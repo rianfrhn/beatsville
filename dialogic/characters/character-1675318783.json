@@ -1,0 +1,25 @@
+{
+	"color": "#ff009f15",
+	"description": "Sparky is sparky",
+	"display_name": "Sparky",
+	"display_name_bool": true,
+	"id": "character-1675318783.json",
+	"mirror_portraits": false,
+	"name": "Sparky",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Assets/TEMP/Sparky_PortraitPlaceholder.png"
+		},
+		{
+			"name": "Happy",
+			"path": "res://Assets/TEMP/Sparky_PortraitPlaceholder.png"
+		}
+	],
+	"scale": 100,
+	"theme": "theme-1675348442.cfg"
+}

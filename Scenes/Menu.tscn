@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Fonts/PixelFontBigger.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Menu.cs" type="Script" id=2]
+[ext_resource path="res://Assets/Theme/MenuTheme.tres" type="Theme" id=3]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 100.0
+margin_bottom = -10.0
+alignment = 2
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+margin_top = 113.0
+margin_right = 90.0
+margin_bottom = 126.0
+custom_fonts/font = ExtResource( 1 )
+text = "Play"
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+margin_top = 130.0
+margin_right = 90.0
+margin_bottom = 143.0
+text = "Continue"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+margin_top = 147.0
+margin_right = 90.0
+margin_bottom = 160.0
+text = "Options"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_Options_pressed"]

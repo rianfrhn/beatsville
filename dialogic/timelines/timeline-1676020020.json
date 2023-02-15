@@ -1,0 +1,75 @@
+{
+	"events": [
+		{
+			"character": "character-1676019524.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hai! I'm Lazarus, your local travelling merchant! "
+		},
+		{
+			"character": "character-1676019524.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Interested in anything? "
+		},
+		{
+			"choice": "Sure",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1676019524.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Pick anything you want! "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Shop not yet implemented. "
+		},
+		{
+			"choice": "Nah",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 0
+		},
+		{
+			"character": "character-1676019524.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[shake rate=30 level=3]You mf why are you talking to me in the first place like bro if you had spent all your time and energy talking to me then you might aswell buy something from me atleast. Bro you should give up and not talk to me again maybe.[/shake]"
+		},
+		{
+			"block_input": false,
+			"event_id": "dialogic_050",
+			"wait_time": 0
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "He looks pissed. "
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1676020020.json",
+		"name": "LazarusShop"
+	}
+}

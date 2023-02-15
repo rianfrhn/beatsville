@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/beep-sound-8333.mp3-cd7c51ac0943859295ea3ef580d540ac.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/beep-sound-8333.mp3"
+dest_files=[ "res://.import/beep-sound-8333.mp3-cd7c51ac0943859295ea3ef580d540ac.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

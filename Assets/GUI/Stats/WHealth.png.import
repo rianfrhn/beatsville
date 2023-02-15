@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/WHealth.png-4b0d1458c2ff861d13acb265a78033a4.res"
+group_file="res://Assets/GUI/Stats/AtlasStats.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/GUI/Stats/WHealth.png"
+dest_files=[ "res://.import/WHealth.png-4b0d1458c2ff861d13acb265a78033a4.res" ]
+
+[params]
+
+atlas_file="res://Assets/GUI/Stats/AtlasStats.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

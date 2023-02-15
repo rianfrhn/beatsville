@@ -1,0 +1,142 @@
+{
+	"files": [
+
+	],
+	"folders": {
+		"Characters": {
+			"files": [
+				"character-1675318783.json",
+				"character-1675319472.json",
+				"character-1675321582.json",
+				"character-1675411105.json",
+				"character-1676019447.json",
+				"character-1676019524.json",
+				"character-1676019656.json"
+			],
+			"folders": {
+
+			},
+			"metadata": {
+				"color": null,
+				"folded": true
+			}
+		},
+		"Definitions": {
+			"files": [
+
+			],
+			"folders": {
+				"FightScene": {
+					"files": [
+						"1676383243-648",
+						"1676383261-787"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				},
+				"TestWorld": {
+					"files": [
+						"1675349947-116"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				},
+				"TestWorld2": {
+					"files": [
+						"1676019935-787"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				}
+			},
+			"metadata": {
+				"color": null,
+				"folded": false
+			}
+		},
+		"Themes": {
+			"files": [
+				"default-theme.cfg",
+				"theme-1675348418.cfg",
+				"theme-1675348442.cfg",
+				"theme-1675423394.cfg",
+				"theme-1676022997.cfg",
+				"theme-1676023305.cfg"
+			],
+			"folders": {
+
+			},
+			"metadata": {
+				"color": null,
+				"folded": false
+			}
+		},
+		"Timelines": {
+			"files": [
+
+			],
+			"folders": {
+				"FightScenes": {
+					"files": [
+						"timeline-1676382996.json",
+						"timeline-1676383350.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				},
+				"TestRoom": {
+					"files": [
+						"timeline-1675319699.json",
+						"timeline-1675411098.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				},
+				"TestRoom2": {
+					"files": [
+						"timeline-1675321564.json",
+						"timeline-1676019726.json",
+						"timeline-1676020020.json",
+						"timeline-1676020385.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				}
+			},
+			"metadata": {
+				"color": null,
+				"folded": false
+			}
+		}
+	}
+}

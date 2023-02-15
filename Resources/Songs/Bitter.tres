@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Resources/SongData.cs" type="Script" id=1]
+[ext_resource path="res://Assets/OST/Beatsville_Bitter.ogg" type="AudioStream" id=2]
+
+[resource]
+script = ExtResource( 1 )
+BPM = 180
+TimeSign = 6
+song = ExtResource( 2 )
+beatsToMove = [  ]
+beatsToAtk = [  ]
+timeChanges = {
+48: "211011",
+336: "100200",
+384: "211211",
+576: "111211",
+624: "100200"
+}

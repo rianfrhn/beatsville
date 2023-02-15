@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/CDefense.png-7e3412b30be89f12f9729a4a9e815f79.res"
+group_file="res://Assets/GUI/Stats/AtlasStats.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/GUI/Stats/CDefense.png"
+dest_files=[ "res://.import/CDefense.png-7e3412b30be89f12f9729a4a9e815f79.res" ]
+
+[params]
+
+atlas_file="res://Assets/GUI/Stats/AtlasStats.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

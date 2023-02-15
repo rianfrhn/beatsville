@@ -1,0 +1,21 @@
+{
+	"color": "#ffffffff",
+	"description": "Shiro is shiro",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1675411105.json",
+	"mirror_portraits": false,
+	"name": "Shiro",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": "theme-1675423394.cfg"
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/CInspiration.png-483c422b0502d29de1c2d2205c184fef.res"
+group_file="res://Assets/GUI/Stats/AtlasStats.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/GUI/Stats/CInspiration.png"
+dest_files=[ "res://.import/CInspiration.png-483c422b0502d29de1c2d2205c184fef.res" ]
+
+[params]
+
+atlas_file="res://Assets/GUI/Stats/AtlasStats.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

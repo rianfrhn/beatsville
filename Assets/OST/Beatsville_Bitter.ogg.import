@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Beatsville_Bitter.ogg-d9ec6903c073c42dcb5c0bc624d037bd.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/Beatsville_Bitter.ogg"
+dest_files=[ "res://.import/Beatsville_Bitter.ogg-d9ec6903c073c42dcb5c0bc624d037bd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

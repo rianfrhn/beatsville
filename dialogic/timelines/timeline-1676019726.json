@@ -1,0 +1,27 @@
+{
+	"events": [
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Haii. "
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You can interact with more of my friends on the right side. "
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Have fun! "
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1676019726.json",
+		"name": "ReiInteract"
+	}
+}

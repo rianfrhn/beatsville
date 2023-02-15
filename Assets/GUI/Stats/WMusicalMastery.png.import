@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/WMusicalMastery.png-709610a2c4f4101b0ee41d5efb6f452f.res"
+group_file="res://Assets/GUI/Stats/AtlasStats.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/GUI/Stats/WMusicalMastery.png"
+dest_files=[ "res://.import/WMusicalMastery.png-709610a2c4f4101b0ee41d5efb6f452f.res" ]
+
+[params]
+
+atlas_file="res://Assets/GUI/Stats/AtlasStats.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Tiles/WhiteTile.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/UI_ActionBar.cs" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Jump"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Template:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 2.14355, 0.267944 ),
+"update": 0,
+"values": [ Vector2( 133.015, 0.00500107 ), Vector2( 133.015, -10 ), Vector2( 133.015, 0 ) ]
+}
+
+[node name="ActionBar" type="Control"]
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Jump = SubResource( 1 )
+
+[node name="Template" type="TextureRect" parent="."]
+modulate = Color( 1, 0.262745, 0.262745, 1 )
+anchor_left = 0.965
+anchor_top = 0.865
+anchor_right = 0.965
+anchor_bottom = 0.865
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 48.0
+margin_bottom = 48.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )

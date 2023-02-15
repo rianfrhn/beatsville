@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sweet and Tender.ogg-6ea1c73769b297c96e93829d7a54e171.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/Sweet and Tender.ogg"
+dest_files=[ "res://.import/Sweet and Tender.ogg-6ea1c73769b297c96e93829d7a54e171.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

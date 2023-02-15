@@ -1,0 +1,22 @@
+[gd_resource type="AnimationNodeAnimation" load_steps=3 format=2]
+
+[ext_resource path="res://Assets/OST/Beatsville_MiraclesOfImagination.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/Resources/SongData.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+BPM = 180
+TimeSign = 4
+song = ExtResource( 1 )
+beatsToMove = [  ]
+beatsToAtk = [  ]
+timeChanges = {
+0: "0000",
+40: "1111",
+64: "1010",
+72: "1111",
+104: "1101",
+136: "1111",
+168: "1000",
+184: "1111"
+}

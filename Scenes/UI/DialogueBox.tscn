@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/GUI/Frame.png" type="Texture" id=1]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="DialogueBox" type="NinePatchRect" parent="."]
+margin_right = 235.0
+margin_bottom = 65.0
+texture = ExtResource( 1 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Char" type="Control" parent="DialogueBox"]
+margin_left = 187.0
+margin_top = 7.0
+margin_right = 227.0
+margin_bottom = 57.0
+
+[node name="Picture" type="TextureRect" parent="DialogueBox/Char"]
+margin_left = 3.0
+margin_right = 35.0
+margin_bottom = 32.0
+
+[node name="Name" type="RichTextLabel" parent="DialogueBox/Char"]
+margin_left = -9.0
+margin_top = 40.0
+margin_right = 44.0
+margin_bottom = 55.0
+text = "Dummy"
+fit_content_height = true
+scroll_active = false
+
+[node name="Dialogue" type="RichTextLabel" parent="DialogueBox"]
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 165.0
+margin_bottom = 59.0
+text = "U dumb lol"

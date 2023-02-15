@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Talk_Sparky.wav-b1e368d57d485fe54920005a2b9e3fa1.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Talk/Talk_Sparky.wav"
+dest_files=[ "res://.import/Talk_Sparky.wav-b1e368d57d485fe54920005a2b9e3fa1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

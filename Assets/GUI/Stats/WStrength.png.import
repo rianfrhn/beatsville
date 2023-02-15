@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/WStrength.png-ac2ce2c0a0f07271d805dfab6e2df65c.res"
+group_file="res://Assets/GUI/Stats/AtlasStats.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/GUI/Stats/WStrength.png"
+dest_files=[ "res://.import/WStrength.png-ac2ce2c0a0f07271d805dfab6e2df65c.res" ]
+
+[params]
+
+atlas_file="res://Assets/GUI/Stats/AtlasStats.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

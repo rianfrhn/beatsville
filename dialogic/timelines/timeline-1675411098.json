@@ -1,0 +1,77 @@
+{
+	"events": [
+		{
+			"character": "character-1675411105.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Good. You are here. "
+		},
+		{
+			"character": "character-1675411105.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Ready for your test run? "
+		},
+		{
+			"choice": "Yeah",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1675411105.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Aight. Goodluck. "
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"res://Scenes/Player.tscn",
+					"res://Scenes/Dummy.tscn",
+					"res://Resources/Songs/MoI.tres",
+					"y"
+				],
+				"method_name": "InitializeFightData",
+				"target_node_path": "GlobalVariable"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"res://Scenes/FightScene.tscn",
+					"STOP"
+				],
+				"method_name": "ChangeScene",
+				"target_node_path": "SceneTransition"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "Nah",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1675411105.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Take your time. "
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1675411098.json",
+		"name": "ShiroTest"
+	}
+}

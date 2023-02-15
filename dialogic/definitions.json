@@ -1,0 +1,31 @@
+{
+	"glossary": [
+
+	],
+	"variables": [
+		{
+			"id": "1675349947-116",
+			"name": "Talked",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1676019935-787",
+			"name": "TalkedWithReiEnter",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1676383243-648",
+			"name": "GotMoney",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1676383261-787",
+			"name": "GotXP",
+			"type": 0,
+			"value": "0"
+		}
+	]
+}

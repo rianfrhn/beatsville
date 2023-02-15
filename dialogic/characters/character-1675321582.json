@@ -1,0 +1,21 @@
+{
+	"color": "#ff980fcf",
+	"description": "Rei is Rei",
+	"display_name": "Rei",
+	"display_name_bool": true,
+	"id": "character-1675321582.json",
+	"mirror_portraits": false,
+	"name": "Rei",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Assets/TEMP/Rei_PortraitPlaceholder.png"
+		}
+	],
+	"scale": 100,
+	"theme": "theme-1675348418.cfg"
+}

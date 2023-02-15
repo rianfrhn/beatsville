@@ -1,0 +1,88 @@
+{
+	"events": [
+		{
+			"condition": "",
+			"definition": "1676019935-787",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Helloo!!!! "
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "What would you like to do today? "
+		},
+		{
+			"choice": "Nothing",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You did nothing. "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You felt proud of yourself. "
+		},
+		{
+			"choice": "Play",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I would love to go play with you! However, this game isn't done yet. "
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Maybe later? "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "\"The tale of Beatsville\" coming soon :D "
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"definition": "1676019935-787",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1675321564.json",
+		"name": "ReiTest"
+	}
+}
