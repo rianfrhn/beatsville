@@ -42,7 +42,8 @@ public class MusicHandler : Node
 
 	public override void _Ready()
 	{
-		musicStream = GetParent<AudioStreamPlayer>();
+		GlobalMusic gm = GetTree().Root.GetNode<GlobalMusic>("GlobalMusic");
+		musicStream = gm.GetPlayingAudioStream();
 		GlobalHandler.CurrentMusic = this;
 		if (songDataRes != null && songDataRes is SongData sd)
 		{

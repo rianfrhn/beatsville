@@ -26,6 +26,18 @@
 			"name": "GotXP",
 			"type": 0,
 			"value": "0"
+		},
+		{
+			"id": "1676538085-648",
+			"name": "HeldScene",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1676538619-787",
+			"name": "HeldMusic",
+			"type": 0,
+			"value": ""
 		}
 	]
 }

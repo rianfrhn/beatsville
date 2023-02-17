@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/OST/The Tale of Beatsville.ogg" type="AudioStream" id=1]
 [ext_resource path="res://GlobalMusic.cs" type="Script" id=2]
@@ -105,6 +105,38 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "Fade1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayer1:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Fade2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayer2:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+
 [sub_resource type="Animation" id=3]
 resource_name = "RESET"
 length = 0.001
@@ -163,6 +195,8 @@ script = ExtResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/CrossTo1 = SubResource( 1 )
 anims/CrossTo2 = SubResource( 2 )
+anims/Fade1 = SubResource( 4 )
+anims/Fade2 = SubResource( 5 )
 anims/RESET = SubResource( 3 )
 
 [node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]

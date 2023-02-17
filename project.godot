@@ -134,6 +134,10 @@ window/stretch/aspect="keep"
 version_control_autoload_on_startup=true
 version_control_plugin_name="GitAPI"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
@@ -185,6 +189,13 @@ dialogic_default_action={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Interactables"
+2d_physics/layer_4="Projectiles"
 
 [mono]
 

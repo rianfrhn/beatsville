@@ -37,8 +37,7 @@ public class FightScene : Node2D
 
 
 		//Song initialization
-		AudioStreamPlayer AudioPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
-		MusicHandler musicHandler = AudioPlayer.GetNode<MusicHandler>("MusicController");
+		MusicHandler musicHandler = GetNode<MusicHandler>("MusicController");
 		musicHandler.musicOffset = songOffset;
 		musicHandler.interval = songInterval;
 		musicHandler.songData = (SongData)songdata;
@@ -53,8 +52,10 @@ public class FightScene : Node2D
 		player1Instance.atkMode = true;
 
 		RandomNumberGenerator rng = new RandomNumberGenerator();
+		rng.Randomize();
 		player1Instance.Position = new Vector2(72, 40 + 16 * rng.RandiRange(0,7));
-		player2Instance.Position = new Vector2(264, 40 + 16 * rng.RandiRange(0, 7));
+		rng.Randomize();
+		player2Instance.Position = new Vector2(248, 40 + 16 * rng.RandiRange(0, 7));
 		AddChild(player1Instance);
 		AddChild(player2Instance);
 

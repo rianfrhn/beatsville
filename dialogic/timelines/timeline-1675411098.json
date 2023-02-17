@@ -29,14 +29,20 @@
 			"text": "Aight. Goodluck. "
 		},
 		{
+			"event_id": "bv_ifd1",
+			"is_bossfight": false,
+			"money_gain": 10,
+			"player1": "res://Scenes/Player.tscn",
+			"player2": "res://Scenes/Dummy.tscn",
+			"song_data": "res://Resources/Songs/MoI.tres",
+			"xp_gain": 10
+		},
+		{
 			"call_node": {
 				"arguments": [
-					"res://Scenes/Player.tscn",
-					"res://Scenes/Dummy.tscn",
-					"res://Resources/Songs/MoI.tres",
-					"y"
+					"res://Scenes/TestRoom.tscn"
 				],
-				"method_name": "InitializeFightData",
+				"method_name": "HoldPosition",
 				"target_node_path": "GlobalVariable"
 			},
 			"event_id": "dialogic_042"
@@ -45,7 +51,8 @@
 			"call_node": {
 				"arguments": [
 					"res://Scenes/FightScene.tscn",
-					"STOP"
+					"STOP",
+					""
 				],
 				"method_name": "ChangeScene",
 				"target_node_path": "SceneTransition"

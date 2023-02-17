@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Godot.Collections;
 
 public class GlobalVariable : Node
 {
@@ -48,8 +49,12 @@ public class GlobalVariable : Node
 	Resource playerStat;
 	int money;
 
+	public Node currentScene;
 	public Camera2D currentCamera;
-
+	public string currentMusic;
+	public Humanoid currentPlayer;
+	
+	public Dictionary<string, Vector2> heldPosition = new Dictionary<string, Vector2>();
 	/// <summary>
 	/// Used to initialize the fight
 	/// </summary>
@@ -59,13 +64,24 @@ public class GlobalVariable : Node
 	/// <param name="isBossfight">If is bossfight, no borders. Player can run</param>
 	/// 
 
-	public void InitializeFightData(string player1, string player2, string songData, string isBossfight)
+	public void InitializeFightData(string player1, string player2, string songData, bool isBossfight, int moneygain, int xpgain)
 	{
 		player1dir = player1;
 		player2dir = player2;
 		songdatadir = songData;
-		if (isBossfight == "y" || isBossfight == "Y") IsBossfight = true;
-		else IsBossfight = false;
+		IsBossfight = isBossfight;
+
+		GD.Print(player1dir, player2dir, songdatadir, IsBossfight);
+	}
+
+	public void HoldPosition(string sceneDir)
+    {
+		if (heldPosition.ContainsKey(currentScene.Name)) heldPosition[currentScene.Name] = currentPlayer.GlobalPosition;
+		else heldPosition.Add(currentScene.Name, currentPlayer.GlobalPosition);
+		DialogicSharp.SetVariable("HeldScene", sceneDir);
+		DialogicSharp.SetVariable("HeldMusic", currentMusic);
+
+
 	}
 	public void OpenMenu(string directory)
 	{

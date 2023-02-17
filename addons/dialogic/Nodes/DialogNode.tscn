@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/dialogic/Nodes/TextBubble.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/dialogic/Example Assets/backgrounds/GlossaryBackground.tres" type="StyleBox" id=2]
@@ -11,42 +11,45 @@
 [ext_resource path="res://addons/dialogic/Example Assets/Sound Effects/Beep.wav" type="AudioStream" id=9]
 [ext_resource path="res://addons/dialogic/Nodes/DialogicCustomEvents.gd" type="Script" id=10]
 [ext_resource path="res://addons/dialogic/Nodes/History.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/SFX/Talk/Talk_Default.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/SFX/UI/UI_Hover.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/SFX/UI/UI_Select.wav" type="AudioStream" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 0 )
 expand_margin_left = 10.0
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 1280, 720 )
+extents = Vector2( 320, 180 )
 
 [node name="DialogNode" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 6 )
 
+[node name="TextBubble" parent="." instance=ExtResource( 1 )]
+margin_left = 30.0
+margin_top = 125.0
+margin_right = 290.0
+margin_bottom = 175.0
+
 [node name="Portraits" type="Control" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 640.0
-margin_top = 720.0
-margin_right = 640.0
-margin_bottom = 720.0
+margin_left = 160.0
+margin_top = 180.0
+margin_right = 160.0
+margin_bottom = 180.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextBubble" parent="." instance=ExtResource( 1 )]
-margin_left = 185.0
-margin_top = 513.0
-margin_right = 1095.0
-margin_bottom = 680.0
-
 [node name="Options" type="VBoxContainer" parent="."]
 visible = false
-margin_right = 1280.0
-margin_bottom = 720.0
+margin_right = 320.0
+margin_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -73,9 +76,12 @@ script = ExtResource( 3 )
 [node name="Audio" type="Node" parent="FX"]
 
 [node name="Typing" type="AudioStreamPlayer" parent="FX/Audio"]
+volume_db = -0.08
+bus = "Dialogue"
 script = ExtResource( 8 )
-samples = [ ExtResource( 9 ) ]
+samples = [ ExtResource( 12 ) ]
 random_strategy = 2
+random_pitch_range = 0.2
 
 [node name="Waiting" type="AudioStreamPlayer" parent="FX/Audio"]
 script = ExtResource( 8 )
@@ -88,13 +94,14 @@ samples = [ ExtResource( 9 ) ]
 random_strategy = 2
 
 [node name="Hovering" type="AudioStreamPlayer" parent="FX/Audio"]
+bus = "User Interface"
 script = ExtResource( 8 )
-samples = [ ExtResource( 9 ) ]
+samples = [ ExtResource( 13 ) ]
 random_strategy = 2
 
 [node name="Selecting" type="AudioStreamPlayer" parent="FX/Audio"]
 script = ExtResource( 8 )
-samples = [ ExtResource( 9 ) ]
+samples = [ ExtResource( 14 ) ]
 random_strategy = 2
 
 [node name="DefinitionInfo" type="PanelContainer" parent="."]
