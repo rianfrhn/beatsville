@@ -1,0 +1,37 @@
+{
+	"color": "#ff00a5ff",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1676874925.json",
+	"mirror_portraits": true,
+	"name": "Marione",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Assets/GUI/Char/Marione/Marione_Default.png"
+		},
+		{
+			"name": "Angry",
+			"path": "res://Assets/GUI/Char/Marione/Marione_Angry.png"
+		},
+		{
+			"name": "Sad",
+			"path": "res://Assets/GUI/Char/Marione/Marione_Sad.png"
+		},
+		{
+			"name": "Surprised",
+			"path": "res://Assets/GUI/Char/Marione/Marione_Surprised.png"
+		},
+		{
+			"name": "Look Away",
+			"path": "res://Assets/GUI/Char/Marione/Marione_Default_LookAway.png"
+		}
+	],
+	"scale": 100,
+	"theme": "theme-1676877734.cfg"
+}

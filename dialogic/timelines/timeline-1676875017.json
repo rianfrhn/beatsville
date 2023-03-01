@@ -1,0 +1,195 @@
+{
+	"events": [
+		{
+			"animation": "2-fade_in_up.gd",
+			"animation_length": 0.5,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "Surprised",
+			"text": "Oh hey Kal!"
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "I was just chatting with Tez about something."
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "Look Away",
+			"text": "Oh by the way..."
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "I got my own Character Sprite!!!!"
+		},
+		{
+			"animation": "2-fade_in_up.gd",
+			"animation_length": 0.5,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": true,
+			"portrait": "Angry",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Angry",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 2,
+			"z_index": 0
+		},
+		{
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_001",
+			"portrait": "Angry",
+			"text": "Hey, you aren't the only one who got new sprites y'know."
+		},
+		{
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_001",
+			"portrait": "Grin",
+			"text": "Anyway yeah, Sparky did a good job on these!"
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "Angry",
+			"text": "No Actually he used AI art to do so."
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": true,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": true,
+			"portrait": "Sad",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 2,
+			"z_index": 0
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "(Don't change)",
+			"text": "We look so out of place with these."
+		},
+		{
+			"animation": "back_out_right.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": true,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Don't worry."
+		},
+		{
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_001",
+			"portrait": "Grin",
+			"text": "He'll update it soon once he finishes the key game mechanics!"
+		},
+		{
+			"animation": "5-fade_out_down.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1676875017.json",
+		"name": "MarioneTest"
+	}
+}

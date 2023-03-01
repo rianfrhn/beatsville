@@ -44,7 +44,7 @@
 		{
 			"block_input": true,
 			"event_id": "dialogic_050",
-			"wait_time": 0
+			"wait_time": 0.5
 		},
 		{
 			"character": "character-1676019524.json",
@@ -55,7 +55,7 @@
 		{
 			"block_input": false,
 			"event_id": "dialogic_050",
-			"wait_time": 0
+			"wait_time": 0.5
 		},
 		{
 			"character": "",

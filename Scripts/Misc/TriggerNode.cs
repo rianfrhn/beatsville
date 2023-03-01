@@ -32,11 +32,11 @@ public class TriggerNode : Area2D
 				gv.fromScene = GetParent().Name;
 
 				if(parameter == "HELD")
-                {
+				{
 					parameter = DialogicSharp.GetVariable("HeldScene");
-                }
+				}
 				if(parameter2 == "HELD")
-                {
+				{
 					parameter2 = DialogicSharp.GetVariable("HeldMusic");
 				}
 

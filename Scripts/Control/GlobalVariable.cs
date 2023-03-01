@@ -46,7 +46,7 @@ public class GlobalVariable : Node
 	public bool IsBossfight;
 
 	//Player data
-	Resource playerStat;
+	Stats playerStat;
 	int money;
 
 	public Node currentScene;
@@ -75,7 +75,7 @@ public class GlobalVariable : Node
 	}
 
 	public void HoldPosition(string sceneDir)
-    {
+	{
 		if (heldPosition.ContainsKey(currentScene.Name)) heldPosition[currentScene.Name] = currentPlayer.GlobalPosition;
 		else heldPosition.Add(currentScene.Name, currentPlayer.GlobalPosition);
 		DialogicSharp.SetVariable("HeldScene", sceneDir);
@@ -86,13 +86,32 @@ public class GlobalVariable : Node
 	public void OpenMenu(string directory)
 	{
 		PackedScene ps = ResourceLoader.Load<PackedScene>(directory);
-		Control instance = ps.Instance<Control>();
+		CanvasLayer instance = ps.Instance<CanvasLayer>();
 		GetTree().Root.AddChild(instance);
 		if(currentCamera != null)
 		{
-			instance.RectGlobalPosition = currentCamera.GetCameraScreenCenter() - instance.RectSize/2;
+			//instance.RectGlobalPosition = currentCamera.GetCameraScreenCenter() - instance.RectSize/2;
 		}
 
 
 	}
+	public override void _Ready()
+	{
+		playerStat = new Stats();
+		playerStat.maxHealth = 1000;
+		playerStat.maxInspiration = 100;
+		playerStat.strength = 10;
+		playerStat.healthRegen = 10;
+		playerStat.inspirationRegen = 20;
+		playerStat.defense = 0;
+	}
+	public void SaveGame()
+	{
+
+	}
+	public void LoadGame()
+	{
+
+	}
+	
 }

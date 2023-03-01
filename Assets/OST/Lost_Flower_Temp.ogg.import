@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lost_Flower_Temp.ogg-72d6a34375457f68b2c2ccceb8490e37.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/Lost_Flower_Temp.ogg"
+dest_files=[ "res://.import/Lost_Flower_Temp.ogg-72d6a34375457f68b2c2ccceb8490e37.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

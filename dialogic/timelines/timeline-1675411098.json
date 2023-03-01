@@ -40,7 +40,7 @@
 		{
 			"call_node": {
 				"arguments": [
-					"res://Scenes/TestRoom.tscn"
+					"res://Scenes/Map/TestCave.tscn"
 				],
 				"method_name": "HoldPosition",
 				"target_node_path": "GlobalVariable"

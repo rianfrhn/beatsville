@@ -112,6 +112,7 @@ _global_script_class_icons={
 
 config/name="Beatsville"
 run/main_scene="res://Scenes/Menu.tscn"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -192,6 +193,13 @@ dialogic_default_action={
 
 [layer_names]
 
+2d_render/layer_1="World"
+2d_render/layer_2="Player Occluder"
+2d_render/layer_3="Player Sprite"
+2d_render/layer_4="Intr Occluder"
+2d_render/layer_5="Intr Sprite"
+2d_render/layer_6="Env Occluder"
+2d_render/layer_7="EnvSprite"
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Interactables"
@@ -209,6 +217,7 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 2d/snapping/use_gpu_pixel_snap=true
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
 
 [world]

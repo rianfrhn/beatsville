@@ -12,20 +12,21 @@ public class PlayerController : Node2D
 	{
 		player = GetParent<Humanoid>();
 		playerRaycast = player.GetNode<RayCast2D>("RayCast2D");
+		
 
 		if (!player.atkMode)
 		{
 			GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 			gv.currentPlayer = player;
 			gv.currentScene = player.GetParent();
-            if (gv.heldPosition.ContainsKey(player.GetParent().Name))
-            {
+			if (gv.heldPosition.ContainsKey(player.GetParent().Name))
+			{
 				player.Position = gv.heldPosition[player.GetParent().Name];
-            }
+			}
 		}
 	}
 
-    public override void _PhysicsProcess(float delta)
+	public override void _PhysicsProcess(float delta)
 	{
 		if (!player.atkMode && player.currentState != Humanoid.status.Moving)
 		{

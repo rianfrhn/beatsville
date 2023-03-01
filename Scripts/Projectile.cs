@@ -8,7 +8,9 @@ public abstract class Projectile : Area2D
 	public int speed;
 	public Vector2 initialPos;
 	public Vector2 targetpoint;
+	AnimationPlayer animplayer;
 	public abstract void Move(int beat);
+	public bool collided = false;
 
 	[Signal]
 	public delegate void Hit(int stunDuration);
@@ -20,7 +22,7 @@ public abstract class Projectile : Area2D
 		GlobalHandler.CurrentMusic.Connect("EmitBeat", this, "Move");
 		Connect("body_entered", this, "onHit");
 	}
-	public void onHit(Node obj)
+	public async void onHit(Node obj)
 	{
 		if(obj is Humanoid)
 		{
@@ -30,7 +32,16 @@ public abstract class Projectile : Area2D
 			EmitSignal("Hit", stunDur, damage);
 			Disconnect("Hit", h, "Hit");
 		}
+		animplayer.Play("Collide");
+		collided = true;
+		await ToSignal(animplayer, "animation_finished");
 		this.QueueFree();
+	}
+	
+	public override void _Ready(){
+		animplayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		animplayer.Play("Default");
+		
 	}
 	
 

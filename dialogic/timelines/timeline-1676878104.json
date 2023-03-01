@@ -1,0 +1,81 @@
+{
+	"events": [
+		{
+			"animation": "2-fade_in_up.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": true,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Regardless on what Marione said. "
+		},
+		{
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sparky did a good job on these sprites! "
+		},
+		{
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_001",
+			"portrait": "Grin",
+			"text": "Notice how our facial expressions changed? "
+		},
+		{
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "He'll update our sprites soon. "
+		},
+		{
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_001",
+			"portrait": "Angry",
+			"text": "Using AI art is no good."
+		},
+		{
+			"animation": "5-fade_out_down.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1676876993.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1676878104.json",
+		"name": "TezTest"
+	}
+}

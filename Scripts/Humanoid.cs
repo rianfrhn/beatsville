@@ -8,14 +8,20 @@ public class Humanoid : Interactable
 	private int health = 1000;
 	private int maxInspiration = 100;
 	private int inspiration = 100;
+	private int defense = 0;
+	private int strength = 10;
 
 	private int healthRegenRate = 10;
 	private int inspirationRegenRate = 5;
 	private int inspirationBlunderRate = 15;
 
+	public AnimationTree animationTree;
+	public AnimationNodeStateMachinePlayback stateMachine;
+
 	RayCast2D raycast;
 	Timer timer;
 	float AnimSpeed = 0.3f;
+	Sprite sprite;
 
 	[Signal]
 	public delegate void HealthChanged(int health, int maxHealth);
@@ -41,14 +47,38 @@ public class Humanoid : Interactable
 	private int projectileCost = 10;
 	[Export]
 	public bool atkMode;
+	[Export]
+	public Resource statsResource;
+	[Export]
+	public bool faceLeft = false;
 
 	public override void _Ready()
 	{
+		if(statsResource is Stats)
+		{
+			Stats stat = (Stats)statsResource;
+			maxHealth = stat.maxHealth;
+			health = maxHealth;
+			maxInspiration = stat.maxInspiration;
+			inspiration = maxInspiration;
+			defense = stat.defense;
+			healthRegenRate = stat.healthRegen;
+			inspirationRegenRate = stat.healthRegen;
+			strength = stat.strength;
+		}
+		sprite = GetNodeOrNull<Sprite>("Sprite");
+		animationTree = GetNodeOrNull<AnimationTree>("AnimationTree");
+		if(animationTree != null)
+		{
+			stateMachine = (AnimationNodeStateMachinePlayback)animationTree.Get("parameters/playback");
+		}
+
+
 		raycast = this.GetNode<RayCast2D>("RayCast2D");
 		timer = this.GetNode<Timer>("Timer");
 		currentState = status.Idle;
 		AnimSpeed = GlobalHandler.CurrentMusic != null ? 48.0f/(GlobalHandler.CurrentMusic.songBPM): AnimSpeed;
-
+		sprite.FlipH = faceLeft;
 
 		Connect("Blundered", this, "DecreaseInspiration");
 
@@ -56,6 +86,9 @@ public class Humanoid : Interactable
 	public bool Move(Vector2 targetPos)
 	{
 		if (inspiration == 0) return false;
+		if (targetPos.x < 0) sprite.FlipH = true;
+		else if (targetPos.x > 0) sprite.FlipH = false;
+		
 		raycast.CastTo = targetPos;
 		raycast.ForceRaycastUpdate();
 		if (!raycast.IsColliding() && currentState == status.Idle)
@@ -64,14 +97,29 @@ public class Humanoid : Interactable
 			SceneTreeTween tweening = GetTree().Root.CreateTween();
 			tweening.TweenProperty(this, "position", Position + targetPos, AnimSpeed).SetTrans(Tween.TransitionType.Linear);
 			tweening.TweenCallback(this, "RefreshState");
+			if(animationTree != null)
+			{
+				if (atkMode)
+				{
+					stateMachine.Start("Jump");
+				}
+				else
+				{
+					stateMachine.Travel("Walk");
+				}
+
+			}
+
+
 			return true;
 		}
 		return false;
 
-
 	}
 	public void CheckInteract(Vector2 targetPos)
 	{
+		if (targetPos.x < 0) sprite.FlipH = true;
+		else if(targetPos.x>0) sprite.FlipH = false;
 		raycast.CastTo = targetPos;
 		raycast.ForceRaycastUpdate();
 		if (raycast.IsColliding()) {
@@ -83,12 +131,16 @@ public class Humanoid : Interactable
 		if (obj is Interactable) 
 		{
 			Interactable o = (Interactable)obj;
-			o.OpenDialogue();
+			o.OpenDialogue((Node2D)this);
 		}
 	}
 	public void RefreshState()
 	{
 		currentState = status.Idle;
+		if (animationTree != null)
+		{
+			stateMachine.Travel("Idle");
+		}
 		if (timer.IsConnected("timeout", this, "RefreshState")) { timer.Disconnect("timeout", this, "RefreshState"); }
 	}
 	void SpawnProjectile( Vector2 target)
@@ -110,6 +162,8 @@ public class Humanoid : Interactable
 	{
 		if(inspiration - projectileCost >= 0)
 		{
+			if (Target.x < 0) sprite.FlipH = true;
+			else if (Target.x > 0) sprite.FlipH = false;
 			SpawnProjectile(Target);
 			inspiration -= projectileCost;
 			EmitSignal("InspirationChanged", inspiration, maxInspiration);
@@ -152,12 +206,26 @@ public class Humanoid : Interactable
 	{
 		if (inspiration > 0)
 		{
+			stateMachine.Start("Blunder");
 			inspiration -= inspirationBlunderRate;
 			if (inspiration < 0) inspiration = 0;
 			EmitSignal("InspirationChanged", inspiration, maxInspiration);
 		}
 	}
-	
+	public override void OpenDialogue(Node2D castSource)
+	{
+		if (castSource.Position.x < Position.x) sprite.FlipH = true;
+		else sprite.FlipH = false;
+		Node dialogueNode = DialogicSharp.Start(dialogue);
+		GetTree().Root.AddChild(dialogueNode);
+		dialogueNode.Connect("tree_exiting", this, "ResetPosition");
+	}
+
+	public void ResetPosition()
+	{
+		sprite.FlipH = faceLeft;
+	}
+
 
 }
 

@@ -1,4 +1,4 @@
-using Godot;
+ using Godot;
 using System;
 
 public class Projectile1 : Projectile
@@ -13,6 +13,7 @@ public class Projectile1 : Projectile
 	bool interchange = false;
 	public override void Move(int beat)
 	{
+		if(collided) return;
 		Vector2 newPos = new Vector2();
 		//Bresenham's line algorithm
 		if (e <= 0)

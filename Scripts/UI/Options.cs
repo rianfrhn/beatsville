@@ -2,7 +2,7 @@ using Godot;
 using System;
 using Godot.Collections;
 
-public class Options : Control
+public class Options : CanvasLayer
 {
 	public Dictionary<string, BVTextButton> Buttons = new Dictionary<string, BVTextButton>();
 	public Dictionary<string, Control> TargetFrames = new Dictionary<string, Control>();

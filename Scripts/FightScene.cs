@@ -70,13 +70,14 @@ public class FightScene : Node2D
 
 		//if (IsBossfight)
 		//{
-		//HealthBar healthbar2 = ResourceLoader.Load<HealthBar>("res://Scenes/UI/HealthBar.tscn");
+		//HealthBar healthbar2 = ResourceLoader.Load<HealthBar>("res://Scenes/UI/HealthBar.tscn")
 
 
 		//}
 		HealthBar healthbar2 = GetNode<HealthBar>("HealthBar2");
 		player2Instance.Connect("HealthChanged", healthbar2, "onHealthChanged");
 		player2Instance.Connect("InspirationChanged", healthbar2, "onInspirationChanged");
+
 
 
 

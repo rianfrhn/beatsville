@@ -1,0 +1,65 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Humanoid.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Interactables/Chimera/Idle/chimera_idle_0002.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Interactables/Chimera/Idle/chimera_idle_0004.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Interactables/Chimera/Idle/chimera_idle_0001.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Interactables/Chimera/Idle/chimera_idle_0003.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Interactables/Chimera/Idle/chimera_idle_0005.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Interactables/Chimera/Idle/chimera_idle_0000.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 7 )
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeStateMachine" id=3]
+states/Idle/node = SubResource( 2 )
+states/Idle/position = Vector2( 469.667, 101.667 )
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
+
+[sub_resource type="Animation" id=5]
+resource_name = "Idle"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.7, 0.8, 0.9, 1.4, 1.7, 1.9, 2.2, 2.3, 2.4, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 7 ) ]
+}
+
+[node name="Chimera" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource( 1 )
+dialogue = ""
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 3 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 5 )

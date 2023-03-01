@@ -12,9 +12,9 @@ public class Stats : Resource
     [Export]
     public int inspirationRegen;
     [Export]
-    public int maxDefense;
+    public int defense;
     [Export]
-    public int baseAtk;
+    public int strength;
 
     [Export]
     Resource atkForm1;
