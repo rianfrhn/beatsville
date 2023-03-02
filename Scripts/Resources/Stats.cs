@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Godot.Collections;
 
 public class Stats : Resource
 {
@@ -17,10 +18,5 @@ public class Stats : Resource
     public int strength;
 
     [Export]
-    Resource atkForm1;
-    [Export]
-    Resource atkForm2;
-    [Export]
-    Resource atkForm3;
-
+    public Array<Resource> forms;
 }

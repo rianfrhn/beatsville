@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Misc/DamageIndicator.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/PixelFontExtraSmolOutlined.tres" type="DynamicFont" id=2]
+
+[node name="DamageIndicator" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -11.0
+margin_top = -10.0
+margin_right = 13.0
+margin_bottom = 6.0
+rect_clip_content = false
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center][color=#ff0000][tornado radius=2 freq=5][shake rate=30 level=5]100"
+meta_underlined = false
+text = "100"
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true

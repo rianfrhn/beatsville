@@ -33,7 +33,7 @@
 			"is_bossfight": false,
 			"money_gain": 10,
 			"player1": "res://Scenes/Player.tscn",
-			"player2": "res://Scenes/Dummy.tscn",
+			"player2": "res://Scenes/Interactables/NPC/Shiro.tscn",
 			"song_data": "res://Resources/Songs/MoI.tres",
 			"xp_gain": 10
 		},

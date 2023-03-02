@@ -8,15 +8,17 @@ public class PlayerController : Node2D
 	float tweenAnimSpeed = 5;
 	SongData songData;
 	bool menuOpened = false;
+	int selectedSkill;
 	public override void _Ready()
 	{
 		player = GetParent<Humanoid>();
 		playerRaycast = player.GetNode<RayCast2D>("RayCast2D");
-		
+		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		if (gv.playerStat != null)
+			player.statsResource = gv.playerStat;
 
 		if (!player.atkMode)
 		{
-			GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 			gv.currentPlayer = player;
 			gv.currentScene = player.GetParent();
 			if (gv.heldPosition.ContainsKey(player.GetParent().Name))
@@ -52,10 +54,22 @@ public class PlayerController : Node2D
 	{
 		if (player.atkMode)
 		{
+
+			if (@event.IsActionPressed("switch_move_1"))
+			{
+				selectedSkill = 0;
+			}
+			if (@event.IsActionPressed("switch_move_2"))
+			{
+				selectedSkill = 1;
+			}
+
+
 			if (@event.IsActionPressed("click_left"))
 			{
 				if (player.currentState != Humanoid.status.Idle)
 				{
+					if (player.currentState == Humanoid.status.Attacking) return;
 					player.EmitSignal("Blundered");
 					return;
 				}
@@ -82,6 +96,12 @@ public class PlayerController : Node2D
 
 			if (@event.IsActionPressed("click_right"))
 			{
+				if (player.currentState != Humanoid.status.Idle)
+				{
+					if (player.currentState == Humanoid.status.Attacking) return;
+					player.EmitSignal("Blundered");
+					return;
+				}
 				songData = (SongData)GlobalHandler.CurrentMusic.songData;
 				if (!songData.beatsToMove.Contains(GlobalHandler.CurrentMusic.inBeat())) {
 					player.EmitSignal("Blundered");
@@ -91,8 +111,9 @@ public class PlayerController : Node2D
 				float x = GMP.x - (GMP.x % 16) + 8;
 				float y = GMP.y - (GMP.y % 16) + 8;
 				Vector2 gridMP = new Vector2(x, y);
-				player.Attack(gridMP);
+				player.Attack(gridMP, selectedSkill);
 			}
+
 		}
 		if (!player.atkMode)
 		{

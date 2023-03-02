@@ -35,6 +35,8 @@ public class BVTextButton : Button
 		if(noArrow) return;
 		Text = Text.Trim('>', ' ', '<');
 		Text = "> " + Text + " <";
+		Modulate = new Color(1, 1.5f, 1);
+
 	}
 	private void onClick()
 	{
@@ -52,6 +54,7 @@ public class BVTextButton : Button
 	{
 		if(noArrow) return;
 		Text = Text.Trim('>', ' ', '<');
+		Modulate = new Color(1, 1, 1);
 	}
 	private void onEnterMouse()
 	{

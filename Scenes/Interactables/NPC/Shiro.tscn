@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Humanoid.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Interactables/Shiro/shiro_idle_0002.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interactables/Shiro/shiro_idle_0000.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Interactables/Shiro/shiro_idle_0001.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Interactables/Shiro/shiro_idle_0003.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Stats/DummyStats.tres" type="Resource" id=6]
 
 [sub_resource type="OccluderPolygon2D" id=6]
 polygon = PoolVector2Array( -3, 8, 3, 8, 3, 6, -3, 6 )
@@ -44,6 +45,7 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource( 1 )
 dialogue = ""
+statsResource = ExtResource( 6 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 light_mask = 8

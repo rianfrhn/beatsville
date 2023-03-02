@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/OST/Beatsville_Bitter.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Scripts/MusicHandler.cs" type="Script" id=2]
@@ -9,6 +9,14 @@
 [ext_resource path="res://Assets/SFX/Metronome.mp3" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/UI/ActionBar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/UI/HealthBar.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+glow_levels/1 = true
+glow_levels/2 = true
+glow_levels/5 = false
+glow_blend_mode = 1
 
 [node name="FightScene" type="Node2D"]
 script = ExtResource( 4 )
@@ -31,6 +39,7 @@ stream = ExtResource( 1 )
 root_node = NodePath("../..")
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -2
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 collision_mask = 6
@@ -95,3 +104,6 @@ margin_right = 440.0
 margin_bottom = 40.0
 rect_scale = Vector2( -1, 1 )
 mouse_filter = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )

@@ -56,6 +56,7 @@ public class FightScene : Node2D
 		player1Instance.Position = new Vector2(72, 40 + 16 * rng.RandiRange(0,7));
 		rng.Randomize();
 		player2Instance.Position = new Vector2(248, 40 + 16 * rng.RandiRange(0, 7));
+		player2Instance.faceLeft = true;
 		AddChild(player1Instance);
 		AddChild(player2Instance);
 

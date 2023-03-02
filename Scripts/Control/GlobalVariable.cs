@@ -46,8 +46,8 @@ public class GlobalVariable : Node
 	public bool IsBossfight;
 
 	//Player data
-	Stats playerStat;
-	int money;
+	public Stats playerStat;
+	public int money;
 
 	public Node currentScene;
 	public Camera2D currentCamera;
@@ -99,11 +99,17 @@ public class GlobalVariable : Node
 	{
 		playerStat = new Stats();
 		playerStat.maxHealth = 1000;
-		playerStat.maxInspiration = 100;
+		playerStat.maxInspiration = 200;
 		playerStat.strength = 10;
 		playerStat.healthRegen = 10;
 		playerStat.inspirationRegen = 20;
 		playerStat.defense = 0;
+
+		playerStat.forms = new Array<Resource>();
+		Resource form1 = ResourceLoader.Load("res://Resources/AttackForms/Cards.tres");
+		playerStat.forms.Add(form1);
+		Resource form2 = ResourceLoader.Load("res://Resources/AttackForms/MoonlitSonata1.tres");
+		playerStat.forms.Add(form2);
 	}
 	public void SaveGame()
 	{
@@ -111,6 +117,17 @@ public class GlobalVariable : Node
 	}
 	public void LoadGame()
 	{
+
+	}
+
+	public void CreateDamageIndicator(int damage, Vector2 Gpos)
+	{
+		PackedScene DIRes = ResourceLoader.Load<PackedScene>("res://Scenes/Misc/DamageIndicator.tscn");
+		DamageIndicator DI = DIRes.Instance<DamageIndicator>();
+		DI.damage = damage;
+		DI.GlobalPosition = Gpos;
+		GetTree().CurrentScene.AddChild(DI);
+
 
 	}
 	

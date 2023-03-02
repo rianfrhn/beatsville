@@ -37,14 +37,14 @@ public class UI_ActionBar : Node
 		animplayer.Play("Jump");
 		if (GlobalHandler.CurrentMusic.songData.beatsToAtk.Contains(b))
 		{
-			texture.Modulate = new Color(0, 255, 0);
+			texture.Modulate = new Color(0, 1, 0);
 		} else if (GlobalHandler.CurrentMusic.songData.beatsToMove.Contains(b))
 		{
-			texture.Modulate = new Color(0, 0, 255);
+			texture.Modulate = new Color(0, 0, 1);
 		}
 		else
 		{
-			texture.Modulate = new Color(255, 0, 0);
+			texture.Modulate = new Color(1, 0, 0);
 		}
 
 	}

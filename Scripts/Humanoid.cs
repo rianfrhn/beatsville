@@ -15,6 +15,8 @@ public class Humanoid : Interactable
 	private int inspirationRegenRate = 5;
 	private int inspirationBlunderRate = 15;
 
+	private Array<SkillForm> skillForms = new Array<SkillForm>();
+	public int selectedSkill = 0;
 	public AnimationTree animationTree;
 	public AnimationNodeStateMachinePlayback stateMachine;
 
@@ -43,9 +45,6 @@ public class Humanoid : Interactable
 	[Export]
 	public Array<int> beatsToMove = new Array<int>();
 	[Export]
-	PackedScene Projectile;
-	private int projectileCost = 10;
-	[Export]
 	public bool atkMode;
 	[Export]
 	public Resource statsResource;
@@ -54,7 +53,7 @@ public class Humanoid : Interactable
 
 	public override void _Ready()
 	{
-		if(statsResource is Stats)
+		if(statsResource != null && statsResource is Stats)
 		{
 			Stats stat = (Stats)statsResource;
 			maxHealth = stat.maxHealth;
@@ -65,6 +64,12 @@ public class Humanoid : Interactable
 			healthRegenRate = stat.healthRegen;
 			inspirationRegenRate = stat.healthRegen;
 			strength = stat.strength;
+			foreach(Resource res in stat.forms)
+			{
+				if (res is SkillForm skill)
+				skillForms.Add(skill);
+			}
+
 		}
 		sprite = GetNodeOrNull<Sprite>("Sprite");
 		animationTree = GetNodeOrNull<AnimationTree>("AnimationTree");
@@ -143,30 +148,38 @@ public class Humanoid : Interactable
 		}
 		if (timer.IsConnected("timeout", this, "RefreshState")) { timer.Disconnect("timeout", this, "RefreshState"); }
 	}
-	void SpawnProjectile( Vector2 target)
+	void SpawnProjectile(Vector2 target, PackedScene projectileScene, int basedmg)
 	{
-		if(currentState == status.Idle)
-		{
-			Viewport root = GetTree().Root;
-			var proj = (Projectile)Projectile.Instance();
-			proj.setTarget(this.GlobalPosition, target);
-			proj.GlobalPosition = this.GlobalPosition;
 
+		if (currentState == status.Idle)
+		{
+			currentState = status.Attacking;
+			Viewport root = GetTree().Root;
+			Projectile proj = (Projectile)projectileScene.Instance();
+			proj.setTarget(this.GlobalPosition, target, basedmg, strength);
+			proj.GlobalPosition = this.GlobalPosition;
 			root.GetChild(root.GetChildCount() - 1).AddChild(proj);
-			timer.WaitTime = 50 / GlobalHandler.CurrentMusic.songBPM;
-			if (!timer.IsConnected("timeout", this, "RefreshState")) { timer.Connect("timeout", this, "RefreshState"); }
-			timer.Start();
 		}
 	}
-	public void Attack(Vector2 Target)
+	public void Attack(Vector2 Target, int skill = -1)
 	{
+		int selectedSkill = skill == -1 ? this.selectedSkill : skill;
+		if (selectedSkill > skillForms.Count) return;
+		int projectileCost = skillForms[selectedSkill].cost;
+
 		if(inspiration - projectileCost >= 0)
 		{
-			if (Target.x < 0) sprite.FlipH = true;
-			else if (Target.x > 0) sprite.FlipH = false;
-			SpawnProjectile(Target);
+			stateMachine.Start("Attack");
+
+			int baseDmg = skillForms[selectedSkill].damage;
+			if (Target.x < Position.x) sprite.FlipH = true;
+			else if (Target.x > Position.x) sprite.FlipH = false;
+			SpawnProjectile(Target, skillForms[selectedSkill].projectile, baseDmg);
 			inspiration -= projectileCost;
 			EmitSignal("InspirationChanged", inspiration, maxInspiration);
+			timer.WaitTime = /*skillForms[selectedSkill].duration * */30 / GlobalHandler.CurrentMusic.songBPM;
+			if (!timer.IsConnected("timeout", this, "RefreshState")) { timer.Connect("timeout", this, "RefreshState"); }
+			timer.Start();
 		}
 		
 	}

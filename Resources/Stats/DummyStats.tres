@@ -1,3 +1,13 @@
-[gd_resource type="Resource" format=2]
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/Stats.cs" type="Script" id=1]
 
 [resource]
+script = ExtResource( 1 )
+maxHealth = 1000
+healthRegen = 10
+maxInspiration = 100
+inspirationRegen = 10
+defense = 10
+strength = 10
+forms = null

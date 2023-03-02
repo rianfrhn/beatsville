@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Tiles/BlueTile.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Humanoid.cs" type="Script" id=2]
+[ext_resource path="res://Resources/Stats/DummyStats.tres" type="Resource" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7 )
@@ -11,6 +12,7 @@ position = Vector2( 120, 56 )
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 2 )
+statsResource = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
