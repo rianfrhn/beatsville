@@ -10,8 +10,11 @@ public abstract class Projectile : Area2D
 	public Vector2 initialPos;
 	public Vector2 targetpoint;
 	public AnimationPlayer animplayer;
+	CollisionShape2D collisionShape;
 	public abstract void Move(int beat);
 	public bool collided = false;
+
+	public bool onCollideAutoDel = true;
 
 	[Signal]
 	public delegate void Hit(int stunDuration);
@@ -50,13 +53,25 @@ public abstract class Projectile : Area2D
 			GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 			gv.CreateDamageIndicator(newDmg, ((Node2D)obj).GlobalPosition);
 		}
-		if (!collided)
+		if(obj is BreakableTiles)
 		{
-			animplayer.Play("Collide");
-		};
-		collided = true;
-		await ToSignal(animplayer, "animation_finished");
-		this.QueueFree();
+			CollisionShape2D colShape = GetNode<CollisionShape2D>("CollisionShape2D");
+			
+			BreakableTiles tileset = (BreakableTiles)obj;
+			Vector2 cell = tileset.WorldToMap(colShape.GlobalPosition);
+			tileset.SetCellv(cell, -1);
+
+		}
+		if (onCollideAutoDel)
+		{
+			if (!collided)
+			{
+				animplayer.Play("Collide");
+			};
+			collided = true;
+			await ToSignal(animplayer, "animation_finished");
+			this.QueueFree();
+		}
 	}
 	
 	public override void _Ready(){
@@ -64,6 +79,7 @@ public abstract class Projectile : Area2D
 		animplayer.Play("Default");
 		
 	}
+	
 	
 
 

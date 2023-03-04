@@ -63,6 +63,10 @@ public class PlayerController : Node2D
 			{
 				selectedSkill = 1;
 			}
+			if (@event.IsActionPressed("switch_move_3"))
+			{
+				selectedSkill = 2;
+			}
 
 
 			if (@event.IsActionPressed("click_left"))

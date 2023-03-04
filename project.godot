@@ -166,6 +166,10 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+ogg_vorbis={
+"loop": true,
+"loop_offset": 0
+}
 
 [input]
 
@@ -224,6 +228,11 @@ switch_move_2={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":50,"unicode":0,"echo":false,"script":null)
  ]
 }
+switch_move_3={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":51,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -234,6 +243,10 @@ switch_move_2={
 2d_render/layer_5="Intr Sprite"
 2d_render/layer_6="Env Occluder"
 2d_render/layer_7="EnvSprite"
+2d_render/layer_8="WorldOccluder"
+2d_render/layer_9="WorldSprite"
+2d_render/layer_10="NOLIGHT"
+2d_render/layer_11="Runes"
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Interactables"

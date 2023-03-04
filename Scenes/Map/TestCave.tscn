@@ -42,6 +42,12 @@ scale = Vector2( 4.22172, -0.488761 )
 parameter = "res://Scenes/TestRoom.tscn"
 parameter2 = "res://Assets/OST/Dire Guardian.ogg"
 
+[node name="TriggerNode2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 584, 55 )
+scale = Vector2( 0.736, -0.645342 )
+parameter = "res://Scenes/Map/TestCavern.tscn"
+parameter2 = "STOP"
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 248, 280 )
 

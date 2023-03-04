@@ -108,8 +108,10 @@ public class GlobalVariable : Node
 		playerStat.forms = new Array<Resource>();
 		Resource form1 = ResourceLoader.Load("res://Resources/AttackForms/Cards.tres");
 		playerStat.forms.Add(form1);
-		Resource form2 = ResourceLoader.Load("res://Resources/AttackForms/MoonlitSonata1.tres");
+		Resource form2 = ResourceLoader.Load("res://Resources/AttackForms/Fist.tres");
 		playerStat.forms.Add(form2);
+		Resource form3 = ResourceLoader.Load("res://Resources/AttackForms/MoonlitSonata2.tres");
+		playerStat.forms.Add(form3);
 	}
 	public void SaveGame()
 	{
