@@ -22,7 +22,7 @@ public class Humanoid : Interactable
 
 	RayCast2D raycast;
 	Timer timer;
-	float AnimSpeed = 0.3f;
+	public float AnimSpeed = 0.3f;
 	Sprite sprite;
 
 	[Signal]
