@@ -18,8 +18,6 @@ public class GlobalVariable : Node
 	/// </summary>
 	public float interval = 0.15f;
 
-
-
 	/// <summary>
 	/// String that stores from what scene. Will then be passed to the Position2d Inside of the map
 	/// </summary>
@@ -46,6 +44,7 @@ public class GlobalVariable : Node
 	public bool IsBossfight;
 
 	//Player data
+	public SaveData saveData;
 	public Stats playerStat;
 	public int money;
 
@@ -113,11 +112,15 @@ public class GlobalVariable : Node
 		Resource form3 = ResourceLoader.Load("res://Resources/AttackForms/MoonlitSonata2.tres");
 		playerStat.forms.Add(form3);
 	}
-	public void SaveGame()
+	public void SaveGameData()
 	{
 
 	}
-	public void LoadGame()
+	public void LoadGameData()
+	{
+
+	}
+	public void NewGameData()
 	{
 
 	}
