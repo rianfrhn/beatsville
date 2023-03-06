@@ -12,8 +12,13 @@ public class Options : CanvasLayer
 		Control xButton = GetNode<Control>("Exit");
 		xButton.Connect("pressed", this, "Close");
 
+
 		Control menus = GetNode("MenuSeparate").GetNode("LeftSide").GetNode("Menus").GetNode("ScrollContainer").GetNode<Control>("VBoxContainer");
 		Control panels = GetNode("MenuSeparate").GetNode<Control>("RightSide");
+
+		Control quitButton = menus.GetNode<Control>("Quit Game");
+		quitButton.Connect("pressed", this, "ReturnMenu");
+
 		foreach(BVTextButton button in menus.GetChildren())
 		{
 			Buttons.Add(button.Name, button);
@@ -34,5 +39,14 @@ public class Options : CanvasLayer
 	public void Close()
 	{
 		QueueFree();
+	}
+	public void ReturnMenu()
+	{
+		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		gv.SaveGameData();
+		SceneTransition st = GetTree().Root.GetNode<SceneTransition>("SceneTransition");
+		st.ChangeScene("res://Scenes/Menu.tscn", "res://Assets/OST/The Tale of Beatsville.ogg");
+		QueueFree();
+
 	}
 }

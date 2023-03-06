@@ -49,11 +49,14 @@ public class GlobalVariable : Node
 	public int money;
 
 	public Node currentScene;
+	public string currentSceneDir;
 	public Camera2D currentCamera;
 	public string currentMusic;
 	public Humanoid currentPlayer;
+
+	public bool loadPos = false;
 	
-	public Dictionary<string, Vector2> heldPosition = new Dictionary<string, Vector2>();
+
 	/// <summary>
 	/// Used to initialize the fight
 	/// </summary>
@@ -65,6 +68,7 @@ public class GlobalVariable : Node
 
 	public void InitializeFightData(string player1, string player2, string songData, bool isBossfight, int moneygain, int xpgain)
 	{
+		SavePlayerPosition();
 		player1dir = player1;
 		player2dir = player2;
 		songdatadir = songData;
@@ -73,6 +77,7 @@ public class GlobalVariable : Node
 		GD.Print(player1dir, player2dir, songdatadir, IsBossfight);
 	}
 
+	/*
 	public void HoldPosition(string sceneDir)
 	{
 		if (heldPosition.ContainsKey(currentScene.Name)) heldPosition[currentScene.Name] = currentPlayer.GlobalPosition;
@@ -82,6 +87,7 @@ public class GlobalVariable : Node
 
 
 	}
+	*/
 	public void OpenMenu(string directory)
 	{
 		PackedScene ps = ResourceLoader.Load<PackedScene>(directory);
@@ -112,17 +118,32 @@ public class GlobalVariable : Node
 		Resource form3 = ResourceLoader.Load("res://Resources/AttackForms/MoonlitSonata2.tres");
 		playerStat.forms.Add(form3);
 	}
+
+	public void SavePlayerPosition()
+	{
+		saveData.position = currentPlayer.Position;
+		GD.Print("Saved Pos: " + currentPlayer.Position);
+		DialogicSharp.SetVariable("HeldScene", currentSceneDir);
+		DialogicSharp.SetVariable("HeldMusic", currentMusic);
+	}
 	public void SaveGameData()
 	{
-
+		SavePlayerPosition();
+		DialogicSharp.Save();
+		saveData.sceneDirectory = currentSceneDir;
+		saveData.musicDirectory = currentMusic;
+		ResourceSaver.Save("user://save_data.tres", saveData);
 	}
 	public void LoadGameData()
 	{
-
+		DialogicSharp.Load();
+		saveData = ResourceLoader.Load<SaveData>("user://save_data.tres");
+		loadPos = true;
 	}
 	public void NewGameData()
 	{
-
+		DialogicSharp.ResetSaves();
+		saveData = ResourceLoader.Load<SaveData>("res://Resources/DefaultPlayerData.tres");
 	}
 
 	public void CreateDamageIndicator(int damage, Vector2 Gpos)

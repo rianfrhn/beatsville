@@ -21,10 +21,10 @@ public class PlayerController : Node2D
 		{
 			gv.currentPlayer = player;
 			gv.currentScene = player.GetParent();
-			if (gv.heldPosition.ContainsKey(player.GetParent().Name))
+			/*if (gv.heldPosition.ContainsKey(player.GetParent().Name))
 			{
 				player.Position = gv.heldPosition[player.GetParent().Name];
-			}
+			}*/
 		}
 	}
 

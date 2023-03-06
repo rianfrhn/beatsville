@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource( 2 )
+id = 0
 projectile = ExtResource( 1 )
 duration = 0
 cost = 2

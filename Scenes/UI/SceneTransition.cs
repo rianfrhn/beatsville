@@ -6,6 +6,10 @@ public class SceneTransition : CanvasLayer
 	Color defaultColor = new Color("51d254");
 	public async void ChangeScene(string scenepath, string musicpath = "", string dialogue = "")
 	{
+		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		PackedScene s = ResourceLoader.Load<PackedScene>(scenepath, noCache: true);
+		Node node = s.Instance();
+
 
 		ColorRect rect = GetNode<ColorRect>("ColorRect");
 		rect.Color = defaultColor;
@@ -31,9 +35,13 @@ public class SceneTransition : CanvasLayer
 		//Turn on music
 		globalmusic.On(musicpath);
 
+		if (node is MapScene)
+		{
+			gv.currentSceneDir = scenepath;
+		}
 		GetTree().ChangeScene(scenepath);
 		animplayer.PlayBackwards("Dissolve");
 	}
-	
+
 
 }

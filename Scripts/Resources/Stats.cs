@@ -2,6 +2,8 @@ using Godot;
 using System;
 using Godot.Collections;
 
+[Serializable]
+[Tool]
 public class Stats : Resource
 {
 	[Export]

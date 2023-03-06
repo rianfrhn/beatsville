@@ -1,6 +1,7 @@
 using Godot;
 using System;
-
+[Serializable]
+[Tool]
 public class Scripture : Resource
 {
     // Declare member variables here. Examples:

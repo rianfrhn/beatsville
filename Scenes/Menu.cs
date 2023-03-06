@@ -22,9 +22,17 @@ public class Menu : Control
 	private void _on_Play_pressed()
 	{
 		// Replace with function body.
+		GetTree().Root.GetNode<GlobalVariable>("GlobalVariable").NewGameData();
 		GetTree().Root.GetNode<SceneTransition>("SceneTransition").ChangeScene("res://Scenes/TestRoom.tscn", "res://Assets/OST/Dire Guardian.ogg");
 		
 	}
+	private void _on_Continue_pressed()
+	{
+		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		gv.LoadGameData();
+		GetTree().Root.GetNode<SceneTransition>("SceneTransition").ChangeScene(gv.saveData.sceneDirectory, gv.saveData.musicDirectory);
+	}
+	
 
 
 	private void _on_Options_pressed()
@@ -32,5 +40,7 @@ public class Menu : Control
 		// Replace with function body.
 	}
 }
+
+
 
 

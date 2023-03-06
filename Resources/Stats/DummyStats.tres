@@ -10,4 +10,4 @@ maxInspiration = 100
 inspirationRegen = 10
 defense = 10
 strength = 10
-forms = null
+forms = [  ]

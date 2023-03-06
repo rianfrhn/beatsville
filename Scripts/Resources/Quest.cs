@@ -1,6 +1,8 @@
 using Godot;
 using System;
 
+[Serializable]
+[Tool]
 public class Quest : Resource
 {
     // Declare member variables here. Examples:

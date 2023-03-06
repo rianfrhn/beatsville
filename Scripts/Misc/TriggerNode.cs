@@ -34,6 +34,7 @@ public class TriggerNode : Area2D
 				if(parameter == "HELD")
 				{
 					parameter = DialogicSharp.GetVariable("HeldScene");
+					gv.loadPos = true;
 				}
 				if(parameter2 == "HELD")
 				{

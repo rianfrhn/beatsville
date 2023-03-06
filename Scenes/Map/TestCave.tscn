@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Tiles/Tilesets/BeatsvilleTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/Misc/LightSources/Fire.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Tiles/Tilesets/BeatsvilleMisc.tres" type="TileSet" id=9]
 [ext_resource path="res://Assets/FX/LightRad64.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/Map/TestCave.cs" type="Script" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -22,6 +23,7 @@ adjustment_contrast = 1.1
 adjustment_saturation = 1.1
 
 [node name="TestCave" type="Node2D"]
+script = ExtResource( 11 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -81,6 +83,12 @@ shadow_item_cull_mask = 41
 
 [node name="TestRoom" type="Position2D" parent="."]
 position = Vector2( 264, 280 )
+__meta__ = {
+"_gizmo_extents_": 8.0
+}
+
+[node name="TestCavern" type="Position2D" parent="."]
+position = Vector2( 584, 72 )
 __meta__ = {
 "_gizmo_extents_": 8.0
 }

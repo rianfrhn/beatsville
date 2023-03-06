@@ -2,6 +2,8 @@ using Godot;
 using System;
 using Godot.Collections;
 
+[Serializable]
+[Tool]
 public class SaveData : Resource
 {
 	//Stats
@@ -44,11 +46,11 @@ public class SaveData : Resource
 	//SkillForms (Owned)
 	[Export]
 	public Array<Resource> skillForms;
-	
+
 	//SkillForms Equipped
-	public int skill1EquippedId;
-	public int skill2EquippedId;
-	public int skill3EquippedId;
+	[Export] public int skill1EquippedId;
+	[Export] public int skill2EquippedId;
+	[Export] public int skill3EquippedId;
 	
 	
 	//Quests Array
@@ -59,6 +61,8 @@ public class SaveData : Resource
 	//Position
 	[Export]
 	public string sceneDirectory;
+	[Export]
+	public string musicDirectory;
 	[Export]
 	public Vector2 position;
 	
