@@ -6,8 +6,6 @@
 [resource]
 script = ExtResource( 2 )
 stats = ExtResource( 1 )
-xp = 0
-level = 1
 money = 0
 talismans = [  ]
 talismanEquippedId = 0

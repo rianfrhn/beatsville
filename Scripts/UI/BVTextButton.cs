@@ -11,8 +11,8 @@ public class BVTextButton : Button
 	public override void _Ready()
 	{
 		
-		hoveraudio = ResourceLoader.Load<AudioStream>("res://Assets/SFX/UI/UI_Hover.wav");
-		selectaudio = ResourceLoader.Load<AudioStream>("res://Assets/SFX/UI/UI_Select.wav");
+		//hoveraudio = ResourceLoader.Load<AudioStream>("res://Assets/SFX/UI/UI_Hover.wav");
+		selectaudio = ResourceLoader.Load<AudioStream>("res://Assets/SFX/UI/UI_Hover.wav");
 		denyaudio = ResourceLoader.Load<AudioStream>("res://Assets/SFX/UI/UI_Denied.wav");
 
 		audioPlayer = new AudioStreamPlayer();

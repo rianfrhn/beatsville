@@ -10,17 +10,10 @@ public class SaveData : Resource
 	[Export]
 	public Resource stats;
 	
-	//XP
-	[Export]
-	public int xp;
-	
-	//Level
-	[Export]
-	public int level;
-	
 	//Money
 	[Export]
 	public int money;
+
 	
 	//Talisman (Owned)
 	[Export]
@@ -30,8 +23,6 @@ public class SaveData : Resource
 	//Talisman Equipped
 	[Export]
 	public int talismanEquippedId;
-	
-	
 	
 	//Scripture(Owned)
 	[Export]
@@ -65,7 +56,33 @@ public class SaveData : Resource
 	public string musicDirectory;
 	[Export]
 	public Vector2 position;
-	
-	
-	
+
+
+
+	public void AddXP(int addedXP)
+	{
+		if(stats is Stats stat)
+		{
+			stat.AddXP(addedXP);
+		}
+	}
+	/// <summary>
+	/// SLOT starts from 0
+	/// </summary>
+	/// <param name="slot"></param>
+	/// <param name="id"></param>
+	public void EquipSkill(int slot, int id)
+	{
+		foreach(Resource skillRes in skillForms)
+		{
+			SkillForm skill = (SkillForm)skillRes;
+			if(skill.id == id)
+			{
+				((Stats)stats).forms[slot] = skillRes;
+			}
+		}
+	}
+
+
+
 }

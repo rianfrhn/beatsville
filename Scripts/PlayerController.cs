@@ -58,15 +58,18 @@ public class PlayerController : Node2D
 
 			if (@event.IsActionPressed("switch_move_1"))
 			{
+				if(((Stats)player.statsResource).forms[0]!= null)
 				selectedSkill = 0;
 			}
 			if (@event.IsActionPressed("switch_move_2"))
 			{
-				selectedSkill = 1;
+				if (((Stats)player.statsResource).forms[1] != null)
+					selectedSkill = 1;
 			}
 			if (@event.IsActionPressed("switch_move_3"))
 			{
-				selectedSkill = 2;
+				if (((Stats)player.statsResource).forms[2] != null)
+					selectedSkill = 2;
 			}
 
 
