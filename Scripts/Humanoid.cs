@@ -56,6 +56,7 @@ public class Humanoid : Interactable
 		if(statsResource != null && statsResource is Stats)
 		{
 			Stats stat = (Stats)statsResource;
+			stat.Update();
 			maxHealth = stat.maxHealth;
 			health = maxHealth;
 			maxInspiration = stat.maxInspiration;

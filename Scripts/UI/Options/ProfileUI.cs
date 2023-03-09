@@ -46,14 +46,15 @@ public class ProfileUI : VBoxContainer
     {
         SaveData savedata = gv.saveData;
         Stats stats = (Stats)savedata.stats;
+        Talisman talisman = (Talisman)stats.talisman;
         //Update main stats
-        healthTxt.Text = stats.maxHealth.ToString();
-        regenHealthTxt.Text = stats.healthRegen.ToString();
-        inspirationTxt.Text = stats.maxInspiration.ToString();
-        regenInspirationTxt.Text = stats.inspirationRegen.ToString();
-        strengthTxt.Text = stats.strength.ToString();
-        defenseTxt.Text = stats.defense.ToString();
-        competenceTxt.Text = stats.competence.ToString();
+        healthTxt.Text = stats.baseMaxHealth+ AddExtra(talisman.health);
+        regenHealthTxt.Text = stats.baseHealthRegen + AddExtra(talisman.healthRegen);
+        inspirationTxt.Text = stats.baseMaxInspiration + AddExtra(talisman.inspiration);
+        regenInspirationTxt.Text = stats.baseInspirationRegen + AddExtra(talisman.inspirationRegen);
+        strengthTxt.Text = stats.baseStrength + AddExtra(talisman.strength);
+        defenseTxt.Text = stats.baseDefense + AddExtra(talisman.defense);
+        competenceTxt.Text = stats.baseCompetence + AddExtra(talisman.competence);
 
         //Update level
         int level = stats.level;
@@ -63,6 +64,14 @@ public class ProfileUI : VBoxContainer
         progressTxt.Text = "Lv." + level + " " + xp + "/" + maxXp;
         progressBar.Value = xp;
         progressBar.MaxValue = maxXp;
+    }
+
+    public string AddExtra(int data)
+    {
+        if (data == 0) return "";
+        string prefix = data < 0 ? "" : "+";
+        string str = "(" + prefix + data + ")";
+        return str;
     }
     public void onHealthPressed()
     {

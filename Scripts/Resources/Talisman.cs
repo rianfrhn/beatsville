@@ -1,17 +1,30 @@
 using Godot;
 using System;
-
+using Godot.Collections;
+[Serializable]
+[Tool]
 public class Talisman : Resource
 {
-	// Declare member variables here. Examples:
-	// private int a = 2;
-	// private string b = "text";
+	[Export]
+	public int id;
+	[Export]
+	public string name;
+	[Export]
+	public string description;
 
-	// Called when the node enters the scene tree for the first time.
+	[Export]
+	public int health = 0;
+	[Export]
+	public int healthRegen = 0;
+	[Export]
+	public int inspiration = 0;
+	[Export]
+	public int inspirationRegen = 0;
+	[Export]
+	public int defense = 0;
+	[Export]
+	public int strength = 0;
+	[Export]
+	public int competence = 0;
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
 }

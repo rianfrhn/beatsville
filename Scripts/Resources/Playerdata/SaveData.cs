@@ -1,7 +1,6 @@
 using Godot;
 using System;
 using Godot.Collections;
-
 [Serializable]
 [Tool]
 public class SaveData : Resource
@@ -61,10 +60,7 @@ public class SaveData : Resource
 
 	public void AddXP(int addedXP)
 	{
-		if(stats is Stats stat)
-		{
-			stat.AddXP(addedXP);
-		}
+		((Stats)stats).AddXP(addedXP);
 	}
 	/// <summary>
 	/// SLOT starts from 0

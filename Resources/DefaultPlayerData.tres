@@ -1,13 +1,17 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://Resources/Stats/DefaultPlayerStats.tres" type="Resource" id=1]
 [ext_resource path="res://Scripts/Resources/Playerdata/SaveData.cs" type="Script" id=2]
+[ext_resource path="res://Resources/Talismans/Boar's Fangs.tres" type="Resource" id=3]
+[ext_resource path="res://Resources/Talismans/Nothing.tres" type="Resource" id=4]
+[ext_resource path="res://Resources/Talismans/Prayer Beads.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/Talismans/Yellow Steel Plate.tres" type="Resource" id=6]
 
 [resource]
 script = ExtResource( 2 )
 stats = ExtResource( 1 )
 money = 0
-talismans = [  ]
+talismans = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ) ]
 talismanEquippedId = 0
 scriptures = [  ]
 scriptureEquippedId = 0

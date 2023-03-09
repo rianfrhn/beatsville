@@ -142,7 +142,14 @@ public class PlayerController : Node2D
 				}
 
 			}
-			
+			if (@event.IsActionPressed("debug"))
+			{
+				GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+				/*
+				Talisman t = ResourceLoader.Load<Talisman>("res://Resources/Talismans/GOD's WILL.tres");
+				gv.saveData.talismans.Add(t);*/
+				gv.saveData.AddXP(5);
+			}
 			if (@event.IsActionPressed("click_left"))
 			{
 

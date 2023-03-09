@@ -4,10 +4,15 @@
 
 [resource]
 script = ExtResource( 1 )
-maxHealth = 1000
-healthRegen = 10
-maxInspiration = 100
-inspirationRegen = 10
-defense = 10
-strength = 10
+baseMaxHealth = 2000
+baseHealthRegen = 10
+baseMaxInspiration = 100
+baseInspirationRegen = 10
+baseDefense = 0
+baseStrength = 0
+baseCompetence = 20
 forms = [  ]
+xp = 0
+level = 0
+levelThreshold = {
+}

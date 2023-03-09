@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/Talisman.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = 3
+name = "Prayer Beads"
+description = "Takes According to legends, this item improves luck. Can also be worn as a bracelet!"
+health = 0
+healthRegen = 5
+inspiration = 20
+inspirationRegen = 10
+defense = 0
+strength = 0
+competence = 2

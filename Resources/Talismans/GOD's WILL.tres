@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/Talisman.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = 5
+name = "GOD's WILL"
+description = "Only for the worthy"
+health = 999
+healthRegen = -1
+inspiration = 99
+inspirationRegen = -1
+defense = 99
+strength = 99
+competence = 5

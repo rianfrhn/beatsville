@@ -102,21 +102,6 @@ public class GlobalVariable : Node
 	}
 	public override void _Ready()
 	{
-		playerStat = new Stats();
-		playerStat.maxHealth = 1000;
-		playerStat.maxInspiration = 200;
-		playerStat.strength = 10;
-		playerStat.healthRegen = 10;
-		playerStat.inspirationRegen = 20;
-		playerStat.defense = 0;
-
-		playerStat.forms = new Array<Resource>();
-		Resource form1 = ResourceLoader.Load("res://Resources/AttackForms/Cards.tres");
-		playerStat.forms.Add(form1);
-		Resource form2 = ResourceLoader.Load("res://Resources/AttackForms/Fist.tres");
-		playerStat.forms.Add(form2);
-		Resource form3 = ResourceLoader.Load("res://Resources/AttackForms/MoonlitSonata2.tres");
-		playerStat.forms.Add(form3);
 	}
 
 	public void SavePlayerPosition()
@@ -132,18 +117,29 @@ public class GlobalVariable : Node
 		DialogicSharp.Save();
 		saveData.sceneDirectory = currentSceneDir;
 		saveData.musicDirectory = currentMusic;
+
+		saveData.stats = playerStat;
+		GD.Print("Save Data, talisman is " + ((Talisman)((Stats)saveData.stats).talisman).name);
+		ResourceSaver.Save("user://stat_data.tres", saveData.stats);
 		ResourceSaver.Save("user://save_data.tres", saveData);
 	}
 	public void LoadGameData()
 	{
 		DialogicSharp.Load();
 		saveData = ResourceLoader.Load<SaveData>("user://save_data.tres");
+		saveData.stats = ResourceLoader.Load("user://stat_data.tres");
+		playerStat = (Stats)saveData.stats;
+		GD.Print("Load Data, talisman is " + ((Talisman)((Stats)saveData.stats).talisman).name);
 		loadPos = true;
+
 	}
 	public void NewGameData()
 	{
 		DialogicSharp.ResetSaves();
 		saveData = ResourceLoader.Load<SaveData>("res://Resources/DefaultPlayerData.tres");
+		playerStat = (Stats)saveData.stats;
+		GD.Print("New Data, talisman is "+ ((Talisman)((Stats)saveData.stats).talisman).name);
+
 	}
 
 	public void CreateDamageIndicator(int damage, Vector2 Gpos)

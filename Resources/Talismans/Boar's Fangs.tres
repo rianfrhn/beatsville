@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/Talisman.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = 1
+name = "Boar's Fangs"
+description = "The fangs of a mythical beast"
+health = 0
+healthRegen = 0
+inspiration = 10
+inspirationRegen = 2
+defense = 0
+strength = 10
+competence = 0
