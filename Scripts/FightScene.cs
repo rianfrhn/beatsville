@@ -21,8 +21,8 @@ public class FightScene : Node2D
 
 	private float songOffset;
 	private float songInterval;
-	private Humanoid player1Instance;
-	private Humanoid player2Instance;
+	public Humanoid player1Instance;
+	public Humanoid player2Instance;
 	
 	public override void _Ready()
 	{
@@ -32,7 +32,7 @@ public class FightScene : Node2D
 		songInterval = gv.interval;
 		player1 = gv.player1dir;
 		player2 = gv.player2dir;
-		songdata = ResourceLoader.Load(gv.songdatadir);
+		songdata = ResourceLoader.Load<Resource>(gv.songdatadir);
 		IsBossfight = gv.IsBossfight;
 
 
@@ -40,7 +40,8 @@ public class FightScene : Node2D
 		MusicHandler musicHandler = GetNode<MusicHandler>("MusicController");
 		musicHandler.musicOffset = songOffset;
 		musicHandler.interval = songInterval;
-		musicHandler.songData = (SongData)songdata;
+		musicHandler.songDataRes = songdata;
+		GD.Print(gv.songdatadir + "BBBBB" + songdata.ResourcePath);
 
 		//Load Characters
 		PackedScene pspl1 = (PackedScene)ResourceLoader.Load(player1);
@@ -54,9 +55,11 @@ public class FightScene : Node2D
 		RandomNumberGenerator rng = new RandomNumberGenerator();
 		rng.Randomize();
 		player1Instance.Position = new Vector2(72, 40 + 16 * rng.RandiRange(0,7));
+		player1Instance.atkMode = true;
 		rng.Randomize();
 		player2Instance.Position = new Vector2(248, 40 + 16 * rng.RandiRange(0, 7));
 		player2Instance.faceLeft = true;
+		player2Instance.atkMode = true;
 		AddChild(player1Instance);
 		AddChild(player2Instance);
 

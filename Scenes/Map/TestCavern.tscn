@@ -105,7 +105,7 @@ script = ExtResource( 13 )
 position = Vector2( 257, 439 )
 scale = Vector2( 4.22172, -0.488761 )
 parameter = "res://Scenes/Map/TestCave.tscn"
-parameter2 = "res://Assets/OST/Lost_Flower_Temp.ogg"
+parameter2 = "res://Assets/OST/Lost Flower.ogg"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 248, 424 )

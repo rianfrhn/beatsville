@@ -42,6 +42,7 @@ public class MusicHandler : Node
 
 	public override void _Ready()
 	{
+		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 		GlobalMusic gm = GetTree().Root.GetNode<GlobalMusic>("GlobalMusic");
 		musicStream = gm.GetPlayingAudioStream();
 		GlobalHandler.CurrentMusic = this;
@@ -51,6 +52,17 @@ public class MusicHandler : Node
 			songBPM = sd.BPM;
 			songTimeSig = sd.TimeSign;
 			musicStream.Stream = sd.song;
+			GD.Print("AAAAAAAAAA");
+		}
+		if(songDataRes == null)
+		{
+			sd = ResourceLoader.Load<SongData>(gv.songdatadir);
+			songData = sd;
+			songBPM = sd.BPM;
+			songTimeSig = sd.TimeSign;
+			musicStream.Stream = sd.song;
+			GD.Print("CCCCCCCC");
+
 		}
 		beatLength = 60 / songBPM;
 		barLength = beatLength * songTimeSig;
@@ -123,7 +135,7 @@ public class MusicHandler : Node
 		if(inWhatBeat != -1)
 		{
 			//EmitSignal("EmitBeat", inWhatBeat);
-			//GD.Print("Moved by player at " + inWhatBeat);
+			GD.Print("Moved by player at " + inWhatBeat);
 			plrMoved = true;
 			cooldown = true;
 		}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scripts/Humanoid.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Interactables/Chimera/Idle/chimera_idle_0002.png" type="Texture" id=2]
@@ -7,19 +7,78 @@
 [ext_resource path="res://Assets/Interactables/Chimera/Idle/chimera_idle_0003.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Interactables/Chimera/Idle/chimera_idle_0005.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Interactables/Chimera/Idle/chimera_idle_0000.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/AI/ChimeraAI.cs" type="Script" id=8]
+[ext_resource path="res://Assets/Projectiles/ScytheThrow/CimeraScythe.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Interactables/Chimera/Jump/chimera_jump_0001.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Interactables/Chimera/Jump/chimera_jump_0003.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Interactables/Chimera/Jump/chimera_jump_0000.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Interactables/Chimera/Jump/chimera_jump_0002.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Interactables/Chimera/Attack/chimera_attack_0000.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Interactables/Chimera/Attack/chimera_attack_0001.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Interactables/Chimera/Attack/chimera_attack_0002.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Interactables/Chimera/Attack/chimera_attack_0003.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Interactables/Chimera/Attack/chimera_attack_0004.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Interactables/Chimera/Attack/chimera_attack_0006.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Interactables/Chimera/Attack/chimera_attack_0005.png" type="Texture" id=20]
+[ext_resource path="res://Resources/Stats/ChimeraStats.tres" type="Resource" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7 )
 
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "Attack"
+
 [sub_resource type="AnimationNodeAnimation" id=2]
 animation = "Idle"
 
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Jump"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Jump_Reverse"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id=3]
+states/Attack/node = SubResource( 13 )
+states/Attack/position = Vector2( 387, 35 )
 states/Idle/node = SubResource( 2 )
-states/Idle/position = Vector2( 469.667, 101.667 )
+states/Idle/position = Vector2( 424.334, 113.667 )
+states/Jump/node = SubResource( 6 )
+states/Jump/position = Vector2( 261.667, 115 )
+states/Jump_Reverse/node = SubResource( 7 )
+states/Jump_Reverse/position = Vector2( 416.333, 205.667 )
+transitions = [ "Idle", "Jump", SubResource( 8 ), "Jump", "Jump_Reverse", SubResource( 9 ), "Jump_Reverse", "Idle", SubResource( 10 ), "Idle", "Attack", SubResource( 14 ), "Attack", "Idle", SubResource( 15 ) ]
 start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=4]
+
+[sub_resource type="Animation" id=16]
+resource_name = "Attack"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 19 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "Idle"
@@ -38,14 +97,76 @@ tracks/0/keys = {
 "values": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 7 ) ]
 }
 
+[sub_resource type="Animation" id=11]
+resource_name = "Jump"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -4 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Jump_Reverse"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 12 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -4 ), Vector2( 0, 0 ) ]
+}
+
 [node name="Chimera" type="KinematicBody2D"]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 1 )
 dialogue = ""
+statsResource = ExtResource( 21 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 7 )
+
+[node name="Weapon" type="Sprite" parent="Sprite"]
+scale = Vector2( -1, 1 )
+z_index = -1
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -62,4 +183,10 @@ active = true
 parameters/playback = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 16 )
 anims/Idle = SubResource( 5 )
+anims/Jump = SubResource( 11 )
+anims/Jump_Reverse = SubResource( 12 )
+
+[node name="FightAI" type="Node" parent="."]
+script = ExtResource( 8 )

@@ -15,7 +15,7 @@ public class Humanoid : Interactable
 	private int inspirationRegenRate = 5;
 	private int inspirationBlunderRate = 15;
 
-	private Array<SkillForm> skillForms = new Array<SkillForm>();
+	public Array<SkillForm> skillForms = new Array<SkillForm>();
 	public int selectedSkill = 0;
 	public AnimationTree animationTree;
 	public AnimationNodeStateMachinePlayback stateMachine;
@@ -39,8 +39,11 @@ public class Humanoid : Interactable
 
 	public enum status{Idle, Moving, Attacking, Stunned, Interacting}
 	public status currentState;
+	
 
 	
+	[Export]
+	public bool isPlayer = false;
 
 	[Export]
 	public Array<int> beatsToMove = new Array<int>();
@@ -50,6 +53,8 @@ public class Humanoid : Interactable
 	public Resource statsResource;
 	[Export]
 	public bool faceLeft = false;
+
+	public bool facingLeft = false;
 
 	public override void _Ready()
 	{
@@ -84,16 +89,21 @@ public class Humanoid : Interactable
 		timer = this.GetNode<Timer>("Timer");
 		currentState = status.Idle;
 		AnimSpeed = GlobalHandler.CurrentMusic != null ? 48.0f/(GlobalHandler.CurrentMusic.songBPM): AnimSpeed;
-		sprite.FlipH = faceLeft;
+		facingLeft = faceLeft;
 
 		Connect("Blundered", this, "DecreaseInspiration");
 
 	}
+	public override void _Process(float delta)
+	{
+		AdjustFacing();
+	}
 	public bool Move(Vector2 targetPos)
 	{
+		if (targetPos == Vector2.Zero) return false;
 		if (inspiration == 0) return false;
-		if (targetPos.x < 0) sprite.FlipH = true;
-		else if (targetPos.x > 0) sprite.FlipH = false;
+		if (targetPos.x < 0) facingLeft = true;
+		else if (targetPos.x > 0) facingLeft = false;
 		
 		raycast.CastTo = targetPos;
 		raycast.ForceRaycastUpdate();
@@ -124,8 +134,8 @@ public class Humanoid : Interactable
 	}
 	public void CheckInteract(Vector2 targetPos)
 	{
-		if (targetPos.x < 0) sprite.FlipH = true;
-		else if(targetPos.x>0) sprite.FlipH = false;
+		if (targetPos.x < 0) facingLeft = true;
+		else if(targetPos.x>0) facingLeft = false;
 		raycast.CastTo = targetPos;
 		raycast.ForceRaycastUpdate();
 		if (raycast.IsColliding()) {
@@ -157,15 +167,33 @@ public class Humanoid : Interactable
 			currentState = status.Attacking;
 			Viewport root = GetTree().Root;
 			Projectile proj = (Projectile)projectileScene.Instance();
-			proj.setTarget(this.GlobalPosition, target, basedmg, strength);
+			if (isPlayer)
+			{
+				proj.SetCollisionMaskBit(2, true);
+				proj.SetCollisionMaskBit(1, false);
+				proj.SetCollisionLayerBit(1, true);
+			}
+			else
+			{
+				proj.SetCollisionMaskBit(2, false);
+				proj.SetCollisionMaskBit(1, true);
+				proj.SetCollisionLayerBit(1, false);
+
+			}
+			proj.setTarget(this, target, basedmg, strength);
 			proj.GlobalPosition = this.GlobalPosition;
 			root.GetChild(root.GetChildCount() - 1).AddChild(proj);
 		}
 	}
-	public void Attack(Vector2 Target, int skill = -1)
+	/// <summary>
+	/// Skill range from 0-2
+	/// </summary>
+	/// <param name="Target"></param>
+	/// <param name="skill"></param>
+	public bool Attack(Vector2 Target, int skill = -1)
 	{
 		int selectedSkill = skill == -1 ? this.selectedSkill : skill;
-		if (selectedSkill > skillForms.Count) return;
+		if (selectedSkill > skillForms.Count) return false;
 		int projectileCost = skillForms[selectedSkill].cost;
 
 		if(inspiration - projectileCost >= 0)
@@ -173,15 +201,20 @@ public class Humanoid : Interactable
 			stateMachine.Start("Attack");
 
 			int baseDmg = skillForms[selectedSkill].damage;
-			if (Target.x < Position.x) sprite.FlipH = true;
-			else if (Target.x > Position.x) sprite.FlipH = false;
+			if (Target.x < Position.x) facingLeft = true;
+			else if (Target.x > Position.x) facingLeft = false;
 			SpawnProjectile(Target, skillForms[selectedSkill].projectile, baseDmg);
 			inspiration -= projectileCost;
 			EmitSignal("InspirationChanged", inspiration, maxInspiration);
-			timer.WaitTime = /*skillForms[selectedSkill].duration * */30 / GlobalHandler.CurrentMusic.songBPM;
+			timer.WaitTime = ((float)skillForms[selectedSkill].duration-1)  * 60.0f / GlobalHandler.CurrentMusic.songBPM + 45.0f / GlobalHandler.CurrentMusic.songBPM;
 			if (!timer.IsConnected("timeout", this, "RefreshState")) { timer.Connect("timeout", this, "RefreshState"); }
 			timer.Start();
-		}
+			return true;
+        }
+        else
+        {
+			return false;
+        }
 		
 	}
 
@@ -199,8 +232,9 @@ public class Humanoid : Interactable
 
 
 	}
-	private void RegenInspiration()
+	public void RegenInspiration()
 	{
+		if (currentState != status.Idle) return;
 		if(inspiration < maxInspiration)
 		{
 			inspiration += inspirationRegenRate;
@@ -228,8 +262,8 @@ public class Humanoid : Interactable
 	}
 	public override void OpenDialogue(Node2D castSource)
 	{
-		if (castSource.Position.x < Position.x) sprite.FlipH = true;
-		else sprite.FlipH = false;
+		if (castSource.Position.x < Position.x) facingLeft = true;
+		else facingLeft = false;
 		Node dialogueNode = DialogicSharp.Start(dialogue);
 		GetTree().Root.AddChild(dialogueNode);
 		dialogueNode.Connect("tree_exiting", this, "ResetPosition");
@@ -237,7 +271,26 @@ public class Humanoid : Interactable
 
 	public void ResetPosition()
 	{
-		sprite.FlipH = faceLeft;
+		facingLeft = faceLeft;
+	}
+	public void AdjustFacing()
+	{
+		if (facingLeft)
+		{
+			sprite.Scale = new Vector2(-1,1);
+		}
+		else
+		{
+			sprite.Scale = new Vector2(1, 1);
+		}
+	}
+	public int GetInspirationCount()
+	{
+		return inspiration;
+	}
+	public int GetMaxInspirationCount()
+	{
+		return maxInspiration;
 	}
 
 

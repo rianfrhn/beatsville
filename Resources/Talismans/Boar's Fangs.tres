@@ -1,12 +1,14 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Resources/Talisman.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Talismans/Boar'sFangs.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
 id = 1
 name = "Boar's Fangs"
 description = "The fangs of a mythical beast"
+displayPic = ExtResource( 2 )
 health = 0
 healthRegen = 0
 inspiration = 10

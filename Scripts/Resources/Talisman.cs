@@ -11,6 +11,8 @@ public class Talisman : Resource
 	public string name;
 	[Export]
 	public string description;
+	[Export]
+	public Texture displayPic;
 
 	[Export]
 	public int health = 0;

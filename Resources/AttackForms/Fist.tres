@@ -1,12 +1,16 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Projectiles/Fist.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Resources/SkillForm.cs" type="Script" id=2]
+[ext_resource path="res://Assets/Projectiles/Fist/FistImg.png" type="Texture" id=3]
 
 [resource]
 script = ExtResource( 2 )
+id = 0
+name = "Fist"
+displayPic = ExtResource( 3 )
 projectile = ExtResource( 1 )
-duration = 0
+duration = 1
 cost = 5
 damage = 15
-desc = null
+desc = "Punch the f#$k out of your enemies!"

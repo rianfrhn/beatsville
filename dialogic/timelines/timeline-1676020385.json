@@ -45,10 +45,35 @@
 			"text": "Then lets have at it! "
 		},
 		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "404 Fight Scene not found. "
+			"event_id": "bv_ifd1",
+			"is_bossfight": false,
+			"money_gain": 10,
+			"player1": "res://Scenes/Player.tscn",
+			"player2": "res://Scenes/Interactables/NPC/Chimera.tscn",
+			"song_data": "res://Resources/Songs/RestlessFoe.tres",
+			"xp_gain": 10
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"res://Scenes/Map/TestRoom2.tscn"
+				],
+				"method_name": "HoldPosition",
+				"target_node_path": "GlobalVariable"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"res://Scenes/FightScene.tscn",
+					"STOP",
+					""
+				],
+				"method_name": "ChangeScene",
+				"target_node_path": "SceneTransition"
+			},
+			"event_id": "dialogic_042"
 		},
 		{
 			"choice": "Nevermind",

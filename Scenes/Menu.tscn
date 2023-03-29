@@ -32,7 +32,7 @@ margin_top = 113.0
 margin_right = 90.0
 margin_bottom = 126.0
 custom_fonts/font = ExtResource( 1 )
-text = "Play"
+text = "New Game"
 script = ExtResource( 4 )
 
 [node name="Continue" type="Button" parent="VBoxContainer"]

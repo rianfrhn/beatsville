@@ -298,6 +298,7 @@ polygon = PoolVector2Array( -3, 8, 3, 8, 3, 6, -3, 6 )
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 3 )
+isPlayer = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 visible = false
@@ -306,7 +307,7 @@ collision_mask = 5
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

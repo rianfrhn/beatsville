@@ -43,7 +43,7 @@ script = ExtResource( 1 )
 dialogue = ""
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

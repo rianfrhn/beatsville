@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lost Flower.ogg-700a1d2d7f821bafdbf4c1b21d8f28ed.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/Lost Flower.ogg"
+dest_files=[ "res://.import/Lost Flower.ogg-700a1d2d7f821bafdbf4c1b21d8f28ed.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=18.0

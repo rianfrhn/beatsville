@@ -10,6 +10,7 @@ public abstract class Projectile : Area2D
 	public Vector2 initialPos;
 	public Vector2 targetpoint;
 	public AnimationPlayer animplayer;
+	public Humanoid caster;
 	CollisionShape2D collisionShape;
 	public abstract void Move(int beat);
 	public bool collided = false;
@@ -19,11 +20,13 @@ public abstract class Projectile : Area2D
 	[Signal]
 	public delegate void Hit(int stunDuration);
 
-	public void setTarget(Vector2 initialPosition, Vector2 targetPos, int baseDmg, int str)
+	public void setTarget(Humanoid caster, Vector2 targetPos, int baseDmg, int str)
 	{
 		damage = baseDmg;
 		strength = str;
+		this.caster = caster;
 		targetpoint = targetPos;
+		Vector2 initialPosition = caster.GlobalPosition;
 		initialPos = initialPosition;
 		if (targetPos.x < initialPosition.x)
 		{
@@ -64,18 +67,19 @@ public abstract class Projectile : Area2D
 		}
 		if (onCollideAutoDel)
 		{
-			if (!collided)
+			if (!collided && animplayer != null)
 			{
 				animplayer.Play("Collide");
 			};
 			collided = true;
-			await ToSignal(animplayer, "animation_finished");
+			if(animplayer != null) await ToSignal(animplayer, "animation_finished");
 			this.QueueFree();
 		}
 	}
 	
 	public override void _Ready(){
-		animplayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		animplayer = GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
+		if (animplayer == null) return;
 		animplayer.Play("Default");
 		
 	}

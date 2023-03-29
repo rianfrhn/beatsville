@@ -82,7 +82,7 @@ parameter2 = "res://Assets/OST/Castle.ogg"
 position = Vector2( 264, 41 )
 scale = Vector2( 0.488184, 0.4831 )
 parameter = "res://Scenes/Map/TestCave.tscn"
-parameter2 = "res://Assets/OST/Lost_Flower_Temp.ogg"
+parameter2 = "res://Assets/OST/Lost Flower.ogg"
 
 [node name="TestRoom2" type="Position2D" parent="."]
 position = Vector2( 376, 120 )
