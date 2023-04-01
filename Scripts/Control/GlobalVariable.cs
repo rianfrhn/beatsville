@@ -152,5 +152,10 @@ public class GlobalVariable : Node
 
 
 	}
+	public Humanoid FindNpc(string name)
+    {
+		Humanoid npc = currentScene.GetNodeOrNull<Humanoid>(name);
+		return npc;
+    }
 	
 }

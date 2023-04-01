@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tez_Default.png-eaa7deb8a6b0a9cbfbb8fc4c838f464b.stex"
+path="res://.import/Tez_Neutral.png-81ac96ff01ffb583f81d33cd58654464.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI/Char/Tez/Tez_Default.png"
-dest_files=[ "res://.import/Tez_Default.png-eaa7deb8a6b0a9cbfbb8fc4c838f464b.stex" ]
+source_file="res://Assets/GUI/Char/Tez/Tez_Neutral.png"
+dest_files=[ "res://.import/Tez_Neutral.png-81ac96ff01ffb583f81d33cd58654464.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

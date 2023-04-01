@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tez_Grin.png-d631c77f1c8eb8788fb9e0d84f3f885b.stex"
+path="res://.import/bubble_inspiration0001.png-61f92375ae434e377b91e527d3428127.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI/Char/Tez/Tez_Grin.png"
-dest_files=[ "res://.import/Tez_Grin.png-d631c77f1c8eb8788fb9e0d84f3f885b.stex" ]
+source_file="res://Assets/Misc/ExpressionBubble/bubble_inspiration0001.png"
+dest_files=[ "res://.import/bubble_inspiration0001.png-61f92375ae434e377b91e527d3428127.stex" ]
 
 [params]
 

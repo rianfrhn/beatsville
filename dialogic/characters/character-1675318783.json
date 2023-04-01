@@ -9,11 +9,11 @@
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 0,
-	"offset_y": 0,
+	"offset_y": -55,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Assets/TEMP/Sparky_PortraitPlaceholder.png"
+			"path": "res://Assets/Tiles/GreenTile.png"
 		},
 		{
 			"name": "Happy",

@@ -9,21 +9,21 @@
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 0,
-	"offset_y": 0,
+	"offset_y": -55,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Assets/GUI/Char/Tez/Tez_Default.png"
+			"path": "res://Assets/GUI/Char/Tez/Tez_Neutral.png"
 		},
 		{
-			"name": "Angry",
-			"path": "res://Assets/GUI/Char/Tez/Tez_Angry.png"
+			"name": "Neutral",
+			"path": "res://Assets/GUI/Char/Tez/Tez_Neutral.png"
 		},
 		{
 			"name": "Grin",
 			"path": "res://Assets/GUI/Char/Tez/Tez_Grin.png"
 		}
 	],
-	"scale": 30,
+	"scale": 100,
 	"theme": "theme-1675423394.cfg"
 }

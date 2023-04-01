@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tez_Angry.png-519e95fad49c7aef548c47dc8a6ac7b4.stex"
+path="res://.import/tez_idle_0000.png-2be4d93af068726f74e9e1407869a8d5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI/Char/Tez/Tez_Angry.png"
-dest_files=[ "res://.import/Tez_Angry.png-519e95fad49c7aef548c47dc8a6ac7b4.stex" ]
+source_file="res://Assets/Interactables/Tez/Idle/tez_idle_0000.png"
+dest_files=[ "res://.import/tez_idle_0000.png-2be4d93af068726f74e9e1407869a8d5.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

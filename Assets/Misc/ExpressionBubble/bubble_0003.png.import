@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Marione_Angry.png-0223cb65a31572146fa0a786406f30e4.stex"
+path="res://.import/bubble_0003.png-d00563c0913b002fa7fe12e1af2b47fb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI/Char/Marione/Marione_Angry.png"
-dest_files=[ "res://.import/Marione_Angry.png-0223cb65a31572146fa0a786406f30e4.stex" ]
+source_file="res://Assets/Misc/ExpressionBubble/bubble_0003.png"
+dest_files=[ "res://.import/bubble_0003.png-d00563c0913b002fa7fe12e1af2b47fb.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Marione_Surprised.png-132ea2d4bd93149ce103fca424f43ad7.stex"
+path="res://.import/marione_idle_0001.png-20cbf84469cd75da0fa22ccee616b84d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI/Char/Marione/Marione_Surprised.png"
-dest_files=[ "res://.import/Marione_Surprised.png-132ea2d4bd93149ce103fca424f43ad7.stex" ]
+source_file="res://Assets/Interactables/Marione/Idle/marione_idle_0001.png"
+dest_files=[ "res://.import/marione_idle_0001.png-20cbf84469cd75da0fa22ccee616b84d.stex" ]
 
 [params]
 

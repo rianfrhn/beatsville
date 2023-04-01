@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Marione_Default_LookAway.png-68d2d4aa7904d9372bccd2da8eef10ab.stex"
+path="res://.import/Bubble_Heart.png-1ee1313f85e84b707765894ef3f2a949.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI/Char/Marione/Marione_Default_LookAway.png"
-dest_files=[ "res://.import/Marione_Default_LookAway.png-68d2d4aa7904d9372bccd2da8eef10ab.stex" ]
+source_file="res://Assets/Misc/ExpressionBubble/Bubble_Heart.png"
+dest_files=[ "res://.import/Bubble_Heart.png-1ee1313f85e84b707765894ef3f2a949.stex" ]
 
 [params]
 

@@ -4,32 +4,28 @@
 	"display_name": "",
 	"display_name_bool": false,
 	"id": "character-1676874925.json",
-	"mirror_portraits": true,
+	"mirror_portraits": false,
 	"name": "Marione",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 0,
-	"offset_y": 0,
+	"offset_x": -5,
+	"offset_y": -55,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Assets/GUI/Char/Marione/Marione_Default.png"
+			"path": "res://Assets/GUI/Char/Marione/Marione_Grin.png"
 		},
 		{
-			"name": "Angry",
-			"path": "res://Assets/GUI/Char/Marione/Marione_Angry.png"
+			"name": "Grin",
+			"path": "res://Assets/GUI/Char/Marione/Marione_Grin.png"
 		},
 		{
-			"name": "Sad",
-			"path": "res://Assets/GUI/Char/Marione/Marione_Sad.png"
+			"name": "Smile",
+			"path": "res://Assets/GUI/Char/Marione/Marione_Smile.png"
 		},
 		{
-			"name": "Surprised",
-			"path": "res://Assets/GUI/Char/Marione/Marione_Surprised.png"
-		},
-		{
-			"name": "Look Away",
-			"path": "res://Assets/GUI/Char/Marione/Marione_Default_LookAway.png"
+			"name": "Confused",
+			"path": "res://Assets/GUI/Char/Marione/Marione_Confused.png"
 		}
 	],
 	"scale": 100,

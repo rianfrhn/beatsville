@@ -4,6 +4,22 @@ using System;
 
 public class Humanoid : Interactable
 {
+	public enum Expressions
+	{
+		Angry,
+		Calm,
+		Excited,
+		Happy,
+		Heart,
+		Inspiration,
+		Music,
+		Poker,
+		Surprised,
+		Wrong
+	}
+	Dictionary<Expressions, string> toExpressionString = new Dictionary<Expressions, string>();
+
+
 	private int maxHealth = 1000;
 	private int health = 1000;
 	private int maxInspiration = 100;
@@ -93,6 +109,18 @@ public class Humanoid : Interactable
 
 		Connect("Blundered", this, "DecreaseInspiration");
 
+
+		toExpressionString.Add(Expressions.Angry, "Angry");
+		toExpressionString.Add(Expressions.Calm, "Calm");
+		toExpressionString.Add(Expressions.Excited, "Excited");
+		toExpressionString.Add(Expressions.Happy, "Happy");
+		toExpressionString.Add(Expressions.Heart, "Heart");
+		toExpressionString.Add(Expressions.Inspiration, "Inspiration");
+		toExpressionString.Add(Expressions.Music, "Music");
+		toExpressionString.Add(Expressions.Poker, "Poker");
+		toExpressionString.Add(Expressions.Surprised, "Surprised");
+		toExpressionString.Add(Expressions.Wrong, "Wrong");
+
 	}
 	public override void _Process(float delta)
 	{
@@ -101,7 +129,7 @@ public class Humanoid : Interactable
 	public bool Move(Vector2 targetPos)
 	{
 		if (targetPos == Vector2.Zero) return false;
-		if (inspiration == 0) return false;
+		if (inspiration == 0) { Express(Expressions.Inspiration); return false; }
 		if (targetPos.x < 0) facingLeft = true;
 		else if (targetPos.x > 0) facingLeft = false;
 		
@@ -210,11 +238,13 @@ public class Humanoid : Interactable
 			if (!timer.IsConnected("timeout", this, "RefreshState")) { timer.Connect("timeout", this, "RefreshState"); }
 			timer.Start();
 			return true;
-        }
-        else
-        {
+		}
+		else
+		{
+
+			Express(Expressions.Inspiration);
 			return false;
-        }
+		}
 		
 	}
 
@@ -254,7 +284,7 @@ public class Humanoid : Interactable
 	{
 		if (inspiration > 0)
 		{
-			stateMachine.Start("Blunder");
+			onBlundered();
 			inspiration -= inspirationBlunderRate;
 			if (inspiration < 0) inspiration = 0;
 			EmitSignal("InspirationChanged", inspiration, maxInspiration);
@@ -291,6 +321,26 @@ public class Humanoid : Interactable
 	public int GetMaxInspirationCount()
 	{
 		return maxInspiration;
+	}
+	public void onBlundered()
+	{
+		Express(Expressions.Wrong);
+		stateMachine.Start("Blunder");
+	}
+
+	public void Express(Expressions expression, float duration = 1.0f)
+	{
+		ExpressionBubble expBubble = sprite.GetNodeOrNull<ExpressionBubble>("ExpressionBubble");
+		if(expBubble == null)
+		{
+			PackedScene bubbleScene = ResourceLoader.Load<PackedScene>("res://Scenes/Misc/ExpressionBubble.tscn");
+			Node bubbleNode = bubbleScene.Instance();
+			sprite.AddChild(bubbleNode);
+			expBubble = (ExpressionBubble)bubbleNode;
+			expBubble.Position = new Vector2(0, -16);
+		}
+		expBubble.Start(toExpressionString[expression], duration);
+		
 	}
 
 
