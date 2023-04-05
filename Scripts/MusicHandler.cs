@@ -52,16 +52,16 @@ public class MusicHandler : Node
 			songBPM = sd.BPM;
 			songTimeSig = sd.TimeSign;
 			musicStream.Stream = sd.song;
-			GD.Print("AAAAAAAAAA");
+			//GD.Print("AAAAAAAAAA");
 		}
 		if(songDataRes == null)
 		{
-			sd = ResourceLoader.Load<SongData>(gv.songdatadir);
-			songData = sd;
-			songBPM = sd.BPM;
-			songTimeSig = sd.TimeSign;
-			musicStream.Stream = sd.song;
-			GD.Print("CCCCCCCC");
+			FightData currentFight = (FightData)gv.currentFight;
+			songData = (SongData)currentFight.songData;
+			songBPM = songData.BPM;
+			songTimeSig = songData.TimeSign;
+			musicStream.Stream = songData.song;
+			//GD.Print("CCCCCCCC");
 
 		}
 		beatLength = 60 / songBPM;

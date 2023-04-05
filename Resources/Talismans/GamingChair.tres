@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Talismans/SkullEmojiIThinkLmao.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Resources/Talisman.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+id = 5
+name = "Gaming Chair"
+description = "Only for the worthy"
+displayPic = ExtResource( 1 )
+health = -1
+healthRegen = -1
+inspiration = -1
+inspirationRegen = -1
+defense = -1
+strength = 1000
+competence = -1

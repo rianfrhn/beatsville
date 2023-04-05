@@ -7,10 +7,48 @@
 			"value": "0"
 		},
 		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Joyful",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Surprised",
+			"name": "Rei"
+		},
+		{
 			"character": "character-1675321582.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Helloo!!!! "
+			"text": "Kal!!!!"
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It's been awhile!"
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Happy",
+			"name": "Rei"
 		},
 		{
 			"character": "character-1675321582.json",
@@ -19,29 +57,10 @@
 
 			],
 			"portrait": "",
-			"question": "What would you like to do today? "
+			"question": "How have you been? "
 		},
 		{
-			"choice": "Nothing",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "You did nothing. "
-		},
-		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "You felt proud of yourself. "
-		},
-		{
-			"choice": "Play",
+			"choice": "Good",
 			"condition": "",
 			"definition": "",
 			"event_id": "dialogic_011",
@@ -50,20 +69,39 @@
 		{
 			"character": "character-1675321582.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "I would love to go play with you! However, this game isn't done yet. "
+			"portrait": "Smile",
+			"text": "Good to hear! "
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "Joyful",
+			"text": "You could talk with the others if you'd like!  "
+		},
+		{
+			"choice": "Not so great",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "Smile",
+			"text": "Aww its okay! "
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "Joyful",
+			"text": "Maybe talk with the others! They will cheer you up!  "
 		},
 		{
 			"character": "character-1675321582.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Maybe later? "
-		},
-		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "\"The tale of Beatsville\" coming soon :D "
+			"text": "I think...  "
 		},
 		{
 			"event_id": "dialogic_013"

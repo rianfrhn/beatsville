@@ -1,22 +1,113 @@
 {
 	"events": [
 		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Joyful",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"condition": "!=",
+			"definition": "1680589612-366",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"condition": "",
+			"definition": "1680593518-483",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"definition": "1680593518-483",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Surprised",
+			"name": "Rei"
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Woah! you were amazing back there! "
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Happy",
+			"name": "Rei"
+		},
+		{
 			"character": "character-1675321582.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Haii. "
 		},
 		{
-			"character": "character-1675321582.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "You can interact with more of my friends on the right side. "
+			"condition": "",
+			"definition": "1680593283-146",
+			"event_id": "dialogic_012",
+			"value": "0"
 		},
 		{
 			"character": "character-1675321582.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Smile",
+			"text": "You can interact with more of my friends on the right side. "
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Heart",
+			"name": "Rei"
+		},
+		{
+			"character": "character-1675321582.json",
+			"event_id": "dialogic_001",
+			"portrait": "Joyful",
 			"text": "Have fun! "
+		},
+		{
+			"definition": "1680593283-146",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"event_id": "dialogic_013"
 		}
 	],
 	"metadata": {

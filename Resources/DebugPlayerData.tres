@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=12 format=2]
+
+[ext_resource path="res://Resources/Stats/DefaultPlayerStats.tres" type="Resource" id=1]
+[ext_resource path="res://Scripts/Resources/Playerdata/SaveData.cs" type="Script" id=2]
+[ext_resource path="res://Resources/Talismans/Boar's Fangs.tres" type="Resource" id=3]
+[ext_resource path="res://Resources/Talismans/Nothing.tres" type="Resource" id=4]
+[ext_resource path="res://Resources/Talismans/Prayer Beads.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/Talismans/Yellow Steel Plate.tres" type="Resource" id=6]
+[ext_resource path="res://Resources/AttackForms/Cards.tres" type="Resource" id=7]
+[ext_resource path="res://Resources/AttackForms/Fist.tres" type="Resource" id=8]
+[ext_resource path="res://Resources/AttackForms/MoonlitSonata2.tres" type="Resource" id=9]
+[ext_resource path="res://Resources/AttackForms/MoonlitSonata1.tres" type="Resource" id=10]
+[ext_resource path="res://Resources/Talismans/GamingChair.tres" type="Resource" id=11]
+
+[resource]
+script = ExtResource( 2 )
+stats = ExtResource( 1 )
+money = 0
+talismans = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 11 ) ]
+talismanEquippedId = 0
+scriptures = [  ]
+scriptureEquippedId = 0
+skillForms = [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 9 ) ]
+skill1EquippedId = 0
+skill2EquippedId = 0
+skill3EquippedId = 0
+quests = [  ]
+sceneDirectory = null
+musicDirectory = null
+position = Vector2( 0, 0 )

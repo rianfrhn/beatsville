@@ -1,6 +1,17 @@
 {
 	"events": [
 		{
+			"duration": 3,
+			"event_id": "event_bv_ce",
+			"expression": "Surprised",
+			"name": "Marione"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 3
+		},
+		{
 			"animation": "2-fade_in_up.gd",
 			"animation_length": 0.5,
 			"change_mirror_portrait": false,
@@ -43,6 +54,28 @@
 			"event_id": "dialogic_001",
 			"portrait": "Smile",
 			"text": "I got my own Character Sprite!!!! "
+		},
+		{
+			"duration": 3,
+			"event_id": "event_bv_ce",
+			"expression": "Excited",
+			"name": "Marione"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": false,
+			"wait_seconds": 1
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Poker",
+			"name": "Tez"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": false,
+			"wait_seconds": 2
 		},
 		{
 			"animation": "2-fade_in_up.gd",
@@ -89,8 +122,14 @@
 		{
 			"character": "character-1676876993.json",
 			"event_id": "dialogic_001",
-			"portrait": "Default",
+			"portrait": "Neutral",
 			"text": "Hey, you aren't the only one who got new sprites y'know."
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Poker",
+			"name": "Marione"
 		},
 		{
 			"character": "character-1676876993.json",
@@ -101,13 +140,34 @@
 		{
 			"character": "character-1676874925.json",
 			"event_id": "dialogic_001",
-			"portrait": "Angry",
-			"text": "No Actually he used AI art to do so."
+			"portrait": "Confused",
+			"text": "Yeah yeah whatever... "
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": true,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": true,
+			"portrait": "(Don't change)",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 2,
+			"z_index": 0
 		},
 		{
 			"character": "character-1676874925.json",
 			"event_id": "dialogic_001",
-			"portrait": "Default",
+			"portrait": "Grin",
 			"text": "Hold on, I got something to do! "
 		},
 		{
@@ -137,6 +197,12 @@
 			"event_id": "dialogic_001",
 			"portrait": "Neutral",
 			"text": "She'll be back soon... "
+		},
+		{
+			"duration": 3,
+			"event_id": "event_bv_ce",
+			"expression": "Calm",
+			"name": "Tez"
 		},
 		{
 			"animation": "5-fade_out_down.gd",

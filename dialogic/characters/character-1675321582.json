@@ -1,19 +1,27 @@
 {
 	"color": "#ffc100ff",
 	"description": "Rei is Rei",
-	"display_name": "Rei",
+	"display_name": "Irei",
 	"display_name_bool": true,
 	"id": "character-1675321582.json",
-	"mirror_portraits": false,
+	"mirror_portraits": true,
 	"name": "Rei",
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 0,
-	"offset_y": 0,
+	"offset_y": -55,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Assets/TEMP/Rei_PortraitPlaceholder.png"
+			"path": "res://Assets/GUI/Char/Irei/Irei_Smile.png"
+		},
+		{
+			"name": "Smile",
+			"path": "res://Assets/GUI/Char/Irei/Irei_Smile.png"
+		},
+		{
+			"name": "Joyful",
+			"path": "res://Assets/GUI/Char/Irei/Irei_Joyful.png"
 		}
 	],
 	"scale": 100,

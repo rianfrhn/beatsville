@@ -8,6 +8,8 @@ public class TestRoom2 : MapScene
 		PlacePlayer();
 		Node startDialogue = DialogicSharp.Start("ReiTest");
 		AddChild(startDialogue);
+		Node startDialogue2 = DialogicSharp.Start("ChimeraGrunt");
+		AddChild(startDialogue2);
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

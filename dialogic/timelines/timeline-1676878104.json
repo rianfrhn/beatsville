@@ -1,76 +1,147 @@
 {
 	"events": [
 		{
-			"animation": "2-fade_in_up.gd",
-			"animation_length": 1,
-			"animation_wait": true,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1676876993.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": true,
-			"portrait": "Default",
-			"portrait_definition": "",
-			"position": {
-				"0": true,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 0,
-			"z_index": 0
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "Angry",
+			"name": "Tez"
 		},
 		{
-			"character": "character-1676876993.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Regardless on what Marione said. "
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
 		},
 		{
-			"character": "character-1676876993.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Sparky did a good job on these sprites! "
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "Calm",
+			"name": "Tez"
 		},
 		{
-			"character": "character-1676876993.json",
-			"event_id": "dialogic_001",
-			"portrait": "Grin",
-			"text": "Notice how our facial expressions changed? "
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
 		},
 		{
-			"character": "character-1676876993.json",
-			"event_id": "dialogic_001",
-			"portrait": "Default",
-			"text": "He'll update our sprites soon. "
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "Excited",
+			"name": "Tez"
 		},
 		{
-			"character": "character-1676876993.json",
-			"event_id": "dialogic_001",
-			"portrait": "Angry",
-			"text": "Using AI art is no good."
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
 		},
 		{
-			"animation": "5-fade_out_down.gd",
-			"animation_length": 1,
-			"animation_wait": true,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1676876993.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 1,
-			"z_index": 0
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "Happy",
+			"name": "Tez"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "Heart",
+			"name": "Tez"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "Inspiration",
+			"name": "Tez"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "Music",
+			"name": "Tez"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "Poker",
+			"name": "Tez"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "Surprised",
+			"name": "Tez"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "Wrong",
+			"name": "Tez"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.5
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Excited",
+			"name": "Player"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.5
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Excited",
+			"name": "Tez"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.5
+		},
+		{
+			"duration": 1.5,
+			"event_id": "event_bv_ce",
+			"expression": "Poker",
+			"name": "Marione"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
 		}
 	],
 	"metadata": {

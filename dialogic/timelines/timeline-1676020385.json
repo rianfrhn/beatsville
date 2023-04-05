@@ -1,10 +1,36 @@
 {
 	"events": [
 		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1676019656.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
 			"character": "character-1676019656.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Yo "
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Poker",
+			"name": "Chimera"
 		},
 		{
 			"character": "character-1676019656.json",
@@ -18,9 +44,9 @@
 		{
 			"choice": "A Fight",
 			"condition": "",
-			"definition": "",
+			"definition": "1680589612-366",
 			"event_id": "dialogic_011",
-			"value": ""
+			"value": "0"
 		},
 		{
 			"character": "character-1676019656.json",
@@ -45,33 +71,12 @@
 			"text": "Then lets have at it! "
 		},
 		{
-			"event_id": "bv_ifd1",
-			"is_bossfight": false,
-			"money_gain": 10,
-			"player1": "res://Scenes/Player.tscn",
-			"player2": "res://Scenes/Interactables/NPC/Chimera.tscn",
-			"song_data": "res://Resources/Songs/RestlessFoe.tres",
-			"xp_gain": 10
-		},
-		{
 			"call_node": {
 				"arguments": [
-					"res://Scenes/Map/TestRoom2.tscn"
+					"VSChimera"
 				],
-				"method_name": "HoldPosition",
+				"method_name": "InitializeFight",
 				"target_node_path": "GlobalVariable"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
-			"call_node": {
-				"arguments": [
-					"res://Scenes/FightScene.tscn",
-					"STOP",
-					""
-				],
-				"method_name": "ChangeScene",
-				"target_node_path": "SceneTransition"
 			},
 			"event_id": "dialogic_042"
 		},
@@ -92,11 +97,40 @@
 			"event_id": "dialogic_013"
 		},
 		{
+			"choice": "A Rematch",
+			"condition": "!=",
+			"definition": "1680589612-366",
+			"event_id": "dialogic_011",
+			"value": "0"
+		},
+		{
+			"character": "character-1676019656.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Okay, but I won't go easy this time! "
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"VSChimera"
+				],
+				"method_name": "InitializeFight",
+				"target_node_path": "GlobalVariable"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
 			"choice": "Nothing",
 			"condition": "",
 			"definition": "",
 			"event_id": "dialogic_011",
 			"value": ""
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Angry",
+			"name": "Chimera"
 		},
 		{
 			"character": "character-1676019656.json",

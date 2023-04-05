@@ -4,12 +4,6 @@
 	],
 	"variables": [
 		{
-			"id": "1675349947-116",
-			"name": "Talked",
-			"type": 0,
-			"value": "0"
-		},
-		{
 			"id": "1676019935-787",
 			"name": "TalkedWithReiEnter",
 			"type": 0,
@@ -18,12 +12,6 @@
 		{
 			"id": "1676383243-648",
 			"name": "GotMoney",
-			"type": 0,
-			"value": "0"
-		},
-		{
-			"id": "1676383261-787",
-			"name": "GotXP",
 			"type": 0,
 			"value": "0"
 		},
@@ -38,6 +26,42 @@
 			"name": "HeldMusic",
 			"type": 0,
 			"value": ""
+		},
+		{
+			"id": "1676383261-787",
+			"name": "GotXP",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1680582759-787",
+			"name": "OngoingFight",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1675349947-116",
+			"name": "Talked",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1680589612-366",
+			"name": "VSChimera",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1680593283-146",
+			"name": "TW2Rei",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1680593518-483",
+			"name": "TW2ReiCompliment",
+			"type": 0,
+			"value": "0"
 		}
 	]
 }

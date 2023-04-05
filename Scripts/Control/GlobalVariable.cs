@@ -4,44 +4,22 @@ using Godot.Collections;
 
 public class GlobalVariable : Node
 {
-	/// <summary>
-	/// Music Offset for fight scenes. The higher the number the higher the delay.
-	/// </summary>
 	public float songOffset = 0;
 
-	/// <summary>
-	/// How many percent of the beat can player input.
-	/// <para>
-	/// Ex: 0.15f, therefore player can input between -15% and 15% in beats. therefore a 30% input rate in beat.
-	/// <br/>A 50% interval lets you input in the whole beat.
-	/// </para>
-	/// </summary>
 	public float interval = 0.15f;
 
-	/// <summary>
-	/// String that stores from what scene. Will then be passed to the Position2d Inside of the map
-	/// </summary>
 	public string fromScene;
 
 	//Fight Scene Variables
 
-	/// <summary>
-	/// String of player node path
-	/// </summary>
-	[Export]
-	public string player1dir, player2dir;
+	//[Export]
+	//public string player1dir, player2dir;
 
-	/// <summary>
-	/// Initialize the fight song with its bpm etc. To make resource, add resource in project, attach songdata as script.
-	/// </summary>
-	[Export]
-	public string songdatadir;
+	//[Export]
+	//public string songdatadir;
 
-	/// <summary>
-	/// Bossfight condition. If true ("y"), player cant run.
-	/// </summary>
-	[Export]
-	public bool IsBossfight;
+	//[Export]
+	//public bool IsBossfight;
 
 	//Player data
 	public SaveData saveData;
@@ -54,7 +32,12 @@ public class GlobalVariable : Node
 	public string currentMusic;
 	public Humanoid currentPlayer;
 
+	public Resource currentFight;
+	public string fightSceneID;
+
 	public bool loadPos = false;
+
+	public SceneTransition sceneTransition;
 	
 
 	/// <summary>
@@ -65,7 +48,7 @@ public class GlobalVariable : Node
 	/// <param name="songDatadir">Song data resource</param>
 	/// <param name="isBossfight">If is bossfight, no borders. Player can run</param>
 	/// 
-
+	/*
 	public void InitializeFightData(string player1, string player2, string songData, bool isBossfight, int moneygain, int xpgain)
 	{
 		SavePlayerPosition();
@@ -76,6 +59,27 @@ public class GlobalVariable : Node
 
 		GD.Print(player1dir, player2dir, songdatadir, IsBossfight);
 	}
+	*/
+	public void InitializeFight(string resName)
+    {
+		SaveGameData();
+		FightData fd = ResourceLoader.Load<FightData>("res://Resources/Fights/" + resName + ".tres");
+		if(fd!= null)
+		{
+			fd.Initialize(resName);
+			currentFight = fd;
+		}
+		sceneTransition.ChangeScene("res://Scenes/FightScene.tscn", "STOP");
+    }
+	public void FinishFight()
+    {
+		FightData fd = (FightData) currentFight;
+		fd.Finished();
+		DialogicSharp.Save();
+		saveData.money += fd.moneyGain;
+		saveData.AddXP(fd.xpGain);
+		LoadGameData("FightWon");
+    }
 
 	/*
 	public void HoldPosition(string sceneDir)
@@ -102,24 +106,17 @@ public class GlobalVariable : Node
 	}
 	public override void _Ready()
 	{
-	}
-
-	public void SavePlayerPosition()
-	{
-		saveData.position = currentPlayer.Position;
-		GD.Print("Saved Pos: " + currentPlayer.Position);
-		DialogicSharp.SetVariable("HeldScene", currentSceneDir);
-		DialogicSharp.SetVariable("HeldMusic", currentMusic);
+		sceneTransition = GetTree().Root.GetNode<SceneTransition>("SceneTransition");
 	}
 	public void SaveGameData()
 	{
-		SavePlayerPosition();
 		DialogicSharp.Save();
+		saveData.position = currentPlayer.Position;
 		saveData.sceneDirectory = currentSceneDir;
 		saveData.musicDirectory = currentMusic;
 
 		saveData.stats = playerStat;
-		GD.Print("Save Data, talisman is " + ((Talisman)((Stats)saveData.stats).talisman).name);
+		GD.Print("Save Data, position is "+ saveData.position);
 		ResourceSaver.Save("user://stat_data.tres", saveData.stats);
 		ResourceSaver.Save("user://save_data.tres", saveData);
 	}
@@ -131,6 +128,18 @@ public class GlobalVariable : Node
 		playerStat = (Stats)saveData.stats;
 		GD.Print("Load Data, talisman is " + ((Talisman)((Stats)saveData.stats).talisman).name);
 		loadPos = true;
+		sceneTransition.ChangeScene(saveData.sceneDirectory, saveData.musicDirectory);
+
+	}
+	public void LoadGameData(string dialogue)
+	{
+		DialogicSharp.Load();
+		saveData = ResourceLoader.Load<SaveData>("user://save_data.tres");
+		saveData.stats = ResourceLoader.Load("user://stat_data.tres");
+		playerStat = (Stats)saveData.stats;
+		GD.Print("Load Data, talisman is " + ((Talisman)((Stats)saveData.stats).talisman).name);
+		loadPos = true;
+		sceneTransition.ChangeScene(saveData.sceneDirectory, saveData.musicDirectory, dialogue);
 
 	}
 	public void NewGameData()
@@ -139,6 +148,13 @@ public class GlobalVariable : Node
 		saveData = ResourceLoader.Load<SaveData>("res://Resources/DefaultPlayerData.tres");
 		playerStat = (Stats)saveData.stats;
 		GD.Print("New Data, talisman is "+ ((Talisman)((Stats)saveData.stats).talisman).name);
+
+	}
+	public void NewTestGameData()
+	{
+		DialogicSharp.ResetSaves();
+		saveData = ResourceLoader.Load<SaveData>("res://Resources/DebugPlayerData.tres");
+		playerStat = (Stats)saveData.stats;
 
 	}
 
@@ -157,5 +173,42 @@ public class GlobalVariable : Node
 		Humanoid npc = currentScene.GetNodeOrNull<Humanoid>(name);
 		return npc;
     }
+	public void ExpressNPC(string name, string expression, float duration)
+    {
+		Humanoid npc = FindNpc(name);
+		if(npc == null) { GD.Print("Humanoid "+name+" not found trying to express"); return; }
+		Humanoid.Expressions selectedExpression;
+        switch (expression)
+        {
+			case "Angry":
+				selectedExpression = Humanoid.Expressions.Angry;break;
+			case "Calm":
+				selectedExpression = Humanoid.Expressions.Calm; break;
+			case "Excited":
+				selectedExpression = Humanoid.Expressions.Excited; break;
+			case "Happy":
+				selectedExpression = Humanoid.Expressions.Happy; break;
+			case "Heart":
+				selectedExpression = Humanoid.Expressions.Heart; break;
+			case "Inspiration":
+				selectedExpression = Humanoid.Expressions.Inspiration; break;
+			case "Music":
+				selectedExpression = Humanoid.Expressions.Music; break;
+			case "Poker":
+				selectedExpression = Humanoid.Expressions.Poker; break;
+			case "Surprised":
+				selectedExpression = Humanoid.Expressions.Surprised; break;
+			case "Wrong":
+				selectedExpression = Humanoid.Expressions.Wrong; break;
+			default: GD.Print("Expression " + expression+ " Not Found!"); return; break;
+		}
+		npc.Express(selectedExpression, duration);
+    }
+	public void FlipNPC(string name)
+    {
+		Humanoid npc = FindNpc(name);
+		if(npc == null) { GD.Print("Humanoid not found trying to flip"); return; }
+		npc.facingLeft = !npc.facingLeft;
+	}
 	
 }

@@ -19,6 +19,16 @@ anchor_bottom = 1.0
 theme = ExtResource( 3 )
 script = ExtResource( 2 )
 
+[node name="Test Map" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -90.0
+margin_top = -13.0
+text = "Test Map"
+script = ExtResource( 4 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -52,6 +62,7 @@ script = ExtResource( 4 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
+[connection signal="pressed" from="Test Map" to="." method="_on_Test_Map_pressed"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_Options_pressed"]

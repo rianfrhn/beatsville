@@ -3,7 +3,8 @@ using System;
 
 public class SceneTransition : CanvasLayer
 {
-	Color defaultColor = new Color("51d254");
+	[Export]
+	public Color defaultColor = new Color("ffffff");
 	public async void ChangeScene(string scenepath, string musicpath = "", string dialogue = "")
 	{
 		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
@@ -25,12 +26,14 @@ public class SceneTransition : CanvasLayer
 		globalmusic.FadeOff();
 
 		await ToSignal(animplayer, "animation_finished");
+		GetTree().ChangeScene("res://Scenes/Map/Limbo.tscn");
 		if (dialogue !="" && dialogue != null)
 		{
 			Node dialogueNode = DialogicSharp.Start(dialogue);
 			AddChild(dialogueNode);
 			await ToSignal(dialogueNode, "timeline_end");
 		}
+		GetTree().ChangeScene(scenepath);
 
 		//Turn on music
 		globalmusic.On(musicpath);
@@ -39,7 +42,6 @@ public class SceneTransition : CanvasLayer
 		{
 			gv.currentSceneDir = scenepath;
 		}
-		GetTree().ChangeScene(scenepath);
 		animplayer.PlayBackwards("Dissolve");
 	}
 

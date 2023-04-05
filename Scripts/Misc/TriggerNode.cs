@@ -31,14 +31,12 @@ public class TriggerNode : Area2D
 				GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 				gv.fromScene = GetParent().Name;
 
-				if(parameter == "HELD")
+				if(parameter == "RUN")
 				{
-					parameter = DialogicSharp.GetVariable("HeldScene");
 					gv.loadPos = true;
-				}
-				if(parameter2 == "HELD")
-				{
-					parameter2 = DialogicSharp.GetVariable("HeldMusic");
+					gv.LoadGameData("FightRun");
+					
+					break;
 				}
 
 

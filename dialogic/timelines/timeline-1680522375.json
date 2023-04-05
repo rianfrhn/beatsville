@@ -1,0 +1,45 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "You lost. "
+		},
+		{
+			"choice": "Retry",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"[OngoingFight]"
+				],
+				"method_name": "InitializeFight",
+				"target_node_path": "GlobalVariable"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "Back",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1680522375.json",
+		"name": "FightLost"
+	}
+}

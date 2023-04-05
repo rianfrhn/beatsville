@@ -51,7 +51,8 @@ public class Humanoid : Interactable
 	public delegate void InspirationUpdated(int maxInspiration);
 	[Signal]
 	public delegate void Blundered();
-	
+	[Signal]
+	public delegate void Defeated();
 
 	public enum status{Idle, Moving, Attacking, Stunned, Interacting}
 	public status currentState;
@@ -251,7 +252,14 @@ public class Humanoid : Interactable
 	private void Hit(int stundur, int dmg)
 	{
 		if (health - dmg > 0) health -= dmg;
-		else health = 0;
+		else
+		{
+			health = 0;
+		}
+		if(health == 0)
+		{
+			EmitSignal("Defeated");
+		}
 		EmitSignal("HealthChanged", health, maxHealth);
 		GD.Print("got hit for " + dmg + " dmg, health is now " + health);
 		currentState = status.Stunned;
@@ -338,10 +346,12 @@ public class Humanoid : Interactable
 			sprite.AddChild(bubbleNode);
 			expBubble = (ExpressionBubble)bubbleNode;
 			expBubble.Position = new Vector2(0, -16);
+			expBubble.ZIndex = 1;
 		}
 		expBubble.Start(toExpressionString[expression], duration);
 		
 	}
+	
 
 
 }

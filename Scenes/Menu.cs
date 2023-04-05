@@ -23,14 +23,13 @@ public class Menu : Control
 	{
 		// Replace with function body.
 		GetTree().Root.GetNode<GlobalVariable>("GlobalVariable").NewGameData();
-		GetTree().Root.GetNode<SceneTransition>("SceneTransition").ChangeScene("res://Scenes/TestRoom.tscn", "res://Assets/OST/Dire Guardian.ogg");
+		GetTree().Root.GetNode<SceneTransition>("SceneTransition").ChangeScene("res://Scenes/UI/Cutscenes/Cutscene_Initial.tscn", "STOP");
 		
 	}
 	private void _on_Continue_pressed()
 	{
 		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 		gv.LoadGameData();
-		GetTree().Root.GetNode<SceneTransition>("SceneTransition").ChangeScene(gv.saveData.sceneDirectory, gv.saveData.musicDirectory);
 	}
 	
 
@@ -39,7 +38,15 @@ public class Menu : Control
 	{
 		// Replace with function body.
 	}
+	
+	private void _on_Test_Map_pressed()
+	{
+		GetTree().Root.GetNode<GlobalVariable>("GlobalVariable").NewTestGameData();
+		GetTree().Root.GetNode<SceneTransition>("SceneTransition").ChangeScene("res://Scenes/UI/Cutscenes/Cutscene_TestMap.tscn", "STOP");
+	}
 }
+
+
 
 
 

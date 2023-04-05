@@ -3,10 +3,6 @@ using System;
 
 public class FightScene : Node2D
 {
-	/// <summary>
-	/// Initialize the player nodes
-	/// </summary>
-	public string player1, player2;
 
 	/// <summary>
 	/// Initialize the fight song with its bpm etc. To make resource, add resource in project, attach songdata as script.
@@ -23,17 +19,21 @@ public class FightScene : Node2D
 	private float songInterval;
 	public Humanoid player1Instance;
 	public Humanoid player2Instance;
+	public FightData fightData;
+	public GlobalVariable gv;
+
+	public bool fightFinished = false;
 	
 	public override void _Ready()
 	{
 		//Initialize Variables
-		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 		songOffset = gv.songOffset;
 		songInterval = gv.interval;
-		player1 = gv.player1dir;
-		player2 = gv.player2dir;
-		songdata = ResourceLoader.Load<Resource>(gv.songdatadir);
-		IsBossfight = gv.IsBossfight;
+
+		fightData = (FightData)gv.currentFight;
+		songdata = fightData.songData;
+		IsBossfight = fightData.isBossFight;
 
 
 		//Song initialization
@@ -41,14 +41,11 @@ public class FightScene : Node2D
 		musicHandler.musicOffset = songOffset;
 		musicHandler.interval = songInterval;
 		musicHandler.songDataRes = songdata;
-		GD.Print(gv.songdatadir + "BBBBB" + songdata.ResourcePath);
 
 		//Load Characters
-		PackedScene pspl1 = (PackedScene)ResourceLoader.Load(player1);
-		PackedScene pspl2 = (PackedScene)ResourceLoader.Load(player2);
 
-		player1Instance = (Humanoid)pspl1.Instance();
-		player2Instance = (Humanoid)pspl2.Instance();
+		player1Instance = fightData.player1.Instance<Humanoid>();
+		player2Instance = fightData.player2.Instance<Humanoid>();
 
 		player1Instance.atkMode = true;
 
@@ -70,6 +67,7 @@ public class FightScene : Node2D
 		HealthBar healthbar1 = GetNode<HealthBar>("HealthBar");
 		player1Instance.Connect("HealthChanged", healthbar1, "onHealthChanged");
 		player1Instance.Connect("InspirationChanged", healthbar1, "onInspirationChanged");
+		player1Instance.Connect("Defeated", this, "onPlayer1Defeat");
 
 
 		//if (IsBossfight)
@@ -81,6 +79,9 @@ public class FightScene : Node2D
 		HealthBar healthbar2 = GetNode<HealthBar>("HealthBar2");
 		player2Instance.Connect("HealthChanged", healthbar2, "onHealthChanged");
 		player2Instance.Connect("InspirationChanged", healthbar2, "onInspirationChanged");
+		player2Instance.Connect("Defeated", this, "onPlayer2Defeat");
+		DialogicSharp.SetVariable("GotXP", fightData.xpGain.ToString());
+		DialogicSharp.SetVariable("GotMoney", fightData.moneyGain.ToString());
 
 
 
@@ -94,5 +95,21 @@ public class FightScene : Node2D
 	public Humanoid getPlayer2()
 	{
 		return player2Instance;
+	}
+
+	public void onPlayer1Defeat()
+	{
+		if (fightFinished) return;
+		GD.Print("Player 1 Defeated");
+		Node dialogue = DialogicSharp.Start("FightLost");
+		GetTree().Root.AddChild(dialogue);
+		fightFinished = true;
+	}
+	public void onPlayer2Defeat()
+	{
+		if (fightFinished) return;
+		GD.Print("player 2 defeated");
+		gv.FinishFight();
+		fightFinished = true;
 	}
 }
