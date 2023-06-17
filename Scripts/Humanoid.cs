@@ -17,6 +17,10 @@ public class Humanoid : Interactable
 		Surprised,
 		Wrong
 	}
+	public enum AnimState
+	{
+		Idle, Moving, Attacking, Stunned
+	}
 	Dictionary<Expressions, string> toExpressionString = new Dictionary<Expressions, string>();
 
 
@@ -33,13 +37,15 @@ public class Humanoid : Interactable
 
 	public Array<SkillForm> skillForms = new Array<SkillForm>();
 	public int selectedSkill = 0;
-	public AnimationTree animationTree;
-	public AnimationNodeStateMachinePlayback stateMachine;
+	public NavigationAgent2D navigationAgent;
+	public AnimationPlayer animPlayer;
+	public AnimationPlayer atkAnimPlayer;
 
 	RayCast2D raycast;
 	Timer timer;
 	public float AnimSpeed = 0.3f;
-	Sprite sprite;
+	//Sprite sprite;
+	Node2D body;
 
 	[Signal]
 	public delegate void HealthChanged(int health, int maxHealth);
@@ -56,9 +62,15 @@ public class Humanoid : Interactable
 
 	public enum status{Idle, Moving, Attacking, Stunned, Interacting}
 	public status currentState;
+	private float walkAnimPos = 0.0f;
+
+	//Pathfindings
+	private int PathTarget = 0;
+	private TileMap worldTileMap;
+	private AStarPath AstarPathFind;
+	private bool pathing = false;
 	
 
-	
 	[Export]
 	public bool isPlayer = false;
 
@@ -94,12 +106,15 @@ public class Humanoid : Interactable
 			}
 
 		}
-		sprite = GetNodeOrNull<Sprite>("Sprite");
-		animationTree = GetNodeOrNull<AnimationTree>("AnimationTree");
-		if(animationTree != null)
-		{
-			stateMachine = (AnimationNodeStateMachinePlayback)animationTree.Get("parameters/playback");
-		}
+		body = GetNodeOrNull<Node2D>("Body");
+		//sprite = GetNodeOrNull<Sprite>("Sprite");
+		worldTileMap = GetParent().GetNodeOrNull<TileMap>("PathTileMap");
+		AstarPathFind = GetNodeOrNull<AStarPath>("AStarPath");
+		if(AstarPathFind != null && worldTileMap != null) AstarPathFind.SetTileMap(worldTileMap);
+
+		animPlayer = GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
+		atkAnimPlayer = GetNodeOrNull<AnimationPlayer>("AttackAnimationPlayer");
+		navigationAgent = GetNodeOrNull<NavigationAgent2D>("NavigationAgent2D");
 
 
 		raycast = this.GetNode<RayCast2D>("RayCast2D");
@@ -122,50 +137,119 @@ public class Humanoid : Interactable
 		toExpressionString.Add(Expressions.Surprised, "Surprised");
 		toExpressionString.Add(Expressions.Wrong, "Wrong");
 
+		//RefreshState();
 	}
 	public override void _Process(float delta)
 	{
+
 		AdjustFacing();
+		if (pathing && currentState == status.Idle)
+		{
+			WalkPath();
+		}
+			
+
+
+	}
+	public void SetPathFind(Vector2 targetPos)
+	{
+		Vector2 tp = CastToGrid(targetPos);
+		GD.Print("Path finding " + GlobalPosition + " to " + targetPos);
+		if (AstarPathFind.SetAstarPath(GlobalPosition, tp))
+		{
+			pathing = true;
+			PathTarget = 1;
+		}
+	}
+	public void SetPathFindRelative(Vector2 targetPos)
+	{
+		if (AstarPathFind.SetAstarPath(GlobalPosition, GlobalPosition + targetPos))
+		{
+			pathing = true;
+			PathTarget = 1;
+		}
 	}
 	public bool Move(Vector2 targetPos)
 	{
 		if (targetPos == Vector2.Zero) return false;
 		if (inspiration == 0) { Express(Expressions.Inspiration); return false; }
-		if (targetPos.x < 0) facingLeft = true;
-		else if (targetPos.x > 0) facingLeft = false;
 		
 		raycast.CastTo = targetPos;
+		raycast.CollideWithAreas = false;
 		raycast.ForceRaycastUpdate();
-		if (!raycast.IsColliding() && currentState == status.Idle)
+		if (!raycast.IsColliding())
 		{
-			currentState = status.Moving;
-			SceneTreeTween tweening = GetTree().Root.CreateTween();
-			tweening.TweenProperty(this, "position", Position + targetPos, AnimSpeed).SetTrans(Tween.TransitionType.Linear);
-			tweening.TweenCallback(this, "RefreshState");
-			if(animationTree != null)
-			{
-				if (atkMode)
-				{
-					stateMachine.Start("Jump");
-				}
-				else
-				{
-					stateMachine.Travel("Walk");
-				}
-
-			}
+			bool a = GoTo(targetPos);
 
 
-			return true;
+			return a;
 		}
 		return false;
 
 	}
+	public bool GoTo(Vector2 targetPos, bool relative = true)
+	{
+		int rel = relative ? 1 : 0;
+		Vector2 trueTarget = (Position * rel + targetPos);
+		if (trueTarget.x - Position.x < 0) facingLeft = true;
+		else if (trueTarget.x - Position.x > 0) facingLeft = false;
+		if (currentState != status.Idle) return false;
+		float distance = (trueTarget-Position).Length();
+		GD.Print(distance);
+		currentState = status.Moving;
+		SceneTreeTween tweening = GetTree().Root.CreateTween();
+		tweening.TweenProperty(this, "position", trueTarget, AnimSpeed * distance/ 16).SetTrans(Tween.TransitionType.Linear);
+		tweening.TweenCallback(this, "RefreshState");
+		if (animPlayer != null)
+		{
+			if (atkMode)
+			{
+				if (animPlayer.CurrentAnimation != "Jump")
+					animPlayer.Play("Jump");
+			}
+			else
+			{
+				if(animPlayer.CurrentAnimation != "Walk")
+				{
+					animPlayer.PlaybackSpeed = 0.5f / AnimSpeed;
+					animPlayer.Play("Walk");
+					animPlayer.Seek(walkAnimPos);
+				}
+			}
+
+		}
+		return true;
+	}
+	public Vector2 CastToGrid(Vector2 pos)
+	{
+		int x = (int)(pos.x - (pos.x % 16) + 8);
+		int y = (int)(pos.y - (pos.y % 16) + 8);
+		return new Vector2(x, y);
+	}
+	public void WalkPath()
+	{
+		if (PathTarget < AstarPathFind.pathNodeList.Count)
+		{
+			var targetNode = worldTileMap.MapToWorld(AstarPathFind.pathNodeList[PathTarget]) + AstarPathFind.halfTileSize;
+			GoTo(targetNode, false);
+			GD.Print("Is walking to " + targetNode);
+			if(Position == targetNode)
+			{
+				PathTarget++;
+			}
+		}
+		else
+		{
+			pathing = false;
+		}
+	}
 	public void CheckInteract(Vector2 targetPos)
 	{
+		if (atkMode || currentState != status.Idle) return;
 		if (targetPos.x < 0) facingLeft = true;
 		else if(targetPos.x>0) facingLeft = false;
 		raycast.CastTo = targetPos;
+		raycast.CollideWithAreas = true;
 		raycast.ForceRaycastUpdate();
 		if (raycast.IsColliding()) {
 			Interact((Node)raycast.GetCollider());
@@ -179,14 +263,18 @@ public class Humanoid : Interactable
 			o.OpenDialogue((Node2D)this);
 		}
 	}
-	public void RefreshState()
+	public async void RefreshState()
 	{
-		currentState = status.Idle;
-		if (animationTree != null)
-		{
-			stateMachine.Travel("Idle");
-		}
 		if (timer.IsConnected("timeout", this, "RefreshState")) { timer.Disconnect("timeout", this, "RefreshState"); }
+		currentState = status.Idle;
+		walkAnimPos = animPlayer.CurrentAnimationPosition;
+		animPlayer.PlaybackSpeed = 1;
+
+		if (atkAnimPlayer != null && atkAnimPlayer.IsPlaying()) return;
+
+		animPlayer.Play("RESET");
+		await ToSignal(animPlayer, "animation_finished");
+		animPlayer.Play("Idle");
 	}
 	void SpawnProjectile(Vector2 target, PackedScene projectileScene, int basedmg)
 	{
@@ -223,19 +311,36 @@ public class Humanoid : Interactable
 	{
 		int selectedSkill = skill == -1 ? this.selectedSkill : skill;
 		if (selectedSkill > skillForms.Count) return false;
-		int projectileCost = skillForms[selectedSkill].cost;
-
+		SkillForm skillForm = skillForms[selectedSkill];
+		int projectileCost = skillForm.cost;
+		string animationName = "Attack";
+		if(skillForm.castingAnimation != null && atkAnimPlayer != null)
+		{
+			Animation a = skillForm.castingAnimation;
+			string skillName = a.ResourceName;
+			if (!atkAnimPlayer.HasAnimation(skillName))
+			{
+				atkAnimPlayer.AddAnimation(skillName, a);
+			}
+			animationName = skillName;
+		}
 		if(inspiration - projectileCost >= 0)
 		{
-			stateMachine.Start("Attack");
+			if(atkAnimPlayer!= null)
+			{
+				atkAnimPlayer.PlaybackSpeed = 1 / (((float)skillForm.duration - 1) * 60.0f / GlobalHandler.CurrentMusic.songBPM + 50.0f / GlobalHandler.CurrentMusic.songBPM);
+				atkAnimPlayer.Seek(0, true);
+				atkAnimPlayer.Play(animationName);
 
-			int baseDmg = skillForms[selectedSkill].damage;
+			}
+
+			int baseDmg = skillForm.damage;
 			if (Target.x < Position.x) facingLeft = true;
 			else if (Target.x > Position.x) facingLeft = false;
-			SpawnProjectile(Target, skillForms[selectedSkill].projectile, baseDmg);
+			SpawnProjectile(Target, skillForm.projectile, baseDmg);
 			inspiration -= projectileCost;
 			EmitSignal("InspirationChanged", inspiration, maxInspiration);
-			timer.WaitTime = ((float)skillForms[selectedSkill].duration-1)  * 60.0f / GlobalHandler.CurrentMusic.songBPM + 45.0f / GlobalHandler.CurrentMusic.songBPM;
+			timer.WaitTime = ((float)skillForm.duration-1)  * 60.0f / GlobalHandler.CurrentMusic.songBPM + 45.0f / GlobalHandler.CurrentMusic.songBPM;
 			if (!timer.IsConnected("timeout", this, "RefreshState")) { timer.Connect("timeout", this, "RefreshState"); }
 			timer.Start();
 			return true;
@@ -251,6 +356,7 @@ public class Humanoid : Interactable
 
 	private void Hit(int stundur, int dmg)
 	{
+		animPlayer.Play("Hurt");
 		if (health - dmg > 0) health -= dmg;
 		else
 		{
@@ -313,13 +419,20 @@ public class Humanoid : Interactable
 	}
 	public void AdjustFacing()
 	{
+		if (body == null) return;
 		if (facingLeft)
 		{
-			sprite.Scale = new Vector2(-1,1);
+			//sprite.Scale = new Vector2(-1,1);
+			//body.Scale = new Vector2(-1, 1);
+			SceneTreeTween tweening = GetTree().Root.CreateTween();
+			tweening.TweenProperty(body, "scale", new Vector2(-1, 1), 0.1f).SetTrans(Tween.TransitionType.Sine);
 		}
 		else
 		{
-			sprite.Scale = new Vector2(1, 1);
+			//sprite.Scale = new Vector2(1, 1);
+			//body.Scale = new Vector2(1, 1);
+			SceneTreeTween tweening = GetTree().Root.CreateTween();
+			tweening.TweenProperty(body, "scale", new Vector2(1, 1), 0.1f).SetTrans(Tween.TransitionType.Sine);
 		}
 	}
 	public int GetInspirationCount()
@@ -333,17 +446,19 @@ public class Humanoid : Interactable
 	public void onBlundered()
 	{
 		Express(Expressions.Wrong);
-		stateMachine.Start("Blunder");
+		animPlayer.Play("Blunder");
+		
 	}
 
 	public void Express(Expressions expression, float duration = 1.0f)
 	{
-		ExpressionBubble expBubble = sprite.GetNodeOrNull<ExpressionBubble>("ExpressionBubble");
+		//TODO: PLS CHANGE THIS TO BODY LATER
+		ExpressionBubble expBubble = body.GetNodeOrNull<ExpressionBubble>("ExpressionBubble");
 		if(expBubble == null)
 		{
 			PackedScene bubbleScene = ResourceLoader.Load<PackedScene>("res://Scenes/Misc/ExpressionBubble.tscn");
 			Node bubbleNode = bubbleScene.Instance();
-			sprite.AddChild(bubbleNode);
+			body.AddChild(bubbleNode);
 			expBubble = (ExpressionBubble)bubbleNode;
 			expBubble.Position = new Vector2(0, -16);
 			expBubble.ZIndex = 1;

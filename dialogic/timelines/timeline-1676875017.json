@@ -171,6 +171,13 @@
 			"text": "Hold on, I got something to do! "
 		},
 		{
+			"event_id": "bv_pf",
+			"is_relative": true,
+			"name": "Marione",
+			"posx": 224,
+			"posy": 64
+		},
+		{
 			"animation": "back_out_right.gd",
 			"animation_length": 1,
 			"animation_wait": true,

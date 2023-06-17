@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+void fragment() {
+    // Retrieve the object's texture and vertex color
+    vec4 tex_color = texture(TEXTURE, UV);
+    vec4 vertex_color = COLOR;
+
+    // Define the outline color
+    vec4 outline_color = vec4(1.0, 1.0, 1.0, 1.0); // Red outline color
+
+    // Set the outline thickness
+    float outline_thickness = 0.0; // Adjust as desired
+
+    // Determine if the pixel is part of the outline
+    float edge_factor = (1.0 - length(dFdx(UV) + dFdy(UV))) / outline_thickness;
+    float is_outline = smoothstep(0.0, 1.0, edge_factor);
+
+    // Calculate the final color with the outline effect
+    vec4 final_color = mix(tex_color, outline_color, is_outline) * vertex_color;
+
+    // Output the final color with modified alpha
+    COLOR = vec4(final_color.rgb, tex_color.a);
+}"
+
+[resource]
+shader = SubResource( 1 )

@@ -1,8 +1,9 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Projectiles/MoonlitSonata.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Resources/SkillForm.cs" type="Script" id=2]
 [ext_resource path="res://Assets/Projectiles/MoonlitRune/Moonlit1Img.png" type="Texture" id=3]
+[ext_resource path="res://Animations/Kal/BookSummon.tres" type="Animation" id=4]
 
 [resource]
 script = ExtResource( 2 )
@@ -14,3 +15,4 @@ duration = 3
 cost = 10
 damage = 30
 desc = "Casts 3 tile radius Explosion. Causes self harm."
+castingAnimation = ExtResource( 4 )

@@ -18,6 +18,13 @@
 			"name": "Tez"
 		},
 		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Marione",
+			"posx": 184,
+			"posy": 72
+		},
+		{
 			"event_id": "dialogic_023",
 			"hide_dialogbox": true,
 			"wait_seconds": 1

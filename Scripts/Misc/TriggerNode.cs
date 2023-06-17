@@ -16,11 +16,12 @@ public class TriggerNode : Area2D
 
 	public override void _Ready()
 	{
-		Connect("body_entered", this, "onPlayerEntered");
+		Connect("area_entered", this, "onPlayerEntered");
 		
 	}
 	private void onPlayerEntered(Node body)
 	{
+		if (!(body is Humanoid plr && plr.isPlayer)) return;
 		if (parameter == "") return;
 		switch (action)
 		{

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Interactable : KinematicBody2D
+public class Interactable : Area2D
 {
 	[Export]
 	public string dialogue;

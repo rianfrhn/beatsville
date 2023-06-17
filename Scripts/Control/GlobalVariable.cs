@@ -106,6 +106,7 @@ public class GlobalVariable : Node
 	}
 	public override void _Ready()
 	{
+		BV.GV = this;
 		sceneTransition = GetTree().Root.GetNode<SceneTransition>("SceneTransition");
 	}
 	public void SaveGameData()
@@ -210,5 +211,19 @@ public class GlobalVariable : Node
 		if(npc == null) { GD.Print("Humanoid not found trying to flip"); return; }
 		npc.facingLeft = !npc.facingLeft;
 	}
-	
+	public void MoveNPC(string name, int targetX, int targetY, bool relative)
+	{
+		Vector2 targetPos = new Vector2(targetX, targetY);
+		Humanoid npc = FindNpc(name);
+		if (npc == null) { GD.Print("Humanoid " + name + " not found trying pathfind to " + targetPos); return; }
+		if (relative)
+		{
+			npc.SetPathFindRelative(targetPos);
+		}
+		else
+		{
+			npc.SetPathFind(targetPos);
+		}
+
+	}
 }

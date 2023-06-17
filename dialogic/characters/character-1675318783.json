@@ -13,11 +13,7 @@
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Assets/Tiles/GreenTile.png"
-		},
-		{
-			"name": "Happy",
-			"path": "res://Assets/TEMP/Sparky_PortraitPlaceholder.png"
+			"path": "res://Assets/GUI/Char/Sparky/Sparky_Default.png"
 		}
 	],
 	"scale": 100,

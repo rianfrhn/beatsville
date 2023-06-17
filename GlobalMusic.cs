@@ -10,6 +10,7 @@ public class GlobalMusic : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		BV.GM = this;
 		audioStreams[0] = GetNode<AudioStreamPlayer>("AudioStreamPlayer1");
 		audioStreams[1] = GetNode<AudioStreamPlayer>("AudioStreamPlayer2");
 		animplayer = GetNode<AnimationPlayer>("AnimationPlayer");

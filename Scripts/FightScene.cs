@@ -64,7 +64,7 @@ public class FightScene : Node2D
 		//musicHandler.Connect("SkippedBeat", player2Instance, "RegenInspiration");
 
 		//Healthbar
-		HealthBar healthbar1 = GetNode<HealthBar>("HealthBar");
+		HealthBar healthbar1 = GetNode<HealthBar>("CanvasLayer/HealthBar");
 		player1Instance.Connect("HealthChanged", healthbar1, "onHealthChanged");
 		player1Instance.Connect("InspirationChanged", healthbar1, "onInspirationChanged");
 		player1Instance.Connect("Defeated", this, "onPlayer1Defeat");
@@ -76,7 +76,7 @@ public class FightScene : Node2D
 
 
 		//}
-		HealthBar healthbar2 = GetNode<HealthBar>("HealthBar2");
+		HealthBar healthbar2 = GetNode<HealthBar>("CanvasLayer/HealthBar2");
 		player2Instance.Connect("HealthChanged", healthbar2, "onHealthChanged");
 		player2Instance.Connect("InspirationChanged", healthbar2, "onInspirationChanged");
 		player2Instance.Connect("Defeated", this, "onPlayer2Defeat");

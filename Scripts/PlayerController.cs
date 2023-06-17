@@ -150,7 +150,7 @@ public class PlayerController : Node2D
 				gv.saveData.talismans.Add(t);*/
 				gv.saveData.AddXP(5);
 			}
-			if (@event.IsActionPressed("click_left"))
+			if (@event.IsActionPressed("click_right"))
 			{
 
 				Vector2 GMP = GetGlobalMousePosition();
@@ -167,6 +167,11 @@ public class PlayerController : Node2D
 					player.CheckInteract(Vector2.Right * 16 * Mathf.Sign(deltaX));
 				}
 			}
+            if (@event.IsActionPressed("click_left"))
+            {
+				Vector2 GMP = GetGlobalMousePosition();
+				player.SetPathFind(GMP);
+            }
 		}
 
 	}

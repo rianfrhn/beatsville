@@ -8,14 +8,20 @@ public class ChimeraAI : BaseAI
     // private string b = "text";
 
     // Called when the node enters the scene tree for the first time.
+    [Export]
+    bool showWeaponOnAttackMode = false;
     Sprite weaponSprite;
     public override void _Ready()
     {
         onReady();
-        if (human.atkMode)
+        if (human.atkMode && showWeaponOnAttackMode)
         {
             weaponSprite = human.GetNode<Sprite>("Sprite/Weapon");
             weaponSprite.Visible = true;
+        }
+        else
+        {
+            if (weaponSprite != null) weaponSprite.Visible = false;
         }
     }
     public override void onBeat(int beat)
@@ -57,30 +63,30 @@ public class ChimeraAI : BaseAI
             switch (moveBeat)
             {
                 case 0:
-                    Teleport(ToBackofEnemy());
+                    //Teleport(ToBackofEnemy());
                     break;
                 case 1:
                     human.selectedSkill = 1;
                     TryAttack();
                     break;
                 case 2:
-                    human.Move(ToEnemy());
+                    //human.Move(ToEnemy());
                     break;
                 case 3:
-                    human.selectedSkill = 0;
+                    //human.selectedSkill = 0;
                     TryAttack();
                     break;
                 case 4:
-                    human.Move(AwayFromEnemy());
+                    //human.Move(AwayFromEnemy());
                     break;
                 case 5:
-                    human.RegenInspiration();
+                    //human.RegenInspiration();
                     break;
                 case 6:
-                    human.Move(AwayFromEnemy());
+                    //human.Move(AwayFromEnemy());
                     break;
                 case 7:
-                    human.Move(AwayFromEnemy());
+                    //human.Move(AwayFromEnemy());
                     break;
 
             }

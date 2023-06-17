@@ -51,7 +51,7 @@ func dialog_finished():
 func _ready() -> void:
 	# change the canvas layer
 	var config = DialogicResources.get_settings_config()	
-	layer = int(config.get_value("theme", "canvas_layer", 1))
+	layer = int(config.get_value("theme", "canvas_layer", 2))
 	
 	
 
