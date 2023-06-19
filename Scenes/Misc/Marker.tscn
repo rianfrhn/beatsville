@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Misc/Marker.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Misc/Marker/marker_0001.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Misc/Marker/marker_0004.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Misc/Marker/marker_0002.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Misc/Marker/marker_0000.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Misc/Marker/marker_0003.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Misc/Marker/marker_0005.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Initial"
+length = 0.25
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ), null ]
+}
+
+[node name="Marker" type="Sprite"]
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Initial = SubResource( 1 )

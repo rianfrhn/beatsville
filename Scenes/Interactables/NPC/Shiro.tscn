@@ -565,7 +565,6 @@ texture = ExtResource( 14 )
 offset = Vector2( 0, -1 )
 
 [node name="Weapon" parent="Body" instance=ExtResource( 3 )]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"

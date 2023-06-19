@@ -64,29 +64,30 @@ public class ChimeraAI : BaseAI
             {
                 case 0:
                     //Teleport(ToBackofEnemy());
+                    human.selectedSkill = 0;
+                    TryAttack();
                     break;
                 case 1:
-                    human.selectedSkill = 1;
                     TryAttack();
                     break;
                 case 2:
-                    //human.Move(ToEnemy());
+                    human.Move(ToEnemy());
                     break;
                 case 3:
                     //human.selectedSkill = 0;
-                    TryAttack();
+                    human.Move(ToEnemy());
                     break;
                 case 4:
-                    //human.Move(AwayFromEnemy());
+                    TryAttack();
                     break;
                 case 5:
-                    //human.RegenInspiration();
+                    human.Move(AwayFromEnemy());
                     break;
                 case 6:
-                    //human.Move(AwayFromEnemy());
+                    human.RegenInspiration();
                     break;
                 case 7:
-                    //human.Move(AwayFromEnemy());
+                    human.RegenInspiration();
                     break;
 
             }

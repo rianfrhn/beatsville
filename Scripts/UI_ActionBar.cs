@@ -8,13 +8,17 @@ public class UI_ActionBar : Node
 	TextureRect template;
 	public override void _Ready()
 	{
+		Initialize();
+	}
+	public void Initialize()
+    {
 		template = GetNode<TextureRect>("Template");
-		beats = GlobalHandler.CurrentMusic.songTimeSig;
+		beats = BV.GM.songData.TimeSign;
 		AnimationPlayer animplr = GetNode<AnimationPlayer>("AnimationPlayer");
 		Animation anim = animplr.GetAnimation("Jump");
-		GD.Print(anim.TrackGetKeyValue(0,0).GetType());
+		GD.Print(anim.TrackGetKeyValue(0, 0).GetType());
 
-		for(int i=0; i<beats; i++)
+		for (int i = 0; i < beats; i++)
 		{
 			TextureRect act = (TextureRect)template.Duplicate();
 			act.Name = i.ToString();
@@ -26,19 +30,20 @@ public class UI_ActionBar : Node
 			animationPlayer.AddAnimation("Jump", CreateAnimation(act));
 			act.AddChild(animationPlayer);
 		}
-		GlobalHandler.CurrentMusic.Connect("EmitBeat", this, "Jump");
+		BV.GM.Connect("EmitBeat", this, "Jump");
 		template.QueueFree();
+
 	}
 	public void Jump(int beat)
 	{
-		int b = beat % GlobalHandler.CurrentMusic.songTimeSig;
+		int b = beat % BV.GM.songData.TimeSign;
 		TextureRect texture = GetNode<TextureRect>(b.ToString());
 		AnimationPlayer animplayer = texture.GetNode<AnimationPlayer>("AnimationPlayer");
 		animplayer.Play("Jump");
-		if (GlobalHandler.CurrentMusic.songData.beatsToAtk.Contains(b))
+		if (BV.GM.songData.beatsToAtk.Contains(b))
 		{
 			texture.Modulate = new Color(0, 1, 0);
-		} else if (GlobalHandler.CurrentMusic.songData.beatsToMove.Contains(b))
+		} else if (BV.GM.songData.beatsToMove.Contains(b))
 		{
 			texture.Modulate = new Color(0, 0, 1);
 		}
@@ -53,7 +58,7 @@ public class UI_ActionBar : Node
 		string path = rect.GetPath() + ":rect_position:y";
 		Animation anim = new Animation();
 		int trackNum = anim.AddTrack(Animation.TrackType.Value, 0);
-		float len = 60 / GlobalHandler.CurrentMusic.songBPM;
+		float len = 60 / BV.GM.songBPM;
 		anim.Length = len;
 		anim.TrackSetPath(trackNum, path);
 		anim.TrackInsertKey(trackNum, 0, -16);

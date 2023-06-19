@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GrassTileV1.png-42620469189b342e59d76cdfa568aede.stex"
+path="res://.import/SparkyLegL.png-6d9d3a6626a6cfc98ec8caf43fcd8e72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/GrassTile/GrassTileV1.png"
-dest_files=[ "res://.import/GrassTileV1.png-42620469189b342e59d76cdfa568aede.stex" ]
+source_file="res://Assets/Interactables/Sparky/Parts/SparkyLegL.png"
+dest_files=[ "res://.import/SparkyLegL.png-6d9d3a6626a6cfc98ec8caf43fcd8e72.stex" ]
 
 [params]
 

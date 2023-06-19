@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/OST/The Tale of Beatsville.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Resources/Songs/TheTaleofBeatsville.tres" type="Resource" id=1]
 [ext_resource path="res://GlobalMusic.cs" type="Script" id=2]
+[ext_resource path="res://Assets/SFX/Metronome.mp3" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "CrossTo1"
@@ -191,6 +192,7 @@ tracks/3/keys = {
 
 [node name="GlobalMusic" type="Node"]
 script = ExtResource( 2 )
+songDataRes = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/CrossTo1 = SubResource( 1 )
@@ -200,8 +202,13 @@ anims/Fade2 = SubResource( 5 )
 anims/RESET = SubResource( 3 )
 
 [node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
 autoplay = true
 bus = "Music"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+
+[node name="Metronome" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

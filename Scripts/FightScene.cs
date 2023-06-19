@@ -23,8 +23,8 @@ public class FightScene : Node2D
 	public GlobalVariable gv;
 
 	public bool fightFinished = false;
-	
-	public override void _Ready()
+
+	public override void _EnterTree()
 	{
 		//Initialize Variables
 		gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
@@ -35,12 +35,19 @@ public class FightScene : Node2D
 		songdata = fightData.songData;
 		IsBossfight = fightData.isBossFight;
 
+		GlobalMusic globalMusic = BV.GM;
+		globalMusic.musicOffset = songOffset;
+		globalMusic.interval = songInterval;
+		globalMusic.ChangeSongData((SongData)songdata);
+	}
+
+	public override void _Ready()
+	{
+
 
 		//Song initialization
-		MusicHandler musicHandler = GetNode<MusicHandler>("MusicController");
-		musicHandler.musicOffset = songOffset;
-		musicHandler.interval = songInterval;
-		musicHandler.songDataRes = songdata;
+
+		GlobalMusic globalMusic = BV.GM;
 
 		//Load Characters
 
@@ -60,11 +67,12 @@ public class FightScene : Node2D
 		AddChild(player1Instance);
 		AddChild(player2Instance);
 
-		musicHandler.Connect("SkippedBeat", player1Instance, "RegenInspiration");
+		globalMusic.Connect("SkippedBeat", player1Instance, "RegenInspiration");
 		//musicHandler.Connect("SkippedBeat", player2Instance, "RegenInspiration");
 
 		//Healthbar
 		HealthBar healthbar1 = GetNode<HealthBar>("CanvasLayer/HealthBar");
+		healthbar1.picture.Texture = player1Instance.battlePicture;
 		player1Instance.Connect("HealthChanged", healthbar1, "onHealthChanged");
 		player1Instance.Connect("InspirationChanged", healthbar1, "onInspirationChanged");
 		player1Instance.Connect("Defeated", this, "onPlayer1Defeat");
@@ -77,6 +85,7 @@ public class FightScene : Node2D
 
 		//}
 		HealthBar healthbar2 = GetNode<HealthBar>("CanvasLayer/HealthBar2");
+		healthbar2.picture.Texture = player2Instance.battlePicture;
 		player2Instance.Connect("HealthChanged", healthbar2, "onHealthChanged");
 		player2Instance.Connect("InspirationChanged", healthbar2, "onInspirationChanged");
 		player2Instance.Connect("Defeated", this, "onPlayer2Defeat");

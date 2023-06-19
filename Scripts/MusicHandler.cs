@@ -12,7 +12,6 @@ public class MusicHandler : Node
 	private float barLength;
 	public float secs;
 	public float barPercent;
-	public AudioStreamPlayer audiostream;
 	public bool plrMoved = false;
 	private bool cooldown = false;
 	private bool redCooldown = false;
@@ -144,6 +143,7 @@ public class MusicHandler : Node
 	}
 	public void QueueTimeChange(int beat)
 	{
+		if (songData == null) return;
 		ICollection<int> keys = songData.timeChanges.Keys;
 		if (keys.Contains(beat + songTimeSig))
 		{

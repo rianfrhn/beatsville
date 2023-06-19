@@ -73,7 +73,7 @@ tracks/4/keys = {
 [node name="Cutscene" type="CanvasLayer"]
 script = ExtResource( 5 )
 sceneDirectory = "res://Scenes/TestRoom.tscn"
-musicDirectory = "res://Assets/OST/Dire Guardian.ogg"
+musicDirectory = "res://Resources/Songs/DireGuardian.tres"
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0

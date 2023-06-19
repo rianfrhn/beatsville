@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GrassTileDefault.png-e261ad78ebd417d1fc662c8bc87ff5f0.stex"
+path="res://.import/IreiBody.png-ad1b5aa9c8c2632a05f91a12200675f7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/GrassTile/GrassTileDefault.png"
-dest_files=[ "res://.import/GrassTileDefault.png-e261ad78ebd417d1fc662c8bc87ff5f0.stex" ]
+source_file="res://Assets/Interactables/Rei/Parts/IreiBody.png"
+dest_files=[ "res://.import/IreiBody.png-ad1b5aa9c8c2632a05f91a12200675f7.stex" ]
 
 [params]
 

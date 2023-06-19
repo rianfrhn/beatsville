@@ -7,7 +7,7 @@ public abstract class BaseAI : Node
 	protected Humanoid human;
 	protected FightScene fightScene;
 	protected Humanoid enemy;
-	protected MusicHandler mh;
+	protected GlobalMusic mh;
 	protected SongData songData;
 	protected bool regenning = false;
 
@@ -32,7 +32,7 @@ public abstract class BaseAI : Node
 		if(fightScene == null) return;
 
 		enemy = fightScene.player1Instance;
-		mh = GlobalHandler.CurrentMusic;
+		mh = BV.GM;
 		songData = mh.songData;
 		mh.Connect("EmitBeat", this, "onBeat");
 	}

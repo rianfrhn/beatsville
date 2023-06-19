@@ -69,8 +69,8 @@ public class Humanoid : Interactable
 	private TileMap worldTileMap;
 	private AStarPath AstarPathFind;
 	private bool pathing = false;
-	
-
+	[Export]
+	public Texture battlePicture = null;
 	[Export]
 	public bool isPlayer = false;
 
@@ -120,7 +120,7 @@ public class Humanoid : Interactable
 		raycast = this.GetNode<RayCast2D>("RayCast2D");
 		timer = this.GetNode<Timer>("Timer");
 		currentState = status.Idle;
-		AnimSpeed = GlobalHandler.CurrentMusic != null ? 48.0f/(GlobalHandler.CurrentMusic.songBPM): AnimSpeed;
+		AnimSpeed = BV.GM != null ? 48.0f/(BV.GM.songBPM): AnimSpeed;
 		facingLeft = faceLeft;
 
 		Connect("Blundered", this, "DecreaseInspiration");
@@ -328,7 +328,7 @@ public class Humanoid : Interactable
 		{
 			if(atkAnimPlayer!= null)
 			{
-				atkAnimPlayer.PlaybackSpeed = 1 / (((float)skillForm.duration - 1) * 60.0f / GlobalHandler.CurrentMusic.songBPM + 50.0f / GlobalHandler.CurrentMusic.songBPM);
+				atkAnimPlayer.PlaybackSpeed = 1 / (((float)skillForm.duration - 1) * 60.0f / BV.GM.songBPM + 50.0f / BV.GM.songBPM);
 				atkAnimPlayer.Seek(0, true);
 				atkAnimPlayer.Play(animationName);
 
@@ -340,7 +340,7 @@ public class Humanoid : Interactable
 			SpawnProjectile(Target, skillForm.projectile, baseDmg);
 			inspiration -= projectileCost;
 			EmitSignal("InspirationChanged", inspiration, maxInspiration);
-			timer.WaitTime = ((float)skillForm.duration-1)  * 60.0f / GlobalHandler.CurrentMusic.songBPM + 45.0f / GlobalHandler.CurrentMusic.songBPM;
+			timer.WaitTime = ((float)skillForm.duration-1)  * 60.0f / BV.GM.songBPM + 45.0f / BV.GM.songBPM;
 			if (!timer.IsConnected("timeout", this, "RefreshState")) { timer.Connect("timeout", this, "RefreshState"); }
 			timer.Start();
 			return true;
@@ -369,7 +369,7 @@ public class Humanoid : Interactable
 		EmitSignal("HealthChanged", health, maxHealth);
 		GD.Print("got hit for " + dmg + " dmg, health is now " + health);
 		currentState = status.Stunned;
-		timer.WaitTime = stundur * 55 / GlobalHandler.CurrentMusic.songBPM;
+		timer.WaitTime = stundur * 55 / BV.GM.songBPM;
 		if (!timer.IsConnected("timeout", this, "RefreshState")) { timer.Connect("timeout", this, "RefreshState"); }
 		timer.Start();
 

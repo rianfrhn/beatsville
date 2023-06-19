@@ -13,9 +13,9 @@ public class Moonlit_Sonata1 : Projectile
 	public override void _Ready()
 	{
 		animplayer = GetNode<AnimationPlayer>("AnimationPlayer");
-		animplayer.PlaybackSpeed = GlobalHandler.CurrentMusic.songBPM / 60.0f;
+		animplayer.PlaybackSpeed = BV.GM.songBPM / 60.0f;
 		Particles2D absorbParticle = GetNode<Particles2D>("Absorb");
-		absorbParticle.SpeedScale = GlobalHandler.CurrentMusic.songBPM / 60.0f;
+		absorbParticle.SpeedScale = BV.GM.songBPM / 60.0f;
 		Timer cdTimer = GetNode<Timer>("Timer");
 		cdTimer.Connect("timeout", this, "onTimeout");
 		animplayer.Play("Step1");

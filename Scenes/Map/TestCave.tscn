@@ -53,7 +53,7 @@ tile_data = PoolIntArray( 65548, 3, 0, 65556, 3, 0, 65563, 3, 0, 196642, 2, 0, 1
 position = Vector2( 256, 298 )
 scale = Vector2( 4.22172, -0.488761 )
 parameter = "res://Scenes/TestRoom.tscn"
-parameter2 = "res://Assets/OST/Dire Guardian.ogg"
+parameter2 = "res://Resources/Songs/DireGuardian.tres"
 
 [node name="TriggerNode2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 584, 55 )
@@ -63,7 +63,6 @@ parameter2 = "STOP"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 248, 280 )
-z_index = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -24, -40 )

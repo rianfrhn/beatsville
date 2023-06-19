@@ -3,13 +3,15 @@ using System;
 
 public class HealthBar : Control
 {
-	ProgressBar healthbar;
-	ProgressBar inspirationbar;
+	TextureProgress healthbar;
+	TextureProgress inspirationbar;
+	public TextureRect picture;
 
 	public override void _Ready()
 	{
-		healthbar = GetNode<ProgressBar>("HealthBar");
-		inspirationbar = GetNode<ProgressBar>("InspirationBar");
+		healthbar = GetNode<TextureProgress>("HealthBar");
+		inspirationbar = GetNode<TextureProgress>("InspirationBar");
+		picture = GetNode<TextureRect>("Frame/TextureRect");
 	}
 
 	public void onHealthChanged(int health, int maxHealth)

@@ -16,7 +16,7 @@ public class Moonlit_Sonata2 : Projectile
 		Vector2 vec = targetpoint - initialPos;
 		collision.Position = new Vector2(Mathf.Abs(vec.x), vec.y);
 		animplayer = GetNode<AnimationPlayer>("AnimationPlayer");
-		animplayer.PlaybackSpeed = GlobalHandler.CurrentMusic.songBPM / 60.0f;
+		animplayer.PlaybackSpeed = BV.GM.songBPM / 60.0f;
 		Timer cdTimer = GetNode<Timer>("Timer");
 		cdTimer.Connect("timeout", this, "onTimeout");
 		animplayer.Play("Step1");

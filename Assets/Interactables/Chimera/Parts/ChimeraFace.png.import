@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tree.png-67899adfd2967502b38bb76422293a06.stex"
+path="res://.import/ChimeraFace.png-30cfa26efdd71fe6f3d45966a55812ad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/GrassTile/Tree.png"
-dest_files=[ "res://.import/Tree.png-67899adfd2967502b38bb76422293a06.stex" ]
+source_file="res://Assets/Interactables/Chimera/Parts/ChimeraFace.png"
+dest_files=[ "res://.import/ChimeraFace.png-30cfa26efdd71fe6f3d45966a55812ad.stex" ]
 
 [params]
 

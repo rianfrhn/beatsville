@@ -32,7 +32,7 @@ public abstract class Projectile : Area2D
 		{
 			Scale = new Vector2(-1,1);
 		}
-		GlobalHandler.CurrentMusic.Connect("EmitBeat", this, "Move");
+		BV.GM.Connect("EmitBeat", this, "Move");
 		Connect("area_entered", this, "onHit");
 	}
 	public int RandomizeDamage()

@@ -45,7 +45,7 @@ public class Options : CanvasLayer
 		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 		gv.SaveGameData();
 		SceneTransition st = GetTree().Root.GetNode<SceneTransition>("SceneTransition");
-		st.ChangeScene("res://Scenes/Menu.tscn", "res://Assets/OST/The Tale of Beatsville.ogg");
+		st.ChangeScene("res://Scenes/Menu.tscn", "res://Resources/Songs/TheTaleofBeatsville.tres");
 		QueueFree();
 
 	}

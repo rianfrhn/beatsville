@@ -5,11 +5,11 @@ public class SceneTransition : CanvasLayer
 {
 	[Export]
 	public Color defaultColor = new Color("ffffff");
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		BV.ST = this;
-    }
-    public async void ChangeScene(string scenepath, string musicpath = "", string dialogue = "")
+	}
+	public async void ChangeScene(string scenepath, string musicpath = "", string dialogue = "")
 	{
 		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 		PackedScene s = ResourceLoader.Load<PackedScene>(scenepath, noCache: true);
