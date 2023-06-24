@@ -47,6 +47,7 @@ public class SceneTransition : CanvasLayer
 			gv.currentSceneDir = scenepath;
 		}
 		animplayer.PlayBackwards("Dissolve");
+		node.QueueFree();
 	}
 
 

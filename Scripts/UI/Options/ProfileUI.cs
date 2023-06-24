@@ -44,6 +44,7 @@ public class ProfileUI : VBoxContainer
     }
     public void onVisibilityChanged()
     {
+        if(!Visible)return;
         SaveData savedata = gv.saveData;
         Stats stats = (Stats)savedata.stats;
         Talisman talisman = (Talisman)stats.talisman;

@@ -1,7 +1,7 @@
 extends Node
 
 
-func handle_event(_event_data, dialog_node):
+func handle_event(event_data, dialog_node):
 	""" 
 		If this event should wait for dialog advance to occur, uncomment the WAITING line
 		If this event should block the dialog from continuing, uncomment the WAITINT_INPUT line
@@ -10,7 +10,10 @@ func handle_event(_event_data, dialog_node):
 	#dialog_node.set_state(dialog_node.state.WAITING)
 	#dialog_node.set_state(dialog_node.state.WAITING_INPUT)
 	
-	pass # fill with event action
+	
+	var q_id = event_data['quest_id']
+	# once you want to continue with the next event
+	QuestHandler.StartQuest(q_id)
 	
 	# once you want to continue with the next event
 	dialog_node._load_next_event()

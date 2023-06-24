@@ -38,7 +38,28 @@ public class GlobalVariable : Node
 	public bool loadPos = false;
 
 	public SceneTransition sceneTransition;
-	
+
+	//ACTIONS
+	[Signal]
+	public delegate void Defeated(string name, int ammount);
+	public void EmitDefeated(string name)
+    {
+		EmitSignal("Defeated", name, 1);
+    }
+	[Signal]
+	public delegate void Interacted(string name, int ammount);
+	public void EmitInteracted(string name)
+    {
+		GD.Print("INERACTED WITH " + name);
+		EmitSignal("Interacted", name, 1);
+		
+    }
+	[Signal]
+	public delegate void GotItem(string name, int ammount);
+	public void EmitGotItem(string name, int ammount = 1)
+	{
+		EmitSignal("GotItem", name, ammount);
+	}
 
 	/// <summary>
 	/// Used to initialize the fight
@@ -225,5 +246,19 @@ public class GlobalVariable : Node
 			npc.SetPathFind(targetPos);
 		}
 
+	}
+	public void CreateNotification(Node parent, string text, float duration = 2.0f, Color c = default)
+    {
+		PackedScene ps = ResourceLoader.Load<PackedScene>("res://Scenes/UI/Notifier.tscn");
+		Notifier n = ps.Instance<Notifier>();
+		parent.AddChild(n);
+		n.Initialize(text, duration, c);
+	}
+	public override void _UnhandledInput(InputEvent @event)
+	{
+		if (@event.IsActionPressed("debug"))
+		{
+			PrintStrayNodes();
+		}
 	}
 }

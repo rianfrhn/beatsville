@@ -1,7 +1,7 @@
 extends Node
 
 
-func handle_event(event_data, dialog_node):
+func handle_event(_event_data, dialog_node):
 	""" 
 		If this event should wait for dialog advance to occur, uncomment the WAITING line
 		If this event should block the dialog from continuing, uncomment the WAITINT_INPUT line

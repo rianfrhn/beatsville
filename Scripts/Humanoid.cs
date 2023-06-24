@@ -84,7 +84,9 @@ public class Humanoid : Interactable
 	public bool faceLeft = false;
 
 	public bool facingLeft = false;
-
+	int xFacing = 0;
+	SceneTreeTween tweening;//forface
+	SceneTreeTween tweening2;//formove
 	public override void _Ready()
 	{
 		if(statsResource != null && statsResource is Stats)
@@ -141,7 +143,8 @@ public class Humanoid : Interactable
 	}
 	public override void _Process(float delta)
 	{
-
+		
+		if(body != null && !(facingLeft && xFacing == -1) && !(!facingLeft && xFacing == 1))
 		AdjustFacing();
 		if (pathing && currentState == status.Idle)
 		{
@@ -195,11 +198,12 @@ public class Humanoid : Interactable
 		else if (trueTarget.x - Position.x > 0) facingLeft = false;
 		if (currentState != status.Idle) return false;
 		float distance = (trueTarget-Position).Length();
-		GD.Print(distance);
 		currentState = status.Moving;
-		SceneTreeTween tweening = GetTree().Root.CreateTween();
-		tweening.TweenProperty(this, "position", trueTarget, AnimSpeed * distance/ 16).SetTrans(Tween.TransitionType.Linear);
-		tweening.TweenCallback(this, "RefreshState");
+
+		if (tweening2 != null) tweening2.Kill();
+		tweening2 = GetTree().CreateTween();
+		tweening2.TweenProperty(this, "position", trueTarget, AnimSpeed * distance/ 16).SetTrans(Tween.TransitionType.Linear);
+		tweening2.TweenCallback(this, "RefreshState");
 		if (animPlayer != null)
 		{
 			if (atkMode)
@@ -252,7 +256,8 @@ public class Humanoid : Interactable
 		raycast.CollideWithAreas = true;
 		raycast.ForceRaycastUpdate();
 		if (raycast.IsColliding()) {
-			Interact((Node)raycast.GetCollider());
+			Node body = (Node)raycast.GetCollider();
+			Interact(body);
 		}
 	}
 	public void Interact(Node obj)
@@ -261,6 +266,7 @@ public class Humanoid : Interactable
 		{
 			Interactable o = (Interactable)obj;
 			o.OpenDialogue((Node2D)this);
+			BV.GV.EmitInteracted(o.Name);
 		}
 	}
 	public async void RefreshState()
@@ -424,16 +430,28 @@ public class Humanoid : Interactable
 		{
 			//sprite.Scale = new Vector2(-1,1);
 			//body.Scale = new Vector2(-1, 1);
-			SceneTreeTween tweening = GetTree().Root.CreateTween();
+			if (tweening != null) tweening.Kill();
+			tweening = GetTree().CreateTween();
 			tweening.TweenProperty(body, "scale", new Vector2(-1, 1), 0.1f).SetTrans(Tween.TransitionType.Sine);
+			tweening.TweenCallback(this, "_delTween");
+			xFacing = -1;
 		}
 		else
 		{
 			//sprite.Scale = new Vector2(1, 1);
 			//body.Scale = new Vector2(1, 1);
-			SceneTreeTween tweening = GetTree().Root.CreateTween();
+			if (tweening != null) tweening.Kill();
+			tweening = GetTree().CreateTween();
 			tweening.TweenProperty(body, "scale", new Vector2(1, 1), 0.1f).SetTrans(Tween.TransitionType.Sine);
+			tweening.TweenCallback(this, "_delTween");
+			xFacing = 1;
+
 		}
+	}
+
+	void _delTween()
+	{
+		tweening.Kill();
 	}
 	public int GetInspirationCount()
 	{
@@ -466,7 +484,7 @@ public class Humanoid : Interactable
 		expBubble.Start(toExpressionString[expression], duration);
 		
 	}
-	
+
 
 
 }

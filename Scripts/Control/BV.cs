@@ -18,5 +18,9 @@ public static class BV
     /// Global Variable
     /// </summary>
     public static GlobalVariable GV = null;
+    /// <summary>
+    /// Global Variable
+    /// </summary>
+    public static QuestHandler QH = null;
 
 }

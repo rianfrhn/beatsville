@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Control/QuestHandler.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/Misc/Quest/Quest.cs" type="Script" id=2]
+[ext_resource path="res://Scripts/Misc/Quest/QGInteract.cs" type="Script" id=3]
+
+[node name="QuestHandler" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Quests" type="Node" parent="."]
+
+[node name="TalkChimera" type="Node" parent="Quests"]
+script = ExtResource( 2 )
+questID = "ch1"
+questName = "Talk To Chimera"
+description = "Interact with Chimera. He's located on the east side of the map with Rei and Lazarus."
+
+[node name="Interact" type="Node" parent="Quests/TalkChimera"]
+script = ExtResource( 3 )
+goalID = "ct1"
+interactableName = "Chimera"
+
+[node name="Activated" type="Node" parent="."]
+
+[node name="Completed" type="Node" parent="."]
+
+[node name="Test" type="Node" parent="."]

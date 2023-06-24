@@ -96,6 +96,7 @@ config/icon="res://icon.png"
 GlobalMusic="*res://Scenes/Control/GlobalMusic.tscn"
 GlobalVariable="*res://Scripts/Control/GlobalVariable.cs"
 SceneTransition="*res://Scenes/UI/SceneTransition.tscn"
+QuestHandler="*res://Scenes/Control/QuestHandler.tscn"
 
 [display]
 

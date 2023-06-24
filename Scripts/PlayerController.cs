@@ -156,14 +156,6 @@ public class PlayerController : Node2D
 				}
 
 			}
-			if (@event.IsActionPressed("debug"))
-			{
-				GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
-				/*
-				Talisman t = ResourceLoader.Load<Talisman>("res://Resources/Talismans/GOD's WILL.tres");
-				gv.saveData.talismans.Add(t);*/
-				gv.saveData.AddXP(5);
-			}
 			if (@event.IsActionPressed("click_right"))
 			{
 
@@ -194,7 +186,7 @@ public class PlayerController : Node2D
 				CreateMarker(new Vector2(x,y));
 			}
 		}
-
+		
 	}
 
 }
