@@ -81,7 +81,7 @@ public class QuestHandler : Node
 	{
 		Godot.Collections.Array nodes;
 		Array<Quest> quests = new Array<Quest>();
-		Node parentNode = GetNodeOrNull("Activated");
+		Node parentNode = activatedNode == null? GetNodeOrNull("Activated"): activatedNode;
 		if (parentNode == null) return quests;
 		nodes = parentNode.GetChildren();
 		foreach (Node item in nodes)
@@ -98,7 +98,7 @@ public class QuestHandler : Node
 	{
 		Godot.Collections.Array nodes;
 		Array<Quest> quests = new Array<Quest>();
-		Node parentNode = GetNodeOrNull("Completed");
+		Node parentNode = completedNode == null? GetNodeOrNull("Completed"): completedNode;
 		if (parentNode == null) return quests;
 		nodes = parentNode.GetChildren();
 		foreach (Node item in nodes)
@@ -136,6 +136,112 @@ public class QuestHandler : Node
 			}
 		}
 		GD.PushWarning("QUEST WITH ID " + id + " NOT FOUND");
+		return null;
+	}
+
+	public void SaveQuests()
+	{
+		/*
+		PackedScene psQuests = new PackedScene();
+		psQuests.Pack(questNode);
+		ResourceSaver.Save("user://unfQ", psQuests);
+		*/
+		foreach(Node q in activatedNode.GetChildren())
+		{
+			foreach(Node n in q.GetChildren())
+			{
+				n.Owner = activatedNode;
+			}
+			q.Owner = activatedNode;
+			
+		}
+		foreach (Node q in completedNode.GetChildren())
+		{
+			foreach (Node n in q.GetChildren())
+			{
+				n.Owner = completedNode;
+			}
+			q.Owner = completedNode;
+		}
+		PackedScene psCompleted = new PackedScene();
+		psCompleted.Pack(completedNode);
+		
+		ResourceSaver.Save("user://compQ.tscn", psCompleted, ResourceSaver.SaverFlags.ReplaceSubresourcePaths);
+		
+
+		PackedScene psActivated = new PackedScene();
+		psActivated.Pack(activatedNode);
+		ResourceSaver.Save("user://actQ.tscn", psActivated, ResourceSaver.SaverFlags.ReplaceSubresourcePaths);
+
+
+
+	}
+	public void LoadQuests()
+	{
+		PackedScene psCompleted = ResourceLoader.Load<PackedScene>("user://compQ.tscn", noCache:true);
+		completedNode.QueueFree();
+		Node comp = psCompleted.Instance();
+
+
+		AddChild(comp);
+		completedNode = comp;
+
+		PackedScene psActivated = ResourceLoader.Load<PackedScene>("user://actQ.tscn", noCache: true);
+		activatedNode.QueueFree();
+		Node actv = psActivated.Instance();
+		AddChild(actv);
+		activatedNode = actv;
+		ValidateQuests();
+		foreach(Node n in actv.GetChildren())
+		{
+			if(n is Quest q)
+			{
+				q.Initialize();
+				q.Connect("Completed", this, "CompleteQuest");
+
+			}
+		}
+		UpdateQuests();
+	}
+	public void ValidateQuests()
+	{
+		foreach(Node n in activatedNode.GetChildren())
+		{
+			if (n is Quest q)
+			{
+				Node duplicate = CheckInQuests(q);
+				if (duplicate != null)
+				{
+					questNode.RemoveChild(duplicate);
+					//activatedNode.AddChild(q);
+				}
+			}
+		}
+		foreach (Node n in completedNode.GetChildren())
+		{
+			if (n is Quest q)
+			{
+				Node duplicate = CheckInQuests(q);
+				if (duplicate != null)
+				{
+					questNode.RemoveChild(duplicate);
+					//completedNode.AddChild(q);
+				}
+			}
+		}
+	}
+	public Node CheckInQuests(Quest quest)
+	{
+		foreach (Node n in questNode.GetChildren())
+		{
+			if (n is Quest q)
+			{
+				if(q.questID == quest.questID)
+				{
+  					return n;
+				}
+			}
+		}
 		return null;
 	}
 

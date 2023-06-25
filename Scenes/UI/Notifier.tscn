@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Theme/MenuTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/GUI/Frame.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/UI/Notifier.cs" type="Script" id=3]
+[ext_resource path="res://Assets/SFX/UI/UI_Select.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Enter"
@@ -71,3 +72,7 @@ bbcode_text = "[center][wave][color=#00ffff]Quest Completed[/color][/wave][/cent
 text = "Quest Completed"
 fit_content_height = true
 scroll_active = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true

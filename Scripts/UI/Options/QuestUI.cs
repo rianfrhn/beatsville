@@ -12,7 +12,6 @@ public class QuestUI : VBoxContainer
     {
         container = GetNodeOrNull<VBoxContainer>("ScrollContainer/ItemList");
         label = GetNodeOrNull<RichTextLabel>("Desc");
-        Connect("visibility_changed", this, "UpdateQuests");
         GD.Print("AAAAAA");
         Connect("visibility_changed", this, "onVisibilityChanged");
     }

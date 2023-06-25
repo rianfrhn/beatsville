@@ -132,6 +132,7 @@ public class GlobalVariable : Node
 	}
 	public void SaveGameData()
 	{
+		BV.QH.SaveQuests();
 		DialogicSharp.Save();
 		saveData.position = currentPlayer.Position;
 		saveData.sceneDirectory = currentSceneDir;
@@ -144,6 +145,7 @@ public class GlobalVariable : Node
 	}
 	public void LoadGameData()
 	{
+		BV.QH.LoadQuests();
 		DialogicSharp.Load();
 		saveData = ResourceLoader.Load<SaveData>("user://save_data.tres");
 		saveData.stats = ResourceLoader.Load("user://stat_data.tres");
@@ -155,6 +157,7 @@ public class GlobalVariable : Node
 	}
 	public void LoadGameData(string dialogue)
 	{
+		BV.QH.LoadQuests();
 		DialogicSharp.Load();
 		saveData = ResourceLoader.Load<SaveData>("user://save_data.tres");
 		saveData.stats = ResourceLoader.Load("user://stat_data.tres");
