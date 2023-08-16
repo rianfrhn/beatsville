@@ -71,14 +71,8 @@
 			"text": "Then lets have at it! "
 		},
 		{
-			"call_node": {
-				"arguments": [
-					"VSChimera"
-				],
-				"method_name": "InitializeFight",
-				"target_node_path": "GlobalVariable"
-			},
-			"event_id": "dialogic_042"
+			"event_id": "start_fight",
+			"resource_file": "res://Resources/Fights/VSChimera.tres"
 		},
 		{
 			"choice": "Nevermind",
@@ -110,14 +104,8 @@
 			"text": "Okay, but I won't go easy this time! "
 		},
 		{
-			"call_node": {
-				"arguments": [
-					"VSChimera"
-				],
-				"method_name": "InitializeFight",
-				"target_node_path": "GlobalVariable"
-			},
-			"event_id": "dialogic_042"
+			"event_id": "start_fight",
+			"resource_file": "res://Resources/Fights/VSChimera.tres"
 		},
 		{
 			"choice": "Nothing",

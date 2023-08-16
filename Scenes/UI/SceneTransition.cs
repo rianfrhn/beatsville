@@ -14,7 +14,7 @@ public class SceneTransition : CanvasLayer
 		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 		PackedScene s = ResourceLoader.Load<PackedScene>(scenepath, noCache: true);
 		Node node = s.Instance();
-
+		DefaultMusic defaultMusic = node.GetNodeOrNull<DefaultMusic>("DefaultMusic");
 
 		ColorRect rect = GetNode<ColorRect>("ColorRect");
 		rect.Color = defaultColor;
@@ -39,8 +39,16 @@ public class SceneTransition : CanvasLayer
 		}
 		GetTree().ChangeScene(scenepath);
 
+		string mp = "";
 		//Turn on music
-		globalmusic.On(musicpath);
+		if((musicpath == null || musicpath == "") && defaultMusic != null && (defaultMusic.musicPath != null || defaultMusic.musicPath != ""))
+        {
+			mp = defaultMusic.musicPath;
+        } else if(musicpath != null || musicpath != "")
+        {
+			mp = musicpath;
+        }
+		globalmusic.On(mp);
 
 		if (node is MapScene)
 		{

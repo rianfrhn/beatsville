@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Welcome to Beatsville.ogg-192cf1d18be836a6812ea366189cc2b0.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/Welcome to Beatsville.ogg"
+dest_files=[ "res://.import/Welcome to Beatsville.ogg-192cf1d18be836a6812ea366189cc2b0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,40 @@
+{
+	"events": [
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You are quite strong.  "
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "However, you are not allowed to proceed. "
+		},
+		{
+			"choice": "My ass",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Bro...  "
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1691563116.json",
+		"name": "FigureTransition"
+	}
+}

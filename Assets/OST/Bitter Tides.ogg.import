@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bitter Tides.ogg-39e3a171164bdb2f0cf428661b10c9d7.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/Bitter Tides.ogg"
+dest_files=[ "res://.import/Bitter Tides.ogg-39e3a171164bdb2f0cf428661b10c9d7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

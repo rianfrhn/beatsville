@@ -7,12 +7,12 @@ public class TriggerNode : Area2D
 
 	[Export]
 	Action action;
+	[Export(PropertyHint.File, "*.tscn")]
+	string sceneDir = "";
+	[Export(PropertyHint.File, "*.tres")]
+	string musicDir = "";
 	[Export]
-	string parameter = "";
-	[Export]
-	string parameter2 = "";
-	[Export]
-	string parameter3 = "";
+	string dialogue = "";
 
 	public override void _Ready()
 	{
@@ -21,18 +21,20 @@ public class TriggerNode : Area2D
 	}
 	private void onPlayerEntered(Node body)
 	{
+		if (!Visible) return;
 		if (!(body is Humanoid plr && plr.isPlayer)) return;
-		if (parameter == "") return;
 		switch (action)
 		{
 			case Action.TriggerDialog:
-				DialogicSharp.Start(parameter);
+				Node dialogueNode = DialogicSharp.Start(dialogue);
+				BV.ST.AddChild(dialogueNode);
 				break;
 			case Action.ChangeScene:
+				if (sceneDir == "") return;
 				GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 				gv.fromScene = GetParent().Name;
 
-				if(parameter == "RUN")
+				if(sceneDir == "RUN")
 				{
 					gv.loadPos = true;
 					gv.LoadGameData("FightRun");
@@ -42,7 +44,7 @@ public class TriggerNode : Area2D
 
 
 				SceneTransition st = GetTree().Root.GetNode<SceneTransition>("SceneTransition");
-				st.ChangeScene(parameter, parameter2, parameter3);
+				st.ChangeScene(sceneDir, musicDir, dialogue);
 				break;
 			default: break;
 		}

@@ -89,7 +89,6 @@ tile_data = PoolIntArray( 1, 0, 0, 3, 0, 0, 5, 0, 0, 7, 0, 0, 9, 0, 0, 11, 0, 0,
 position = Vector2( 392, 125 )
 scale = Vector2( 0.862218, 8.68009 )
 parameter = "res://Scenes/Map/TestRoom2.tscn"
-parameter2 = "res://Resources/Songs/SweetAndTender.tres"
 
 [node name="TriggerNode2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 217, 215 )

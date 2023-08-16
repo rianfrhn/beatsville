@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Do you really think that you could go off that easily, Kal ?  "
+		},
+		{
+			"event_id": "start_fight",
+			"resource_file": "res://Resources/Fights/VSShadow.tres"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1691732799.json",
+		"name": "FigureFight"
+	}
+}

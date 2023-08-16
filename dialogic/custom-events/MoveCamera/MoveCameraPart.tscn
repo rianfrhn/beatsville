@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/dialogic/Editor/Events/Parts/Text/GreyLabel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://dialogic/custom-events/MoveCamera/MoveCameraPart.gd" type="Script" id=2]
+
+[node name="EventPart_Example" type="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="Label" parent="." instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 191.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Move Camera"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_top = 18.0
+margin_right = 191.0
+margin_bottom = 42.0
+
+[node name="Label" parent="HBoxContainer2" instance=ExtResource( 1 )]
+margin_top = 5.0
+margin_right = 16.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "X: "
+
+[node name="XInput" type="SpinBox" parent="HBoxContainer2"]
+margin_left = 20.0
+margin_right = 94.0
+margin_bottom = 24.0
+min_value = -1600.0
+max_value = 1600.0
+rounded = true
+
+[node name="Label2" parent="HBoxContainer2" instance=ExtResource( 1 )]
+margin_left = 98.0
+margin_top = 5.0
+margin_right = 113.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Y: "
+
+[node name="YInput" type="SpinBox" parent="HBoxContainer2"]
+margin_left = 117.0
+margin_right = 191.0
+margin_bottom = 24.0
+min_value = -1600.0
+max_value = 1600.0
+rounded = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+margin_top = 46.0
+margin_right = 191.0
+margin_bottom = 70.0
+
+[node name="Label" parent="HBoxContainer4" instance=ExtResource( 1 )]
+margin_top = 5.0
+margin_right = 55.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Duration"
+
+[node name="DurationInput" type="SpinBox" parent="HBoxContainer4"]
+margin_left = 59.0
+margin_right = 133.0
+margin_bottom = 24.0
+min_value = -1600.0
+max_value = 1600.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+margin_top = 74.0
+margin_right = 191.0
+margin_bottom = 98.0
+
+[node name="Label" parent="HBoxContainer3" instance=ExtResource( 1 )]
+margin_top = 5.0
+margin_right = 51.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Relative"
+
+[node name="RelativeCheckBox" type="CheckBox" parent="HBoxContainer3"]
+margin_left = 167.0
+margin_right = 191.0
+margin_bottom = 24.0
+size_flags_horizontal = 10

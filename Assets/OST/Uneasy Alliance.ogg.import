@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Uneasy Alliance.ogg-4009c2a4fbf29927db980155b27addf2.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/Uneasy Alliance.ogg"
+dest_files=[ "res://.import/Uneasy Alliance.ogg-4009c2a4fbf29927db980155b27addf2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

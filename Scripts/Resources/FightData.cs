@@ -15,6 +15,8 @@ public class FightData : Resource
     public Resource songData;
     [Export]
     public bool isBossFight;
+    [Export]
+    public PackedScene map;
     public string name;
 
     public void Initialize(string name)

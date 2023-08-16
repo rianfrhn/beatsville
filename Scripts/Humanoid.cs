@@ -108,7 +108,7 @@ public class Humanoid : Interactable
 			}
 
 		}
-		body = GetNodeOrNull<Node2D>("Body");
+		body = GetNodeOrNull<Node2D>("Rig");
 		//sprite = GetNodeOrNull<Sprite>("Sprite");
 		worldTileMap = GetParent().GetNodeOrNull<TileMap>("PathTileMap");
 		AstarPathFind = GetNodeOrNull<AStarPath>("AStarPath");
@@ -122,7 +122,7 @@ public class Humanoid : Interactable
 		raycast = this.GetNode<RayCast2D>("RayCast2D");
 		timer = this.GetNode<Timer>("Timer");
 		currentState = status.Idle;
-		AnimSpeed = BV.GM != null ? 48.0f/(BV.GM.songBPM): AnimSpeed;
+		if (atkMode) AnimSpeed = BV.GM != null ? 48.0f/(BV.GM.songBPM): AnimSpeed;
 		facingLeft = faceLeft;
 
 		Connect("Blundered", this, "DecreaseInspiration");
@@ -157,7 +157,6 @@ public class Humanoid : Interactable
 	public void SetPathFind(Vector2 targetPos)
 	{
 		Vector2 tp = CastToGrid(targetPos);
-		GD.Print("Path finding " + GlobalPosition + " to " + targetPos);
 		if (AstarPathFind.SetAstarPath(GlobalPosition, tp))
 		{
 			pathing = true;
@@ -236,7 +235,6 @@ public class Humanoid : Interactable
 		{
 			var targetNode = worldTileMap.MapToWorld(AstarPathFind.pathNodeList[PathTarget]) + AstarPathFind.halfTileSize;
 			GoTo(targetNode, false);
-			GD.Print("Is walking to " + targetNode);
 			if(Position == targetNode)
 			{
 				PathTarget++;
@@ -341,8 +339,10 @@ public class Humanoid : Interactable
 			}
 
 			int baseDmg = skillForm.damage;
-			if (Target.x < Position.x) facingLeft = true;
-			else if (Target.x > Position.x) facingLeft = false;
+			GD.Print("Target " + Target);
+			GD.Print("Position " + Position);
+			if (Target.x < Position.x) { facingLeft = true; }
+			else if (Target.x > Position.x) { facingLeft = false; }
 			SpawnProjectile(Target, skillForm.projectile, baseDmg);
 			inspiration -= projectileCost;
 			EmitSignal("InspirationChanged", inspiration, maxInspiration);
@@ -432,8 +432,7 @@ public class Humanoid : Interactable
 			//body.Scale = new Vector2(-1, 1);
 			if (tweening != null) tweening.Kill();
 			tweening = GetTree().CreateTween();
-			tweening.TweenProperty(body, "scale", new Vector2(-1, 1), 0.1f).SetTrans(Tween.TransitionType.Sine);
-			tweening.TweenCallback(this, "_delTween");
+			tweening.TweenProperty(body, "scale:x", -1.0f, 0.1f).SetTrans(Tween.TransitionType.Sine);
 			xFacing = -1;
 		}
 		else
@@ -442,16 +441,10 @@ public class Humanoid : Interactable
 			//body.Scale = new Vector2(1, 1);
 			if (tweening != null) tweening.Kill();
 			tweening = GetTree().CreateTween();
-			tweening.TweenProperty(body, "scale", new Vector2(1, 1), 0.1f).SetTrans(Tween.TransitionType.Sine);
-			tweening.TweenCallback(this, "_delTween");
+			tweening.TweenProperty(body, "scale:x", 1.0f, 0.1f).SetTrans(Tween.TransitionType.Sine);
 			xFacing = 1;
 
 		}
-	}
-
-	void _delTween()
-	{
-		tweening.Kill();
 	}
 	public int GetInspirationCount()
 	{
@@ -483,6 +476,11 @@ public class Humanoid : Interactable
 		}
 		expBubble.Start(toExpressionString[expression], duration);
 		
+	}
+	
+	public int GetHealth()
+	{
+		return health;
 	}
 
 

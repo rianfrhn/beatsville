@@ -194,6 +194,7 @@ tracks/0/keys = {
 }
 
 [node name="ExpressionBubble" type="Sprite"]
+z_index = 20
 script = ExtResource( 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

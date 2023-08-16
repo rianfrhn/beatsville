@@ -49,6 +49,23 @@ public class FightScene : Node2D
 
 		GlobalMusic globalMusic = BV.GM;
 
+		//Map
+		if(fightData.map != null)
+		{
+			TileMap tm = GetNodeOrNull<TileMap>("TileMap");
+			if (tm != null)
+			{
+				int pos = tm.GetPositionInParent();
+				tm.QueueFree();
+				TileMap newTm = fightData.map.Instance<TileMap>();
+				AddChild(newTm);
+				MoveChild(newTm, pos);
+
+
+
+			}
+		}
+
 		//Load Characters
 
 		player1Instance = fightData.player1.Instance<Humanoid>();
@@ -78,12 +95,13 @@ public class FightScene : Node2D
 		player1Instance.Connect("Defeated", this, "onPlayer1Defeat");
 
 
-		//if (IsBossfight)
-		//{
-		//HealthBar healthbar2 = ResourceLoader.Load<HealthBar>("res://Scenes/UI/HealthBar.tscn")
+		if (IsBossfight)
+		{
+			TileMap barrierTile = GetNodeOrNull<TileMap>("BarrierTileMap");
+			if (barrierTile != null) barrierTile.Visible = true;
+			else barrierTile.Visible = false;
 
-
-		//}
+		}
 		HealthBar healthbar2 = GetNode<HealthBar>("CanvasLayer/HealthBar2");
 		healthbar2.picture.Texture = player2Instance.battlePicture;
 		player2Instance.Connect("HealthChanged", healthbar2, "onHealthChanged");

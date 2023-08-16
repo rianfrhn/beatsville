@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/A New Era.ogg-402a38fa79654efcb0dab3aab8282221.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/A New Era.ogg"
+dest_files=[ "res://.import/A New Era.ogg-402a38fa79654efcb0dab3aab8282221.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

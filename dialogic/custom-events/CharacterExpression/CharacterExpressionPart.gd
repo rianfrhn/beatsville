@@ -11,6 +11,7 @@ onready var duration_input = $HBoxContainer3/Duration
  # used to connect the signals
 func _ready():
 	# e.g. 
+	expression_option.clear()
 	expression_option.add_item("Angry", 0);
 	expression_option.add_item("Calm", 1);
 	expression_option.add_item("Excited", 2);

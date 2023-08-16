@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Scripts/Resources/Stats.cs" type="Script" id=1]
 [ext_resource path="res://Resources/AttackForms/Cards.tres" type="Resource" id=2]
-[ext_resource path="res://Resources/Talismans/Prayer Beads.tres" type="Resource" id=3]
+[ext_resource path="res://Resources/Talismans/Nothing.tres" type="Resource" id=3]
 
 [resource]
 script = ExtResource( 1 )
 baseMaxHealth = 1000
 baseHealthRegen = 10
 baseMaxInspiration = 100
-baseInspirationRegen = 20
+baseInspirationRegen = 10
 baseDefense = 0
 baseStrength = 10
 baseCompetence = 20

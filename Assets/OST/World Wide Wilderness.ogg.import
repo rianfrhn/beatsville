@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/World Wide Wilderness.ogg-1af5df21f5dd81f0f12db977589f3366.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/World Wide Wilderness.ogg"
+dest_files=[ "res://.import/World Wide Wilderness.ogg-1af5df21f5dd81f0f12db977589f3366.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

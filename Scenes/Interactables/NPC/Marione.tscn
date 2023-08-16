@@ -1,18 +1,17 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Weapons/BookWeapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Humanoid.cs" type="Script" id=2]
 [ext_resource path="res://Assets/Interactables/Marione/Idle/marione_idle_0000.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Interactables/Kal/Parts/KalFace.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Interactables/Kal/Parts/KalFaceB.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Interactables/Marione/Parts/MarioneFaceB.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Control/AStarPath.cs" type="Script" id=6]
-[ext_resource path="res://Assets/Interactables/Kal/Parts/KalHair.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Interactables/Kal/Parts/KalBody.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Interactables/Kal/Parts/KalLegL.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Interactables/Kal/Parts/KalHand.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Interactables/Kal/Parts/KalLegR.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Interactables/Kal/Parts/KalHead.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Interactables/Kal/Parts/KalHat.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Interactables/Marione/Parts/MarioneHat.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Interactables/Marione/Parts/MarioneHead.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Interactables/Marione/Parts/MarioneHair.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Interactables/Marione/Parts/MarioneHand.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Interactables/Marione/Parts/MarioneBody.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Interactables/Marione/Parts/MarioneFace.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Interactables/Marione/Parts/MarioneSkirt.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7 )
@@ -27,7 +26,7 @@ resource_name = "Blunder"
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:scale")
+tracks/0/path = NodePath("Rig/Body:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -39,7 +38,7 @@ tracks/0/keys = {
 "values": [ Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body:modulate")
+tracks/1/path = NodePath("Rig/Body:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -56,7 +55,7 @@ resource_name = "Hurt"
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:scale")
+tracks/0/path = NodePath("Rig/Body:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -68,7 +67,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body:modulate")
+tracks/1/path = NodePath("Rig/Body:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -85,7 +84,7 @@ resource_name = "Idle"
 length = 3.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Upper:position")
+tracks/0/path = NodePath("Rig/Body/Upper:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -97,7 +96,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -2 ), Vector2( 0, -1 ), Vector2( 0, -1 ), Vector2( 0, -2 ), Vector2( 0, -2 ), Vector2( 0, -1 ), Vector2( 0, -1 ), Vector2( 0, -2 ), Vector2( 0, -2 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/Middle:position")
+tracks/1/path = NodePath("Rig/Body/Middle:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -109,16 +108,28 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 4 ), Vector2( 0, 4 ), Vector2( 0, 5 ), Vector2( 0, 5 ), Vector2( 0, 4 ), Vector2( 0, 4 ), Vector2( 0, 5 ), Vector2( 0, 5 ), Vector2( 0, 4 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Upper/Head/Face:texture")
+tracks/2/path = NodePath("Rig/Body/Upper/Head/Face:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2.5, 2.7 ),
+"times": PoolRealArray( 0, 2.6, 2.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ) ]
+"values": [ true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Rig/Body/Upper/Head/FaceBlink:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.6, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -126,7 +137,7 @@ resource_name = "Jump"
 length = 0.4
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:position")
+tracks/0/path = NodePath("Rig/Body:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -138,7 +149,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 1 ), Vector2( 0, -5 ), Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/Middle/HandR:rotation_degrees")
+tracks/1/path = NodePath("Rig/Body/Middle/HandR:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -150,7 +161,7 @@ tracks/1/keys = {
 "values": [ 0.0, 0.0, -35.4, 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Middle/HandL:rotation_degrees")
+tracks/2/path = NodePath("Rig/Body/Middle/HandL:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -162,7 +173,7 @@ tracks/2/keys = {
 "values": [ 0.0, 0.0, 41.3, 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Lower/FeetR:rotation_degrees")
+tracks/3/path = NodePath("Rig/Body/Lower/FeetR:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -174,7 +185,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0, -16.3, 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Middle/HandR:position")
+tracks/4/path = NodePath("Rig/Body/Middle/HandR:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -186,7 +197,7 @@ tracks/4/keys = {
 "values": [ Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 3, 0 ), Vector2( 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Middle/HandL:position")
+tracks/5/path = NodePath("Rig/Body/Middle/HandL:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -198,7 +209,7 @@ tracks/5/keys = {
 "values": [ Vector2( -2, 0 ), Vector2( -2, 0 ), Vector2( -4, 0 ), Vector2( -2, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Lower/FeetR:position")
+tracks/6/path = NodePath("Rig/Body/Lower/FeetR:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -210,7 +221,7 @@ tracks/6/keys = {
 "values": [ Vector2( 1, -1 ), Vector2( 1, -1 ), Vector2( 1.5, -1 ), Vector2( 1, -1 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/Lower/FeetL:rotation_degrees")
+tracks/7/path = NodePath("Rig/Body/Lower/FeetL:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -222,7 +233,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0, 26.2, 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/Lower/FeetL:position")
+tracks/8/path = NodePath("Rig/Body/Lower/FeetL:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -234,7 +245,7 @@ tracks/8/keys = {
 "values": [ Vector2( -2, -1 ), Vector2( -2, -1 ), Vector2( -2.5, -1 ), Vector2( -2, -1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/Upper/Head/Hat:position")
+tracks/9/path = NodePath("Rig/Body/Upper/Head/Hat:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -246,7 +257,7 @@ tracks/9/keys = {
 "values": [ Vector2( 0, -4 ), Vector2( 0, -4 ), Vector2( 0, -4.7 ), Vector2( 0, -4 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/Upper/Head/Hat:rotation_degrees")
+tracks/10/path = NodePath("Rig/Body/Upper/Head/Hat:rotation_degrees")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -266,7 +277,7 @@ step = 0.025
 [sub_resource type="Animation" id=8]
 resource_name = "RESET"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Lower/FeetR:position")
+tracks/0/path = NodePath("Rig/Body/Lower/FeetR:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -278,7 +289,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, -1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/Lower/FeetR:rotation_degrees")
+tracks/1/path = NodePath("Rig/Body/Lower/FeetR:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -290,7 +301,7 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Lower/FeetL:position")
+tracks/2/path = NodePath("Rig/Body/Lower/FeetL:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -302,7 +313,7 @@ tracks/2/keys = {
 "values": [ Vector2( -2, -1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Lower/FeetL:rotation_degrees")
+tracks/3/path = NodePath("Rig/Body/Lower/FeetL:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -314,7 +325,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Lower:position")
+tracks/4/path = NodePath("Rig/Body/Lower:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -326,7 +337,7 @@ tracks/4/keys = {
 "values": [ Vector2( 0, 7 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Middle/HandR:position")
+tracks/5/path = NodePath("Rig/Body/Middle/HandR:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -338,7 +349,7 @@ tracks/5/keys = {
 "values": [ Vector2( 1, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Middle/HandR:rotation_degrees")
+tracks/6/path = NodePath("Rig/Body/Middle/HandR:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -350,7 +361,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/Middle/Torso:position")
+tracks/7/path = NodePath("Rig/Body/Middle/Torso:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -362,7 +373,7 @@ tracks/7/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/Middle/HandL:position")
+tracks/8/path = NodePath("Rig/Body/Middle/HandL:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -374,7 +385,7 @@ tracks/8/keys = {
 "values": [ Vector2( -2, 0 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/Middle/HandL:rotation_degrees")
+tracks/9/path = NodePath("Rig/Body/Middle/HandL:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -386,7 +397,7 @@ tracks/9/keys = {
 "values": [ 0.0 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/Middle:position")
+tracks/10/path = NodePath("Rig/Body/Middle:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -398,7 +409,7 @@ tracks/10/keys = {
 "values": [ Vector2( 0, 4 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/Upper/Head:position")
+tracks/11/path = NodePath("Rig/Body/Upper/Head:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -410,7 +421,7 @@ tracks/11/keys = {
 "values": [ Vector2( 0, 4 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/Upper/Head:rotation_degrees")
+tracks/12/path = NodePath("Rig/Body/Upper/Head:rotation_degrees")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -422,7 +433,7 @@ tracks/12/keys = {
 "values": [ 0.0 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/Upper/Head/Face:texture")
+tracks/13/path = NodePath("Rig/Body/Upper/Head/Hair:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -430,11 +441,11 @@ tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 4 ) ]
+"update": 0,
+"values": [ Vector2( 0, -4 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body/Upper/Head/Hair:position")
+tracks/14/path = NodePath("Rig/Body/Upper/Head/Hair:rotation_degrees")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -443,10 +454,10 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -4 ) ]
+"values": [ 0.0 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Body/Upper/Head/Hair:rotation_degrees")
+tracks/15/path = NodePath("Rig/Body/Upper/Head/Hat:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -455,10 +466,10 @@ tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Vector2( 0, -4 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body/Upper/Head/Hat:position")
+tracks/16/path = NodePath("Rig/Body/Upper/Head/Hat:rotation_degrees")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -467,10 +478,10 @@ tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -4 ) ]
+"values": [ 0.0 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/Upper/Head/Hat:rotation_degrees")
+tracks/17/path = NodePath("Rig/Body/Upper:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -479,39 +490,27 @@ tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Vector2( 0, -1.80556 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/Upper:position")
+tracks/18/path = NodePath("Rig/Body:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 0.170755 ),
 "update": 0,
-"values": [ Vector2( 0, -1.80556 ) ]
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body:position")
+tracks/19/path = NodePath("Rig/Body:modulate")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 0.170755 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-tracks/20/type = "value"
-tracks/20/path = NodePath("Body:modulate")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -523,7 +522,7 @@ resource_name = "Walk"
 length = 1.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Middle/HandR:position")
+tracks/0/path = NodePath("Rig/Body/Middle/HandR:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -535,7 +534,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 2, 0 ), Vector2( 2, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/Middle/HandL:position")
+tracks/1/path = NodePath("Rig/Body/Middle/HandL:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -547,7 +546,7 @@ tracks/1/keys = {
 "values": [ Vector2( -2, 0 ), Vector2( -2, 0 ), Vector2( -3, 0 ), Vector2( -3, 0 ), Vector2( -2, 0 ), Vector2( -2, 0 ), Vector2( -1, 0 ), Vector2( -1, 0 ), Vector2( -2, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Lower/FeetR:rotation_degrees")
+tracks/2/path = NodePath("Rig/Body/Lower/FeetR:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -559,7 +558,7 @@ tracks/2/keys = {
 "values": [ 0.0, 0.0, 35.4, 35.4, 0.0, 0.0, -35.4, -35.4, 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Lower/FeetL:rotation_degrees")
+tracks/3/path = NodePath("Rig/Body/Lower/FeetL:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -571,7 +570,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0, -35.4, -35.4, 0.0, 0.0, 35.4, 35.4, 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Upper:position")
+tracks/4/path = NodePath("Rig/Body/Upper:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -583,7 +582,7 @@ tracks/4/keys = {
 "values": [ Vector2( 0, -1 ), Vector2( 0, -1 ), Vector2( 0, -2 ), Vector2( 0, -2 ), Vector2( 0, -1 ), Vector2( 0, -1 ), Vector2( 0, -2 ), Vector2( 0, -2 ), Vector2( 0, -1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Middle:position")
+tracks/5/path = NodePath("Rig/Body/Middle:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -601,62 +600,70 @@ collision_mask = 3
 script = ExtResource( 2 )
 dialogue = "MarioneTest"
 
-[node name="Body" type="Node2D" parent="."]
+[node name="Rig" type="Node2D" parent="."]
 
-[node name="Lower" type="Node2D" parent="Body"]
+[node name="Body" type="Node2D" parent="Rig"]
+
+[node name="Lower" type="Node2D" parent="Rig/Body"]
 position = Vector2( 0, 7 )
 
-[node name="FeetR" type="Sprite" parent="Body/Lower"]
+[node name="FeetR" type="Sprite" parent="Rig/Body/Lower"]
 position = Vector2( 1, -1 )
-texture = ExtResource( 11 )
 offset = Vector2( 1, 1 )
 
-[node name="FeetL" type="Sprite" parent="Body/Lower"]
+[node name="FeetL" type="Sprite" parent="Rig/Body/Lower"]
 position = Vector2( -2, -1 )
-texture = ExtResource( 9 )
 offset = Vector2( 0, 1 )
 
-[node name="Middle" type="Node2D" parent="Body"]
+[node name="Sprite" type="Sprite" parent="Rig/Body/Lower"]
+texture = ExtResource( 13 )
+
+[node name="Middle" type="Node2D" parent="Rig/Body"]
 position = Vector2( 0, 4 )
 
-[node name="HandR" type="Sprite" parent="Body/Middle"]
+[node name="HandR" type="Sprite" parent="Rig/Body/Middle"]
 position = Vector2( 1, 0 )
 z_index = -1
 texture = ExtResource( 10 )
 offset = Vector2( 2, 1 )
 
-[node name="Torso" type="Sprite" parent="Body/Middle"]
-texture = ExtResource( 8 )
+[node name="Torso" type="Sprite" parent="Rig/Body/Middle"]
+texture = ExtResource( 11 )
 
-[node name="HandL" type="Sprite" parent="Body/Middle"]
+[node name="HandL" type="Sprite" parent="Rig/Body/Middle"]
 position = Vector2( -2, 0 )
 z_index = 1
 texture = ExtResource( 10 )
 offset = Vector2( -2, 1 )
 
-[node name="Upper" type="Node2D" parent="Body"]
-position = Vector2( 0, -2 )
+[node name="Upper" type="Node2D" parent="Rig/Body"]
+position = Vector2( 0, -1.80556 )
 
-[node name="Head" type="Sprite" parent="Body/Upper"]
+[node name="Head" type="Sprite" parent="Rig/Body/Upper"]
 position = Vector2( 0, 4 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, -3 )
+
+[node name="FaceBlink" type="Sprite" parent="Rig/Body/Upper/Head"]
+texture = ExtResource( 5 )
+offset = Vector2( 0, -3 )
+
+[node name="Face" type="Sprite" parent="Rig/Body/Upper/Head"]
+visible = false
 texture = ExtResource( 12 )
-offset = Vector2( 1, -3 )
+offset = Vector2( 0, -3 )
 
-[node name="Face" type="Sprite" parent="Body/Upper/Head"]
-texture = ExtResource( 4 )
-offset = Vector2( 1, -3 )
+[node name="Hair" type="Sprite" parent="Rig/Body/Upper/Head"]
+position = Vector2( 0, -4 )
+texture = ExtResource( 9 )
+offset = Vector2( 0, 2 )
 
-[node name="Hair" type="Sprite" parent="Body/Upper/Head"]
+[node name="Hat" type="Sprite" parent="Rig/Body/Upper/Head"]
 position = Vector2( 0, -4 )
 texture = ExtResource( 7 )
+offset = Vector2( 0, -2 )
 
-[node name="Hat" type="Sprite" parent="Body/Upper/Head"]
-position = Vector2( 0, -4 )
-texture = ExtResource( 13 )
-offset = Vector2( 0, -1 )
-
-[node name="Weapon" parent="Body" instance=ExtResource( 1 )]
-visible = false
+[node name="Weapon" parent="Rig/Body" instance=ExtResource( 1 )]
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/In The Beningging.ogg-6b2fdb59ecdb199d9a42fc41412e1ebb.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/In The Beningging.ogg"
+dest_files=[ "res://.import/In The Beningging.ogg-6b2fdb59ecdb199d9a42fc41412e1ebb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

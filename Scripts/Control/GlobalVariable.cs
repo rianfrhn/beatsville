@@ -38,6 +38,9 @@ public class GlobalVariable : Node
 	public bool loadPos = false;
 
 	public SceneTransition sceneTransition;
+	[Signal]
+	public delegate void UpdateEvent(); //ini buat ngeupdate yang ada di definition dialogic
+	public bool canMove = true; //Pas dialogic event, ini buat nentuin bisa move apa kg
 
 	//ACTIONS
 	[Signal]
@@ -83,8 +86,8 @@ public class GlobalVariable : Node
 	*/
 	public void InitializeFight(string resName)
     {
-		SaveGameData();
-		FightData fd = ResourceLoader.Load<FightData>("res://Resources/Fights/" + resName + ".tres");
+		//SaveGameData();
+		FightData fd = ResourceLoader.Load<FightData>(resName);
 		if(fd!= null)
 		{
 			fd.Initialize(resName);
@@ -147,7 +150,7 @@ public class GlobalVariable : Node
 	{
 		BV.QH.LoadQuests();
 		DialogicSharp.Load();
-		saveData = ResourceLoader.Load<SaveData>("user://save_data.tres");
+		saveData = ResourceLoader.Load<SaveData>("user://save_data.tres", noCache: true);
 		saveData.stats = ResourceLoader.Load("user://stat_data.tres");
 		playerStat = (Stats)saveData.stats;
 		GD.Print("Load Data, talisman is " + ((Talisman)((Stats)saveData.stats).talisman).name);
@@ -169,6 +172,7 @@ public class GlobalVariable : Node
 	}
 	public void NewGameData()
 	{
+		BV.QH.ResetQuests();
 		DialogicSharp.ResetSaves();
 		saveData = ResourceLoader.Load<SaveData>("res://Resources/DefaultPlayerData.tres");
 		playerStat = (Stats)saveData.stats;
@@ -177,6 +181,7 @@ public class GlobalVariable : Node
 	}
 	public void NewTestGameData()
 	{
+		BV.QH.ResetQuests();
 		DialogicSharp.ResetSaves();
 		saveData = ResourceLoader.Load<SaveData>("res://Resources/DebugPlayerData.tres");
 		playerStat = (Stats)saveData.stats;
@@ -225,7 +230,7 @@ public class GlobalVariable : Node
 				selectedExpression = Humanoid.Expressions.Surprised; break;
 			case "Wrong":
 				selectedExpression = Humanoid.Expressions.Wrong; break;
-			default: GD.Print("Expression " + expression+ " Not Found!"); return; break;
+			default: GD.Print("Expression " + expression+ " Not Found!"); return;
 		}
 		npc.Express(selectedExpression, duration);
     }
@@ -250,6 +255,21 @@ public class GlobalVariable : Node
 		}
 
 	}
+	SceneTreeTween cameratweener;
+	public void MoveCamera(int tX, int tY, bool relative, float duration)
+	{
+		if (currentCamera == null || currentPlayer == null) return;
+		Vector2 t = new Vector2(tX, tY);
+        if (!relative)
+        {
+			t -= currentPlayer.GlobalPosition;
+        }
+		if (cameratweener != null) cameratweener.Kill();
+		cameratweener = GetTree().CreateTween();
+		cameratweener.TweenProperty(currentCamera, "position", t, duration);
+
+
+    }
 	public void CreateNotification(Node parent, string text, float duration = 2.0f, Color c = default)
     {
 		PackedScene ps = ResourceLoader.Load<PackedScene>("res://Scenes/UI/Notifier.tscn");
@@ -264,4 +284,8 @@ public class GlobalVariable : Node
 			PrintStrayNodes();
 		}
 	}
+	public void OnUpdateEvent()
+    {
+		SaveGameData();
+    }
 }

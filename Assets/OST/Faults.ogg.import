@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Faults.ogg-2a99fbc284b943921223d7990bff2336.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/Faults.ogg"
+dest_files=[ "res://.import/Faults.ogg-2a99fbc284b943921223d7990bff2336.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

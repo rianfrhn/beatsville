@@ -62,6 +62,18 @@
 			"name": "TW2ReiCompliment",
 			"type": 0,
 			"value": "0"
+		},
+		{
+			"id": "1691559378-484",
+			"name": "TalkedFigure1",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1691662025-528",
+			"name": "EncounteredMarione",
+			"type": 0,
+			"value": "0"
 		}
 	]
 }

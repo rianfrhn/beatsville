@@ -19,7 +19,6 @@ public class MapScene : Node2D
 
 		if (gv.fromScene == null || gv.fromScene == "") return;
 		Position2D targetPosition = GetNodeOrNull<Position2D>(gv.fromScene);
-		GD.Print("Loading from other scene, pos: "+targetPosition.Position);
 		if(targetPosition != null)
 		{
 			player.Position = targetPosition.Position;

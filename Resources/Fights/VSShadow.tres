@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Interactables/NPC/SKal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/FightTileMaps/MemoryFight.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Resources/FightData.cs" type="Script" id=4]
+[ext_resource path="res://Resources/Songs/InTheBeningging.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 4 )
+moneyGain = 0
+xpGain = 0
+player1 = ExtResource( 3 )
+player2 = ExtResource( 1 )
+songData = ExtResource( 5 )
+isBossFight = true
+map = ExtResource( 2 )

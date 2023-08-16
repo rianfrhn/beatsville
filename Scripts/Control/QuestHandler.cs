@@ -9,8 +9,10 @@ public class QuestHandler : Node
 	public Array<Quest> completedQuests;
 
 	public Node questNode;
+	public Node questNodeDefault;
 	public Node activatedNode;
 	public Node completedNode;
+
 	[Signal]
 	public delegate void QuestActivated(string id);
 
@@ -53,6 +55,8 @@ public class QuestHandler : Node
 		activatedNode = GetNodeOrNull<Node>("Activated");
 		completedNode = GetNodeOrNull<Node>("Completed");
 		UpdateQuests();
+		questNodeDefault = questNode.Duplicate();
+		
 		//StartQuest("ch1");
 	}
 	public void UpdateQuests()
@@ -65,7 +69,7 @@ public class QuestHandler : Node
 	{
 		Godot.Collections.Array nodes;
 		Array<Quest> quests = new Array<Quest>();
-		Node parentNode = GetNodeOrNull("Quests");
+		Node parentNode = questNode == null? GetNodeOrNull("Quests") : questNode;
 		if (parentNode == null) return quests;
 		nodes = parentNode.GetChildren();
 		foreach (Node item in nodes)
@@ -137,6 +141,23 @@ public class QuestHandler : Node
 		}
 		GD.PushWarning("QUEST WITH ID " + id + " NOT FOUND");
 		return null;
+	}
+	public void ResetQuests()
+	{
+		questNode.QueueFree();
+		foreach(Node n in activatedNode.GetChildren())
+		{
+			n.QueueFree();
+		}
+		foreach (Node n in completedNode.GetChildren())
+		{
+			n.QueueFree();
+		}
+		Node rollbackNode = questNodeDefault.Duplicate();
+		questNode = rollbackNode;
+		AddChild(rollbackNode);
+		UpdateQuests();
+
 	}
 
 	public void SaveQuests()

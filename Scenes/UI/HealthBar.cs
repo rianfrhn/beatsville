@@ -38,13 +38,3 @@ public class HealthBar : Control
 
 }
 
-
-
-
-
-
-
-
-
-
-

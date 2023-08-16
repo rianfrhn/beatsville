@@ -98,6 +98,7 @@ public class GlobalMusic : Node
 	{
 		
 		songDataRes = ResourceLoader.Load<SongData>(musicdir);
+		if (songDataRes == null) return;
 		if(playing == 0)
 		{
 			playing = 1;
@@ -112,6 +113,7 @@ public class GlobalMusic : Node
 		}
 		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 		gv.currentMusic = musicdir;
+		EmitSignal("SongChanged");
 	}
 	public void Reset()
 	{
@@ -130,6 +132,7 @@ public class GlobalMusic : Node
 			audioStreams[playing].Play();
 			GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 			gv.currentMusic = musicdir;
+			EmitSignal("SongChanged");
 		}
 		animplayer.Play("Fade" + (playing + 1));
 	}

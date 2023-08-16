@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Misc/EventAction.cs" type="Script" id=1]
+
+[node name="EventAction" type="Node"]
+script = ExtResource( 1 )
+definition = "TalkedFigure1"
+value = "1"

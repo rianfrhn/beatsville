@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/The New Beginning.ogg-1b481f17faefa449b50683185a6d91ae.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/The New Beginning.ogg"
+dest_files=[ "res://.import/The New Beginning.ogg-1b481f17faefa449b50683185a6d91ae.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

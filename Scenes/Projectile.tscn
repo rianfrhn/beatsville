@@ -260,7 +260,7 @@ draw_order = 1
 process_material = ExtResource( 12 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 7 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

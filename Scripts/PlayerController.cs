@@ -42,6 +42,7 @@ public class PlayerController : Node2D
 		if (!player.atkMode && player.currentState != Humanoid.status.Moving)
 		{
 			player.AnimSpeed = Input.IsActionPressed("sprint") ? 0.2f : 0.3f;
+			if (!BV.GV.canMove) return;
 			if (Input.IsActionPressed("ui_left"))
 			{
 				player.Move(Vector2.Left * 16);
@@ -179,6 +180,7 @@ public class PlayerController : Node2D
 			}
             if (@event.IsActionPressed("click_left"))
             {
+				if (!BV.GV.canMove) return;
 				Vector2 GMP = GetGlobalMousePosition();
 				float x = GMP.x - (GMP.x % 16) + 8;
 				float y = GMP.y - (GMP.y % 16) + 8;

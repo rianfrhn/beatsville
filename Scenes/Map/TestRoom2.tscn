@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/GroundTile/WildernessTiles/GrassTiles.tres" type="TileSet" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/Interactables/NPC/Chimera.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Tiles/PathTiles.tres" type="TileSet" id=11]
 [ext_resource path="res://Scripts/Map/AnimatedTiles.cs" type="Script" id=12]
+[ext_resource path="res://Scenes/Misc/DefaultMusic.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7 )
@@ -39,8 +40,6 @@ animatedTileIDs = [ 1, 2, 3 ]
 [node name="TriggerNode" parent="." instance=ExtResource( 5 )]
 position = Vector2( 8, 87 )
 scale = Vector2( 0.616796, 7.01698 )
-parameter = "res://Scenes/TestRoom.tscn"
-parameter2 = "res://Resources/Songs/DireGuardian.tres"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 24, 72 )
@@ -106,3 +105,6 @@ cell_size = Vector2( 16, 16 )
 collision_mask = 6
 format = 1
 tile_data = PoolIntArray( 9, 0, 0, 13, 0, 0, 15, 0, 0, 17, 0, 0, 19, 0, 0, 21, 0, 0, 23, 0, 0, 25, 0, 0, 65536, 0, 0, 65538, 0, 0, 65540, 0, 0, 65542, 0, 0, 65544, 0, 0, 65546, 0, 0, 65548, 0, 0, 65550, 0, 0, 65552, 0, 0, 65554, 0, 0, 65556, 0, 0, 65558, 0, 0, 65560, 0, 0, 65562, 0, 0, 131073, 0, 0, 131075, 0, 0, 131077, 0, 0, 131079, 0, 0, 131081, 0, 0, 131083, 0, 0, 131099, 0, 0, 196610, 0, 0, 196612, 0, 0, 196634, 0, 0, 262171, 0, 0, 327706, 0, 0, 393243, 0, 0, 458778, 0, 0, 524315, 0, 0, 589824, 0, 0, 589826, 0, 0, 589828, 0, 0, 589850, 0, 0, 655361, 0, 0, 655363, 0, 0, 655365, 0, 0, 655387, 0, 0, 720896, 0, 0, 720898, 0, 0, 720900, 0, 0, 720902, 0, 0, 720904, 0, 0, 720906, 0, 0, 720908, 0, 0, 720910, 0, 0, 720912, 0, 0, 720914, 0, 0, 720916, 0, 0, 720918, 0, 0, 720920, 0, 0, 720922, 0, 0, 786433, 0, 0, 786435, 0, 0, 786437, 0, 0, 786439, 0, 0, 786441, 0, 0, 786443, 0, 0, 786445, 0, 0, 786447, 0, 0, 786449, 0, 0, 786451, 0, 0, 786453, 0, 0, 786455, 0, 0, 786457, 0, 0 )
+
+[node name="DefaultMusic" parent="." instance=ExtResource( 13 )]
+musicPath = "res://Resources/Songs/SweetAndTender.tres"

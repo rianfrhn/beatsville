@@ -1,0 +1,224 @@
+{
+	"events": [
+		{
+			"enable_movement": false,
+			"event_id": "configure_movement"
+		},
+		{
+			"duration": 8,
+			"event_id": "move_camera",
+			"is_relative": false,
+			"posx": 584,
+			"posy": 88
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 6
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Sparky",
+			"posx": 632,
+			"posy": 72
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 2
+		},
+		{
+			"event_id": "change_song",
+			"resource_file": "res://Resources/Songs/HerbsAndMedicine.tres"
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yo Marione. "
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Are you done with the flowers? "
+		},
+		{
+			"duration": 3,
+			"event_id": "event_bv_ce",
+			"expression": "Poker",
+			"name": "Marione"
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Please, I'm not even close! "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What's the big deal anyway?? "
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Azka will be very upset, you know. "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You dont even like reading books! Why are you so hyped up all of a sudden? "
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "He rarely invites us over... We should pay him a visit once in a while "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yeah, you go on ahead. These flowers don't water themselves! "
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 0.1
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Unless...... "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Shut up. "
+		},
+		{
+			"block_input": false,
+			"event_id": "dialogic_050",
+			"wait_time": 0.1
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ok. "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'll be there when I'm finished! "
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Sparky",
+			"posx": 728,
+			"posy": 72
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": true,
+			"name": "Marione",
+			"posx": -32,
+			"posy": 0
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#aaaaaa]Sparky and Marione huh?[/color] "
+		},
+		{
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "Surprised",
+			"name": "Marione"
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Marione",
+			"posx": 488,
+			"posy": 120
+		},
+		{
+			"duration": 4,
+			"event_id": "move_camera",
+			"is_relative": false,
+			"posx": 440,
+			"posy": 120
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 5
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "no... "
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Marione",
+			"posx": 728,
+			"posy": 72
+		},
+		{
+			"event_id": "change_song",
+			"resource_file": "res://Resources/Songs/Silence.tres"
+		},
+		{
+			"duration": 3,
+			"event_id": "move_camera",
+			"is_relative": true,
+			"posx": 0,
+			"posy": 0
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 3
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#aaaaaa]What was that all about?[/color] "
+		},
+		{
+			"enable_movement": true,
+			"event_id": "configure_movement"
+		},
+		{
+			"definition": "1691662025-528",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"event_id": "update_event"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1691642680.json",
+		"name": "MarioneEncounter"
+	}
+}

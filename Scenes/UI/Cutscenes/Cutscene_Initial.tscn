@@ -8,7 +8,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Animation"
-length = 65.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AudioStreamPlayer:stream")
 tracks/0/interp = 1
@@ -96,8 +96,7 @@ tracks/6/keys = {
 
 [node name="Cutscene" type="CanvasLayer"]
 script = ExtResource( 5 )
-sceneDirectory = "res://Scenes/TestRoom.tscn"
-musicDirectory = "res://Resources/Songs/DireGuardian.tres"
+sceneDirectory = "res://Scenes/Map/Memory/Start.tscn"
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -119,9 +118,8 @@ rect_clip_content = false
 size_flags_horizontal = 5
 size_flags_vertical = 3
 bbcode_enabled = true
-bbcode_text = "[center]All before disaster struck. "
+bbcode_text = "[center]"
 meta_underlined = false
-text = "All before disaster struck. "
 fit_content_height = true
 scroll_active = false
 
