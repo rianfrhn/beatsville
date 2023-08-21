@@ -87,6 +87,8 @@ public class Humanoid : Interactable
 	int xFacing = 0;
 	SceneTreeTween tweening;//forface
 	SceneTreeTween tweening2;//formove
+
+	public int attackCombo = 0;
 	public override void _Ready()
 	{
 		if(statsResource != null && statsResource is Stats)
@@ -139,7 +141,7 @@ public class Humanoid : Interactable
 		toExpressionString.Add(Expressions.Surprised, "Surprised");
 		toExpressionString.Add(Expressions.Wrong, "Wrong");
 
-		//RefreshState();
+		RefreshState();
 	}
 	public override void _Process(float delta)
 	{
@@ -207,6 +209,7 @@ public class Humanoid : Interactable
 		{
 			if (atkMode)
 			{
+				attackCombo = 0;
 				if (animPlayer.CurrentAnimation != "Jump")
 					animPlayer.Play("Jump");
 			}
@@ -263,7 +266,7 @@ public class Humanoid : Interactable
 		if (obj is Interactable) 
 		{
 			Interactable o = (Interactable)obj;
-			o.OpenDialogue((Node2D)this);
+			o.OpenDialogue(this);
 			BV.GV.EmitInteracted(o.Name);
 		}
 	}
@@ -280,14 +283,13 @@ public class Humanoid : Interactable
 		await ToSignal(animPlayer, "animation_finished");
 		animPlayer.Play("Idle");
 	}
-	void SpawnProjectile(Vector2 target, PackedScene projectileScene, int basedmg)
+	void SpawnProjectile(Vector2 target, Projectile proj, int basedmg)
 	{
 
 		if (currentState == status.Idle)
 		{
 			currentState = status.Attacking;
 			Viewport root = GetTree().Root;
-			Projectile proj = (Projectile)projectileScene.Instance();
 			if (isPlayer)
 			{
 				proj.SetCollisionMaskBit(2, true);
@@ -313,42 +315,54 @@ public class Humanoid : Interactable
 	/// <param name="skill"></param>
 	public bool Attack(Vector2 Target, int skill = -1)
 	{
+		
 		int selectedSkill = skill == -1 ? this.selectedSkill : skill;
 		if (selectedSkill > skillForms.Count) return false;
+
 		SkillForm skillForm = skillForms[selectedSkill];
 		int projectileCost = skillForm.cost;
-		string animationName = "Attack";
-		if(skillForm.castingAnimation != null && atkAnimPlayer != null)
-		{
-			Animation a = skillForm.castingAnimation;
-			string skillName = a.ResourceName;
-			if (!atkAnimPlayer.HasAnimation(skillName))
-			{
-				atkAnimPlayer.AddAnimation(skillName, a);
-			}
-			animationName = skillName;
-		}
+
+		//Check combo
+		if (skillForm.projectiles.Count == 0) return false;
+		if (attackCombo >= skillForm.projectiles.Count) attackCombo = 0;
+
+		PackedScene projectile = skillForm.projectiles[attackCombo];
+		
 		if(inspiration - projectileCost >= 0)
 		{
-			if(atkAnimPlayer!= null)
-			{
-				atkAnimPlayer.PlaybackSpeed = 1 / (((float)skillForm.duration - 1) * 60.0f / BV.GM.songBPM + 50.0f / BV.GM.songBPM);
-				atkAnimPlayer.Seek(0, true);
-				atkAnimPlayer.Play(animationName);
-
-			}
-
+			Projectile p = projectile.Instance<Projectile>();
 			int baseDmg = skillForm.damage;
-			GD.Print("Target " + Target);
-			GD.Print("Position " + Position);
+			//GD.Print("Target " + Target);
+			//GD.Print("Position " + Position);
 			if (Target.x < Position.x) { facingLeft = true; }
 			else if (Target.x > Position.x) { facingLeft = false; }
-			SpawnProjectile(Target, skillForm.projectile, baseDmg);
+			SpawnProjectile(Target, p, baseDmg);
 			inspiration -= projectileCost;
 			EmitSignal("InspirationChanged", inspiration, maxInspiration);
-			timer.WaitTime = ((float)skillForm.duration-1)  * 60.0f / BV.GM.songBPM + 45.0f / BV.GM.songBPM;
+			timer.WaitTime = 45.0f / BV.GM.songBPM;
 			if (!timer.IsConnected("timeout", this, "RefreshState")) { timer.Connect("timeout", this, "RefreshState"); }
 			timer.Start();
+
+			if (atkAnimPlayer != null)
+			{
+				string animationName = "Attack";
+
+				if (p.castingAnimation != null)
+				{
+					Animation a = p.castingAnimation;
+					string skillName = a.ResourceName;
+					if (!atkAnimPlayer.HasAnimation(skillName))
+					{
+						atkAnimPlayer.AddAnimation(skillName, a);
+					}
+					animationName = skillName;
+				}
+
+				atkAnimPlayer.PlaybackSpeed = 1 / (55.0f / BV.GM.songBPM);
+				atkAnimPlayer.Seek(0, true);
+				atkAnimPlayer.Play(animationName);
+			}
+			attackCombo++;
 			return true;
 		}
 		else
@@ -385,6 +399,7 @@ public class Humanoid : Interactable
 	public void RegenInspiration()
 	{
 		if (currentState != status.Idle) return;
+		attackCombo = 0;
 		if(inspiration < maxInspiration)
 		{
 			inspiration += inspirationRegenRate;
@@ -458,7 +473,7 @@ public class Humanoid : Interactable
 	{
 		Express(Expressions.Wrong);
 		animPlayer.Play("Blunder");
-		
+		attackCombo = 0;
 	}
 
 	public void Express(Expressions expression, float duration = 1.0f)

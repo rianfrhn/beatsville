@@ -1,9 +1,8 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Projectiles/MoonlitSonata2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Resources/SkillForm.cs" type="Script" id=2]
 [ext_resource path="res://Assets/Projectiles/MoonlitRune/Moonlit2Img.png" type="Texture" id=3]
-[ext_resource path="res://Animations/Kal/BookSummon.tres" type="Animation" id=4]
 
 [resource]
 script = ExtResource( 2 )
@@ -11,8 +10,7 @@ id = 0
 name = "Moonlit Sonata Mvt.2"
 displayPic = ExtResource( 3 )
 projectile = ExtResource( 1 )
-duration = 2
 cost = 30
 damage = 10
 desc = "Casts a thunder on a desired location."
-castingAnimation = ExtResource( 4 )
+projectiles = null

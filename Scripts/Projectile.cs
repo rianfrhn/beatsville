@@ -3,6 +3,8 @@ using System;
 
 public abstract class Projectile : Area2D
 {
+	[Export]
+	public Animation castingAnimation;
 	public int stunDur = 1;
 	public int damage = 50;
 	public int strength;
@@ -34,6 +36,7 @@ public abstract class Projectile : Area2D
 		}
 		BV.GM.Connect("EmitBeat", this, "Move");
 		Connect("area_entered", this, "onHit");
+		Connect("body_entered", this, "onHit");
 	}
 	public int RandomizeDamage()
 	{

@@ -1,0 +1,133 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/FX/Ray16x16Mid.png" type="Texture" id=1]
+[ext_resource path="res://Assets/FX/Ray16x16Start.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/ProjectileBehaviors/Moonlit_Sonata3.cs" type="Script" id=3]
+[ext_resource path="res://Animations/Kal/BookOpenAttack.tres" type="Animation" id=4]
+
+[sub_resource type="Animation" id=21]
+resource_name = "Collide"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( -0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "Step1"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ray:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 0.95 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true ]
+}
+
+[sub_resource type="RayShape2D" id=22]
+length = 321.0
+
+[node name="MoonlitSonata" type="Area2D"]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource( 3 )
+castingAnimation = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Collide = SubResource( 21 )
+anims/RESET = SubResource( 17 )
+anims/Step1 = SubResource( 18 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[node name="Ray" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+rotation = 1.5708
+
+[node name="Sprite" type="Sprite" parent="Ray"]
+texture = ExtResource( 2 )
+offset = Vector2( 0, -8 )
+
+[node name="Sprite2" type="Sprite" parent="Ray"]
+position = Vector2( 0, -16 )
+scale = Vector2( 1, 20 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -8 )
+
+[node name="Sprite3" type="Sprite" parent="Ray"]
+position = Vector2( 0, -336 )
+rotation = 3.14159
+texture = ExtResource( 2 )
+offset = Vector2( 0, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource( 22 )
+disabled = true

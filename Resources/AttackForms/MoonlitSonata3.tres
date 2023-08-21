@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Projectiles/MS3/MoonlitSonata3Start.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Resources/SkillForm.cs" type="Script" id=2]
+[ext_resource path="res://Assets/Projectiles/MoonlitRune/Moonlit2Img.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Projectiles/MS3/MoonlitSonata3Fire.tscn" type="PackedScene" id=4]
+
+[resource]
+script = ExtResource( 2 )
+id = 0
+name = "Moonlit Sonata Mvt.3"
+displayPic = ExtResource( 3 )
+cost = 30
+damage = 10
+desc = "Fires a Beam of Ray that shoots vertically, dealing massive damage"
+projectiles = [ ExtResource( 1 ), ExtResource( 4 ) ]

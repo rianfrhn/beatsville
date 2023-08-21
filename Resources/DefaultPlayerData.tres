@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://Resources/Stats/DefaultPlayerStats.tres" type="Resource" id=1]
 [ext_resource path="res://Scripts/Resources/Playerdata/SaveData.cs" type="Script" id=2]
+[ext_resource path="res://Resources/AttackForms/MoonlitSonata3.tres" type="Resource" id=3]
 [ext_resource path="res://Resources/Talismans/Nothing.tres" type="Resource" id=4]
 [ext_resource path="res://Resources/AttackForms/Cards.tres" type="Resource" id=7]
 [ext_resource path="res://Resources/AttackForms/Fist.tres" type="Resource" id=8]
@@ -16,7 +17,7 @@ talismans = [ ExtResource( 4 ) ]
 talismanEquippedId = 0
 scriptures = [  ]
 scriptureEquippedId = 0
-skillForms = [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 9 ) ]
+skillForms = [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 3 ) ]
 skill1EquippedId = 0
 skill2EquippedId = 0
 skill3EquippedId = 0

@@ -1,9 +1,11 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Animations/Kal/BookSummon.tres" type="Animation" id=1]
 [ext_resource path="res://Scripts/PlayerController.cs" type="Script" id=2]
 [ext_resource path="res://Scripts/Humanoid.cs" type="Script" id=3]
 [ext_resource path="res://Scenes/Weapons/BookWeapon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Animations/Kal/BookOpen.tres" type="Animation" id=5]
+[ext_resource path="res://Animations/Kal/BookOpenAttack.tres" type="Animation" id=6]
 [ext_resource path="res://Assets/Interactables/Kal/Parts/KalFace.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Interactables/Kal/Parts/KalFaceB.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Interactables/Kal/Parts/KalHair.png" type="Texture" id=11]
@@ -765,7 +767,9 @@ texture = ExtResource( 19 )
 offset = Vector2( 0, -1 )
 
 [node name="Weapon" parent="Rig/Body" instance=ExtResource( 4 )]
-position = Vector2( 12, -3 )
+visible = false
+position = Vector2( 10, 2 )
+rotation = 1.5708
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 visible = false
@@ -816,6 +820,8 @@ anims/Walk = SubResource( 33 )
 
 [node name="AttackAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack = SubResource( 35 )
+anims/BookOpen = ExtResource( 5 )
+anims/BookOpenAttack = ExtResource( 6 )
 anims/BookSummon = ExtResource( 1 )
 
 [editable path="Rig/Body/Weapon"]

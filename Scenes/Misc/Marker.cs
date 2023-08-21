@@ -11,6 +11,6 @@ public class Marker : Sprite
 		
 	}
 	public void on_anim_finished(string _anim_name){
-		//QueueFree();
+		QueueFree();
 	}
 }
