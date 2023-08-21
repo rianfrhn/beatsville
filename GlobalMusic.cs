@@ -222,7 +222,7 @@ public class GlobalMusic : Node
 		if (inWhatBeat != -1)
 		{
 			//EmitSignal("EmitBeat", inWhatBeat);
-			GD.Print("Moved by player at " + inWhatBeat);
+			//GD.Print("Moved by player at " + inWhatBeat);
 			plrMoved = true;
 			cooldown = true;
 		}

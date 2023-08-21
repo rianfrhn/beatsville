@@ -70,10 +70,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.6, 0.95 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.15, 0.2, 0.35, 0.4, 0.55, 0.6, 0.95 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.792157, 0.603922, 1, 0.890196 ), Color( 1, 1, 1, 1 ), Color( 0.662745, 0.352941, 1, 0.937255 ), Color( 1, 1, 1, 1 ), Color( 0.662745, 0.352941, 1, 0.937255 ), Color( 1, 1, 1, 1 ), Color( 0.290196, 0, 1, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CollisionShape2D:disabled")
@@ -108,7 +108,7 @@ one_shot = true
 autostart = true
 
 [node name="Ray" type="Node2D" parent="."]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 0.290196, 0, 1, 0 )
 rotation = 1.5708
 
 [node name="Sprite" type="Sprite" parent="Ray"]

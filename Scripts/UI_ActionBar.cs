@@ -11,7 +11,7 @@ public class UI_ActionBar : Node
 		Initialize();
 	}
 	public void Initialize()
-    {
+	{
 		template = GetNode<TextureRect>("Template");
 		beats = BV.GM.songData.TimeSign;
 		AnimationPlayer animplr = GetNode<AnimationPlayer>("AnimationPlayer");

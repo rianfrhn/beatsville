@@ -664,6 +664,7 @@ texture = ExtResource( 7 )
 offset = Vector2( 0, -2 )
 
 [node name="Weapon" parent="Rig/Body" instance=ExtResource( 1 )]
+visible = false
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false

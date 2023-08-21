@@ -22,10 +22,15 @@ public class PlayerController : Node2D
 		{
 			gv.currentPlayer = player;
 			gv.currentScene = player.GetParent();
-			/*if (gv.heldPosition.ContainsKey(player.GetParent().Name))
+            /*if (gv.heldPosition.ContainsKey(player.GetParent().Name))
 			{
 				player.Position = gv.heldPosition[player.GetParent().Name];
 			}*/
+        }
+        else
+		{
+			gv.currentAtkPlayer = player;
+
 		}
 	}
 	public void CreateMarker(Vector2 gPos, Color col = default)
@@ -99,9 +104,11 @@ public class PlayerController : Node2D
 				songData = BV.GM.songData;
 				if (!songData.beatsToMove.Contains(BV.GM.inBeat())) 
 				{
+					player.EmitSignal("Acted", false);
 					player.EmitSignal("Blundered");
-					return; 
+					return;
 				}
+				player.EmitSignal("Acted", true);
 				if (Mathf.Abs(deltaY) > Mathf.Abs(deltaX))
 				{
 					Vector2 t = Vector2.Down * 16 * Mathf.Sign(deltaY);
@@ -125,10 +132,13 @@ public class PlayerController : Node2D
 					return;
 				}
 				songData = BV.GM.songData;
-				if (!songData.beatsToMove.Contains(BV.GM.inBeat())) {
+				if (!songData.beatsToMove.Contains(BV.GM.inBeat()))
+				{
+					player.EmitSignal("Acted", false);
 					player.EmitSignal("Blundered");
-					return; 
+					return;
 				}
+				player.EmitSignal("Acted", true);
 				Vector2 GMP = GetGlobalMousePosition();
 				float x = GMP.x - (GMP.x % 16) + 8;
 				float y = GMP.y - (GMP.y % 16) + 8;

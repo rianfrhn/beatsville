@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/FightTileMaps/WildernessFight.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/UI/BeatAction.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Tiles/B&WTileSet.tres" type="TileSet" id=3]
 [ext_resource path="res://Scripts/FightScene.cs" type="Script" id=4]
 [ext_resource path="res://Scenes/Misc/TriggerNode.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Misc/Shaders/MonitorEffectAdvanced.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/UI/ActionBar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/UI/HealthBar.tscn" type="PackedScene" id=10]
 
 [node name="FightScene" type="Node2D"]
@@ -56,6 +56,8 @@ scale = Vector2( 15.227, 0.503254 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Beat" parent="CanvasLayer" instance=ExtResource( 2 )]
+
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource( 10 )]
 
 [node name="HealthBar2" parent="CanvasLayer" instance=ExtResource( 10 )]
@@ -65,16 +67,4 @@ margin_right = 440.0
 margin_bottom = 40.0
 rect_scale = Vector2( -1, 1 )
 
-[node name="ActionBar" parent="CanvasLayer" instance=ExtResource( 9 )]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-
-[node name="Template" parent="CanvasLayer/ActionBar" index="1"]
-modulate = Color( 1, 0, 0, 1 )
-
 [node name="ColorRect" parent="CanvasLayer" instance=ExtResource( 8 )]
-
-[editable path="CanvasLayer/ActionBar"]

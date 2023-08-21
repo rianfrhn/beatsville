@@ -24,6 +24,7 @@ public class FightScene : Node2D
 
 	public bool fightFinished = false;
 
+
 	public override void _EnterTree()
 	{
 		//Initialize Variables

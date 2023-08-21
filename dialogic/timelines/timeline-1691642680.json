@@ -151,13 +151,13 @@
 			"is_relative": false,
 			"name": "Marione",
 			"posx": 488,
-			"posy": 120
+			"posy": 136
 		},
 		{
 			"duration": 4,
 			"event_id": "move_camera",
 			"is_relative": false,
-			"posx": 440,
+			"posx": 504,
 			"posy": 120
 		},
 		{

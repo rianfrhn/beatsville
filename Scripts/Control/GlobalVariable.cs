@@ -31,6 +31,7 @@ public class GlobalVariable : Node
 	public Camera2D currentCamera;
 	public string currentMusic;
 	public Humanoid currentPlayer;
+	public Humanoid currentAtkPlayer;
 
 	public Resource currentFight;
 	public string fightSceneID;

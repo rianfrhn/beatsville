@@ -48,6 +48,8 @@ public class Humanoid : Interactable
 	Node2D body;
 
 	[Signal]
+	public delegate void Acted(bool valid);
+	[Signal]
 	public delegate void HealthChanged(int health, int maxHealth);
 	[Signal]
 	public delegate void HealthUpdated(int maxHealth);
@@ -315,7 +317,6 @@ public class Humanoid : Interactable
 	/// <param name="skill"></param>
 	public bool Attack(Vector2 Target, int skill = -1)
 	{
-		
 		int selectedSkill = skill == -1 ? this.selectedSkill : skill;
 		if (selectedSkill > skillForms.Count) return false;
 
