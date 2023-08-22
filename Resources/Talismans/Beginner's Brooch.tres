@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/Talisman.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = 0
+name = "Beginner's Brooch"
+description = "Makes things a little bit easier."
+health = 0
+healthRegen = 0
+inspiration = 0
+inspirationRegen = 0
+defense = 0
+strength = 0
+competence = 20

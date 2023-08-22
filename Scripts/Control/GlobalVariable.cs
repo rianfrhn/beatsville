@@ -6,8 +6,6 @@ public class GlobalVariable : Node
 {
 	public float songOffset = 0;
 
-	public float interval = 0.15f;
-
 	public string fromScene;
 
 	//Fight Scene Variables

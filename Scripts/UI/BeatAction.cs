@@ -10,6 +10,9 @@ public class BeatAction : Node
 	Array<CenterContainer> beats;
 	TextureRect met;
 	TextureRect metHand;
+	TextureRect indicator;
+	TextureRect indicatorArrow;
+	ColorRect indicatorIndicator;
 
 	int metSign = 1;
 
@@ -21,10 +24,33 @@ public class BeatAction : Node
 	{
 		beats = new Array<CenterContainer>();
 		beatNum = BV.GM.songData.TimeSign;
-		beatContainer = GetNode<Control>("Beats");
+		beatContainer = GetNode<Control>("Left/Beats");
 		beatTemplate = beatContainer.GetNode<CenterContainer>("Beat");
-		met = GetNode<TextureRect>("Metronome");
-		metHand = GetNode<TextureRect>("Metronome/MetronomeHand");
+		met = GetNode<TextureRect>("Left/Metronome");
+		metHand = GetNode<TextureRect>("Left/Metronome/MetronomeHand");
+		indicator = GetNode<TextureRect>("Left/Indicator");
+		indicatorArrow = indicator.GetNode<TextureRect>("Arrow");
+		indicatorIndicator = indicator.GetNode<ColorRect>("IndicatorIndi");
+		TextureRect indicatorColor = indicator.GetNode<TextureRect>("Color");
+
+		GradientTexture colorGradient = new GradientTexture();
+		Gradient grad = new Gradient();
+		grad.InterpolationMode = Gradient.InterpolationModeEnum.Constant;
+		grad.Colors = new Color[]
+		{
+			Colors.Red,
+			Colors.Green,
+			Colors.Red,
+		};
+		grad.Offsets = new float[]
+		{
+			0,
+			0.5f - BV.GM.interval,
+			0.5f + BV.GM.interval
+		};
+		colorGradient.Gradient = grad;
+		indicatorColor.Texture = colorGradient;
+
 
 		for (int i = 0; i < beatNum; i++)
 		{
@@ -63,6 +89,11 @@ public class BeatAction : Node
 	public override void _Process(float delta)
 	{
 		metHand.RectRotation = metSign * 60 * Mathf.Sin(BV.GM.barPercent * BV.GM.songTimeSig * Mathf.Pi);
+		float percent = BV.GM.percentInBeats + 0.5f;
+		if (percent > 1) percent -= 1;
+		percent *= indicator.RectSize.x;
+		indicatorArrow.RectPosition = new Vector2(percent - 1.5f, -2);
+		
 	}
 	public void onPlayerAction(bool validMove)
 	{
@@ -73,7 +104,14 @@ public class BeatAction : Node
 		indTw.TweenProperty(metHandIndicator, "modulate:a", 0.0f, 1.5f);
 		indTw.TweenCallback(metHandIndicator, "queue_free");
 		
-		
+		ColorRect indicatorShadow = (ColorRect)indicatorIndicator.Duplicate();
+		indicator.AddChild(indicatorShadow);
+		indicatorShadow.Modulate = new Color(0.1f, 0.1f, 0.1f, 1);
+		indicatorShadow.Visible = true;
+		indicatorShadow.RectPosition = new Vector2(indicatorArrow.RectPosition.x + 1.5f - 0.5f, 0);
+		SceneTreeTween indShadTw = GetTree().CreateTween();
+		indShadTw.TweenProperty(indicatorShadow, "modulate:a", 0.0f, 2.0f);
+		indShadTw.TweenCallback(indicatorShadow, "queue_free");
 
 	}
 

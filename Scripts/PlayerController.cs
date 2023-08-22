@@ -12,7 +12,9 @@ public class PlayerController : Node2D
 	string MarkerPath = "res://Scenes/Misc/Marker.tscn";
 	public override void _Ready()
 	{
+
 		player = GetParent<Humanoid>();
+		
 		playerRaycast = player.GetNode<RayCast2D>("RayCast2D");
 		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 		if (gv.playerStat != null)
@@ -32,8 +34,16 @@ public class PlayerController : Node2D
 			gv.currentAtkPlayer = player;
 
 		}
+		setMusicCompetence();
 	}
-	public void CreateMarker(Vector2 gPos, Color col = default)
+	public async void setMusicCompetence()
+    {
+		await ToSignal(player, "ready");
+		GD.Print(player.competence);
+		BV.GM.interval = player.competence / 200.0f;
+
+	}
+    public void CreateMarker(Vector2 gPos, Color col = default)
     {
 		PackedScene marker = ResourceLoader.Load<PackedScene>(MarkerPath);
 		Node2D markerInst = marker.Instance<Node2D>();

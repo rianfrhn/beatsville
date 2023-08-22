@@ -30,7 +30,6 @@ public class FightScene : Node2D
 		//Initialize Variables
 		gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 		songOffset = gv.songOffset;
-		songInterval = gv.interval;
 
 		fightData = (FightData)gv.currentFight;
 		songdata = fightData.songData;
@@ -38,7 +37,6 @@ public class FightScene : Node2D
 
 		GlobalMusic globalMusic = BV.GM;
 		globalMusic.musicOffset = songOffset;
-		globalMusic.interval = songInterval;
 		globalMusic.ChangeSongData((SongData)songdata);
 	}
 

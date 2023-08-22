@@ -16,6 +16,9 @@ public class GlobalMusic : Node
 	private float barLength;
 	public float secs;
 	public float barPercent;
+
+	public float percentInBar;
+	public float percentInBeats;
 	public bool plrMoved = false;
 	private bool cooldown = false;
 	private bool redCooldown = false;
@@ -24,8 +27,7 @@ public class GlobalMusic : Node
 
 	[Export]
 	public float musicOffset = 0;
-	[Export]
-	public float interval = 0.1f;
+	public float interval;
 	[Export]
 	public Resource songDataRes;
 
@@ -177,9 +179,9 @@ public class GlobalMusic : Node
 	private void Process_Music()
 	{
 		int beatNum = Mathf.FloorToInt(secs / beatLength);
-		float percentInBar = secs % barLength / barLength;
-		float percentInBeats = secs % beatLength / beatLength;
-		if (percentInBeats <= interval || percentInBeats >= (beatLength - interval) / beatLength)
+		percentInBar = secs % barLength / barLength;
+		percentInBeats = secs % beatLength / beatLength;
+		if (percentInBeats <= interval || percentInBeats > 1-interval)
 		{
 			if (!cooldown)
 			{

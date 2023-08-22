@@ -30,6 +30,7 @@ public class Humanoid : Interactable
 	private int inspiration = 100;
 	private int defense = 0;
 	private int strength = 10;
+	public int competence = 20;
 
 	private int healthRegenRate = 10;
 	private int inspirationRegenRate = 5;
@@ -105,6 +106,7 @@ public class Humanoid : Interactable
 			healthRegenRate = stat.healthRegen;
 			inspirationRegenRate = stat.healthRegen;
 			strength = stat.strength;
+			competence = stat.competence;
 			foreach(Resource res in stat.forms)
 			{
 				if (res is SkillForm skill)
@@ -488,7 +490,7 @@ public class Humanoid : Interactable
 			body.AddChild(bubbleNode);
 			expBubble = (ExpressionBubble)bubbleNode;
 			expBubble.Position = new Vector2(0, -16);
-			expBubble.ZIndex = 1;
+			expBubble.ZIndex = 10;
 		}
 		expBubble.Start(toExpressionString[expression], duration);
 		
