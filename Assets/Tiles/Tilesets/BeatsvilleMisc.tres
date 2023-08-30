@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=39 format=2]
+[gd_resource type="TileSet" load_steps=46 format=2]
 
 [ext_resource path="res://Assets/Tiles/GroundTile/Tree.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tiles/Buildings/Mines.png" type="Texture" id=2]
@@ -8,6 +8,13 @@
 [ext_resource path="res://Assets/Tiles/Village/HouseMarionne.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Tiles/Village/Fence.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Tiles/Village/Bush.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Tiles/Village/HouseAdelle.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Tiles/Village/Dojo.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Tiles/Village/HouseRai.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Tiles/Village/HouseCutter.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Tiles/Village/KhelHouse.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Tiles/Village/HouseLazarus.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Tiles/Village/HouseSparky.png" type="Texture" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 32, 32, 32, 32, 48, 16, 48 )
@@ -408,3 +415,101 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 7/shape_one_way_margin = 0.0
 7/shapes = [  ]
 7/z_index = 0
+8/name = "Dojo.png 8"
+8/texture = ExtResource( 10 )
+8/tex_offset = Vector2( -48, -64 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 112, 80 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "HouseRai.png 9"
+9/texture = ExtResource( 11 )
+9/tex_offset = Vector2( -32, -64 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 80, 80 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "KhelHouse.png 10"
+10/texture = ExtResource( 13 )
+10/tex_offset = Vector2( -32, -64 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 96, 80 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "HouseAdelle.png 11"
+11/texture = ExtResource( 9 )
+11/tex_offset = Vector2( -32, -64 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 80, 80 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "HouseSparky.png 12"
+12/texture = ExtResource( 15 )
+12/tex_offset = Vector2( -32, -64 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 0, 0, 80, 80 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "HouseCutter.png 13"
+13/texture = ExtResource( 12 )
+13/tex_offset = Vector2( -32, -64 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 0, 0, 96, 80 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "HouseLazarus.png 14"
+14/texture = ExtResource( 14 )
+14/tex_offset = Vector2( -32, -64 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 96, 80 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0

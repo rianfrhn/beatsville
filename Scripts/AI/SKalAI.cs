@@ -79,7 +79,16 @@ public class SKalAI : BaseAI
 		if(human.GetHealth() < 100 && !belowThresh)
 		{
 			belowThresh = true;
-			BV.ST.ChangeScene("res://Scenes/Map/WildernessVWest/WildernessWest.tscn", "", "FigureTransition");
+			BV.ST.ChangeScene("res://Scenes/Map/VillageInside/HouseAdelle.tscn", "", "ShadowFightWon");
+			if (DialogicSharp.GetVariable("FoughtShadow") != "2")
+				DialogicSharp.SetVariable("FoughtShadow", "1");
+		}
+		if(enemy.GetHealth() < 200 && !belowThresh)
+        {
+			belowThresh = true;
+			BV.ST.ChangeScene("res://Scenes/Map/VillageInside/HouseAdelle.tscn", "", "ShadowFightLost");
+			if (DialogicSharp.GetVariable("FoughtShadow") != "2")
+				DialogicSharp.SetVariable("FoughtShadow", "1");
 		}
 		
 	}

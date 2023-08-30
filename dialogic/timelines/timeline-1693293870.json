@@ -1,0 +1,113 @@
+{
+	"events": [
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Gah.... . "
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "So weak... "
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 0.1
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "However you must- "
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hust "
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Come back.."
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Huft.... "
+		},
+		{
+			"block_input": false,
+			"event_id": "dialogic_050",
+			"wait_time": 0.1
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Whew that took a toll on me."
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'll spare you for now, Kal"
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "However, I shall be back..."
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 3
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#aaaaaa]Huft...[/color]  "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#aaaaaa]That thing... [/color] "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#aaaaaa]What even is that.. [/color] "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#aaaaaa]I must get to the bottom of this.[/color] "
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 2
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#aaaaaa]Huh?[/color] "
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1693293870.json",
+		"name": "ShadowFightLost"
+	}
+}

@@ -1,0 +1,170 @@
+{
+	"events": [
+		{
+			"enable_movement": false,
+			"event_id": "configure_movement"
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "SKal",
+			"posx": 360,
+			"posy": 104
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"black"
+				],
+				"method_name": "ChangeScreenColorByString",
+				"target_node_path": "SceneTransition"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"0.6",
+					"2"
+				],
+				"method_name": "ChangeScreenAlpha",
+				"target_node_path": "SceneTransition"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 2
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You really think you can escape by going back here? "
+		},
+		{
+			"event_id": "change_song",
+			"resource_file": "res://Resources/Songs/ANewBeginning.tres"
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "SKal",
+			"posx": 408,
+			"posy": 120
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "As expected. Foolish of you. "
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "SKal",
+			"posx": 424,
+			"posy": 120
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You're as pitiful as always. "
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "SKal",
+			"posx": 424,
+			"posy": 136
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You might be very unaware, but you are very powerless right now... "
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "SKal",
+			"posx": 424,
+			"posy": 152
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"0.9",
+					"1"
+				],
+				"method_name": "ChangeScreenAlpha",
+				"target_node_path": "SceneTransition"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Come back. "
+		},
+		{
+			"choice": "No.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Fine. "
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You'll pay for what you've done.. "
+		},
+		{
+			"choice": "What if I don't?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You stubborn little $#!&"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"enable_movement": true,
+			"event_id": "configure_movement"
+		},
+		{
+			"event_id": "start_fight",
+			"resource_file": "res://Resources/Fights/VSShadow.tres"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1693291228.json",
+		"name": "ShadowHauntsBack"
+	}
+}

@@ -3,7 +3,7 @@ i:{00000000-0000-0000-0000-000000000000}:Beatsville.sln
 ++Beatsville
 i:{00000000-0000-0000-0000-000000000000}:Beatsville
 ++Dependencies
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:>11986
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:>12204
 ++addons
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\
 ++Scenes
@@ -83,12 +83,16 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\
 ++Blob.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\blob.cs
+++Empty_Projectile.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\empty_projectile.cs
 ++Fist.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\fist.cs
 ++Moonlit_Sonata1.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\moonlit_sonata1.cs
 ++Moonlit_Sonata2.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\moonlit_sonata2.cs
+++Moonlit_Sonata3.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\moonlit_sonata3.cs
 ++ScytheThrow.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\scythethrow.cs
 ++Resources
@@ -197,7 +201,5 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\wildernessvwest\wildernesswest.cs
 ++DialogicSharp.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\dialogic\other\dialogicsharp.cs
-++Moonlit_Sonata3.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\moonlit_sonata3.cs
-++Empty_Projectile.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\empty_projectile.cs
+++BeatAction.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\ui\beataction.cs

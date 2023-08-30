@@ -19,7 +19,7 @@ public static class BV
     /// </summary>
     public static GlobalVariable GV = null;
     /// <summary>
-    /// Global Variable
+    /// QuestHandler
     /// </summary>
     public static QuestHandler QH = null;
 

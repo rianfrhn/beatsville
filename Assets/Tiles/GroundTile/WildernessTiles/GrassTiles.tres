@@ -1,10 +1,12 @@
-[gd_resource type="TileSet" load_steps=6 format=2]
+[gd_resource type="TileSet" load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Tiles/GroundTile/WildernessTiles/GrassTileDefault.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tiles/GroundTile/WildernessTiles/GrassTileGrass.tres" type="Texture" id=2]
 [ext_resource path="res://Assets/Tiles/GroundTile/WildernessTiles/GrassTileFlower1.tres" type="Texture" id=3]
 [ext_resource path="res://Assets/Tiles/GroundTile/WildernessTiles/GrassTileFlower2.tres" type="Texture" id=4]
 [ext_resource path="res://Assets/Tiles/GroundTile/WildernessTiles/Sand/Sand.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Tiles/GroundTile/WildernessTiles/GrassCliff/CliffRocks.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Tiles/GroundTile/WildernessTiles/GrassCliff/GrassCliff.png" type="Texture" id=7]
 
 [resource]
 0/name = "GrassTileDefault.png 0"
@@ -77,3 +79,45 @@
 4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 0
+6/name = "GrassCliff.png 6"
+6/texture = ExtResource( 7 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 48, 48 )
+6/tile_mode = 2
+6/autotile/icon_coordinate = Vector2( 0, 0 )
+6/autotile/tile_size = Vector2( 16, 16 )
+6/autotile/spacing = 0
+6/autotile/occluder_map = [  ]
+6/autotile/navpoly_map = [  ]
+6/autotile/priority_map = [  ]
+6/autotile/z_index_map = [  ]
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "CliffRocks.png 7"
+7/texture = ExtResource( 6 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 16, 32 )
+7/tile_mode = 2
+7/autotile/icon_coordinate = Vector2( 0, 0 )
+7/autotile/tile_size = Vector2( 16, 16 )
+7/autotile/spacing = 0
+7/autotile/occluder_map = [  ]
+7/autotile/navpoly_map = [  ]
+7/autotile/priority_map = [  ]
+7/autotile/z_index_map = [  ]
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0

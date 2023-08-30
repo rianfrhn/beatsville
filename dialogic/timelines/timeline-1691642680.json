@@ -66,13 +66,13 @@
 			"character": "character-1675318783.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Azka will be very upset, you know. "
+			"text": "Cutter will be very upset, you know. "
 		},
 		{
 			"character": "character-1676874925.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "You dont even like reading books! Why are you so hyped up all of a sudden? "
+			"text": "Why are you all hyped up all of a sudden anyway? "
 		},
 		{
 			"character": "character-1675318783.json",
@@ -121,6 +121,40 @@
 			"text": "I'll be there when I'm finished! "
 		},
 		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The sudden rush isnt nescessary! "
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 0.1
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Necessary* "
+		},
+		{
+			"block_input": false,
+			"event_id": "dialogic_050",
+			"wait_time": 0.1
+		},
+		{
+			"duration": 1,
+			"event_id": "event_bv_ce",
+			"expression": "",
+			"name": "Marione"
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Just go already! "
+		},
+		{
 			"event_id": "bv_pf",
 			"is_relative": false,
 			"name": "Sparky",
@@ -135,59 +169,15 @@
 			"posy": 0
 		},
 		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "[color=#aaaaaa]Sparky and Marione huh?[/color] "
-		},
-		{
-			"duration": 1,
-			"event_id": "event_bv_ce",
-			"expression": "Surprised",
-			"name": "Marione"
-		},
-		{
-			"event_id": "bv_pf",
-			"is_relative": false,
-			"name": "Marione",
-			"posx": 488,
-			"posy": 136
-		},
-		{
-			"duration": 4,
-			"event_id": "move_camera",
-			"is_relative": false,
-			"posx": 504,
-			"posy": 120
-		},
-		{
-			"event_id": "dialogic_023",
-			"hide_dialogbox": true,
-			"wait_seconds": 5
-		},
-		{
-			"character": "character-1676874925.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "no... "
-		},
-		{
-			"event_id": "bv_pf",
-			"is_relative": false,
-			"name": "Marione",
-			"posx": 728,
-			"posy": 72
-		},
-		{
-			"event_id": "change_song",
-			"resource_file": "res://Resources/Songs/Silence.tres"
-		},
-		{
 			"duration": 3,
 			"event_id": "move_camera",
 			"is_relative": true,
 			"posx": 0,
 			"posy": 0
+		},
+		{
+			"event_id": "change_song",
+			"resource_file": "res://Resources/Songs/Silence.tres"
 		},
 		{
 			"event_id": "dialogic_023",

@@ -3,7 +3,11 @@ using System;
 
 public class MapScene : Node2D
 {
-	public void PlacePlayer(string directory = "")
+    public override void _Ready()
+    {
+		PlacePlayer();
+    }
+    public void PlacePlayer(string directory = "")
 	{
 		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
 		Humanoid player = GetNode<Humanoid>("Player");

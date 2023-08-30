@@ -1,0 +1,67 @@
+{
+	"events": [
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Gahh... "
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You have grown stronger. "
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It's impossible for you to have grown that strong while you are away, Kal. "
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eitherway, I am not going to back down. "
+		},
+		{
+			"character": "character-1691731414.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Just you wait. "
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 3
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#aaaaaa]What even is that thing that I fought?? [/color] "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#aaaaaa]I must get to the bottom of this.[/color] "
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 2
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#aaaaaa]Huh?[/color] "
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1693293644.json",
+		"name": "ShadowFightWon"
+	}
+}

@@ -74,6 +74,12 @@
 			"name": "EncounteredMarione",
 			"type": 0,
 			"value": "0"
+		},
+		{
+			"id": "1693295379-447",
+			"name": "FoughtShadow",
+			"type": 0,
+			"value": "0"
 		}
 	]
 }
