@@ -271,7 +271,7 @@ public class Humanoid : Interactable
 		{
 			Interactable o = (Interactable)obj;
 			o.OpenDialogue(this);
-			BV.GV.EmitInteracted(o.Name);
+			BV.GH.EmitInteracted(o.Name);
 		}
 	}
 	public async void RefreshState()

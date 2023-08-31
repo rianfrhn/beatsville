@@ -12,7 +12,7 @@ public class TestRoom : MapScene
 	public override void _Ready()
 	{
 		PlacePlayer(sceneDirectory);
-		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 		//Node dialogueNode = DialogicSharp.Start("ShiroTest");
 		//AddChild(dialogueNode);
 	}

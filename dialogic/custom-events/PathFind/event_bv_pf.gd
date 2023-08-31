@@ -17,6 +17,6 @@ func handle_event(event_data, dialog_node):
 	var isRelative = event_data.get('is_relative', true)
 	
 	# once you want to continue with the next event
-	GlobalVariable.MoveNPC(npc, x, y, isRelative)
+	WorldManipulator.MoveNPC(npc, x, y, isRelative)
 	dialog_node._load_next_event()
 	dialog_node.set_state(dialog_node.state.READY)

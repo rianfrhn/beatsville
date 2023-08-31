@@ -22,7 +22,7 @@ public class Cutscene : CanvasLayer
 	{
 		if(fromSaved)
 		{
-			GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+			GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 			GetTree().Root.GetNode<SceneTransition>("SceneTransition").ChangeScene(gv.saveData.sceneDirectory, gv.saveData.musicDirectory);
 			
 		} else{

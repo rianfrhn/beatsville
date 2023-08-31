@@ -72,7 +72,7 @@ public class GlobalMusic : Node
 	}
 	public void UpdateStream()
 	{
-		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 		GlobalMusic gm = GetTree().Root.GetNode<GlobalMusic>("GlobalMusic");
 		//GlobalHandler.CurrentMusic = this;
 		if (songDataRes != null && songDataRes is SongData sd)
@@ -113,7 +113,7 @@ public class GlobalMusic : Node
 			UpdateStream();
 			animplayer.Play("CrossTo1");
 		}
-		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 		gv.currentMusic = musicdir;
 		EmitSignal("SongChanged");
 	}
@@ -132,7 +132,7 @@ public class GlobalMusic : Node
 			songDataRes = ResourceLoader.Load<SongData>(musicdir);
 			UpdateStream();
 			audioStreams[playing].Play();
-			GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+			GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 			gv.currentMusic = musicdir;
 			EmitSignal("SongChanged");
 		}
@@ -146,7 +146,7 @@ public class GlobalMusic : Node
 			{
 				songDataRes = ResourceLoader.Load<SongData>(musicdir);
 				UpdateStream();
-				GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+				GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 				gv.currentMusic = musicdir;
 			}
 			else

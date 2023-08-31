@@ -10,7 +10,7 @@ func handle_event(event_data, dialog_node):
 	#dialog_node.set_state(dialog_node.state.WAITING)
 	#dialog_node.set_state(dialog_node.state.WAITING_INPUT)
 	
-	GlobalVariable.emit_signal("UpdateEvent")
+	GlobalHandler.emit_signal("UpdateEvent")
 	
 	# once you want to continue with the next event
 	dialog_node._load_next_event()

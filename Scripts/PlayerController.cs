@@ -16,7 +16,7 @@ public class PlayerController : Node2D
 		player = GetParent<Humanoid>();
 		
 		playerRaycast = player.GetNode<RayCast2D>("RayCast2D");
-		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 		if (gv.playerStat != null)
 			player.statsResource = gv.playerStat;
 
@@ -24,12 +24,12 @@ public class PlayerController : Node2D
 		{
 			gv.currentPlayer = player;
 			gv.currentScene = player.GetParent();
-            /*if (gv.heldPosition.ContainsKey(player.GetParent().Name))
+			/*if (gv.heldPosition.ContainsKey(player.GetParent().Name))
 			{
 				player.Position = gv.heldPosition[player.GetParent().Name];
 			}*/
-        }
-        else
+		}
+		else
 		{
 			gv.currentAtkPlayer = player;
 
@@ -37,27 +37,27 @@ public class PlayerController : Node2D
 		setMusicCompetence();
 	}
 	public async void setMusicCompetence()
-    {
+	{
 		await ToSignal(player, "ready");
 		GD.Print(player.competence);
 		BV.GM.interval = player.competence / 200.0f;
 
 	}
-    public void CreateMarker(Vector2 gPos, Color col = default)
-    {
+	public void CreateMarker(Vector2 gPos, Color col = default)
+	{
 		PackedScene marker = ResourceLoader.Load<PackedScene>(MarkerPath);
 		Node2D markerInst = marker.Instance<Node2D>();
 		GetTree().CurrentScene.AddChild(markerInst);
 		markerInst.GlobalPosition = gPos;
 		markerInst.Modulate = col != default? col : Colors.White;
-    }
+	}
 
 	public override void _PhysicsProcess(float delta)
 	{
 		if (!player.atkMode && player.currentState != Humanoid.status.Moving)
 		{
 			player.AnimSpeed = Input.IsActionPressed("sprint") ? 0.2f : 0.3f;
-			if (!BV.GV.canMove) return;
+			if (!BV.WM.canMove) return;
 			if (Input.IsActionPressed("ui_left"))
 			{
 				player.Move(Vector2.Left * 16);
@@ -165,7 +165,7 @@ public class PlayerController : Node2D
 			{
 				if (!menuOpened)
 				{
-					GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+					GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 					gv.OpenMenu("res://Scenes/UI/Options.tscn");
 					menuOpened = true;
 				}
@@ -198,9 +198,9 @@ public class PlayerController : Node2D
 					CreateMarker(player.GlobalPosition + t, Colors.Yellow);
 				}
 			}
-            if (@event.IsActionPressed("click_left"))
-            {
-				if (!BV.GV.canMove) return;
+			if (@event.IsActionPressed("click_left"))
+			{
+				if (!BV.WM.canMove) return;
 				Vector2 GMP = GetGlobalMousePosition();
 				float x = GMP.x - (GMP.x % 16) + 8;
 				float y = GMP.y - (GMP.y % 16) + 8;

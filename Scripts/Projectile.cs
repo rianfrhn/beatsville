@@ -56,8 +56,8 @@ public abstract class Projectile : Area2D
 			EmitSignal("Hit", stunDur, newDmg);
 			Disconnect("Hit", h, "Hit");
 
-			GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
-			gv.CreateDamageIndicator(newDmg, ((Node2D)obj).GlobalPosition);
+			
+			BV.WM.CreateDamageIndicator(newDmg, ((Node2D)obj).GlobalPosition);
 		}
 		if(obj is BreakableTiles)
 		{

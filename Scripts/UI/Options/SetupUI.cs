@@ -4,7 +4,7 @@ using Godot.Collections;
 
 public class SetupUI : VBoxContainer
 {
-	GlobalVariable gv;
+	GlobalHandler gh;
 	SaveData saveData;
 	Stats playerStat;
 	Control container;
@@ -18,8 +18,8 @@ public class SetupUI : VBoxContainer
 	int skillArrSize;
 	public override void _Ready()
 	{
-		gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
-		saveData = gv.saveData;
+		gh = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
+		saveData = gh.saveData;
 		playerStat = (Stats)saveData.stats;
 		container = GetNode<Control>("ScrollContainer/VBoxContainer");
 		talismanBox = container.GetNode<Control>("Talismans/VBoxContainer");
@@ -61,7 +61,7 @@ public class SetupUI : VBoxContainer
 		}
 		displayedTalisman = (Talisman)saveData.talismans[talismanArrIndex];
 		playerStat.talisman = displayedTalisman;
-		gv.playerStat = playerStat;
+		gh.playerStat = playerStat;
 		talismanArrIndex = GetIndexByTalisman(displayedTalisman);
 	}
 	public void ScrollSkill(int slot, bool ascending = true)
@@ -79,7 +79,7 @@ public class SetupUI : VBoxContainer
 		}
 		displayedSkillArray[slot] = saveData.skillForms[skillArrIndex[slot]];
 		playerStat.forms[slot] = displayedSkillArray[slot];
-		gv.playerStat = playerStat;
+		gh.playerStat = playerStat;
 		skillArrIndex[slot] = GetIndexBySkill(displayedSkillArray[slot]);
 	}
 	public int GetIndexByTalisman(Talisman talisman)

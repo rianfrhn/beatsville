@@ -31,7 +31,7 @@ public class TriggerNode : Area2D
 				break;
 			case Action.ChangeScene:
 				if (sceneDir == "") return;
-				GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+				GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 				gv.fromScene = GetParent().Name;
 
 				if(sceneDir == "RUN")

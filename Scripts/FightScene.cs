@@ -20,7 +20,7 @@ public class FightScene : Node2D
 	public Humanoid player1Instance;
 	public Humanoid player2Instance;
 	public FightData fightData;
-	public GlobalVariable gv;
+	public GlobalHandler gh;
 
 	public bool fightFinished = false;
 
@@ -28,10 +28,10 @@ public class FightScene : Node2D
 	public override void _EnterTree()
 	{
 		//Initialize Variables
-		gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
-		songOffset = gv.songOffset;
+		gh = BV.GH;
+		songOffset = gh.songOffset;
 
-		fightData = (FightData)gv.currentFight;
+		fightData = (FightData)gh.currentFight;
 		songdata = fightData.songData;
 		IsBossfight = fightData.isBossFight;
 
@@ -135,7 +135,7 @@ public class FightScene : Node2D
 	{
 		if (fightFinished) return;
 		GD.Print("player 2 defeated");
-		gv.FinishFight();
+		gh.FinishFight();
 		fightFinished = true;
 	}
 }

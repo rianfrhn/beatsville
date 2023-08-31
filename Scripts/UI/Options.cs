@@ -42,7 +42,7 @@ public class Options : CanvasLayer
 	}
 	public void ReturnMenu()
 	{
-		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 		gv.SaveGameData();
 		SceneTransition st = GetTree().Root.GetNode<SceneTransition>("SceneTransition");
 		st.ChangeScene("res://Scenes/Menu.tscn", "res://Resources/Songs/TheTaleofBeatsville.tres");

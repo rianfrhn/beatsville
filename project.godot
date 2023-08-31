@@ -94,9 +94,10 @@ config/icon="res://icon.png"
 [autoload]
 
 GlobalMusic="*res://Scenes/Control/GlobalMusic.tscn"
-GlobalVariable="*res://Scripts/Control/GlobalVariable.cs"
+GlobalHandler="*res://Scripts/Control/GlobalHandler.cs"
 SceneTransition="*res://Scenes/UI/SceneTransition.tscn"
 QuestHandler="*res://Scenes/Control/QuestHandler.tscn"
+WorldManipulator="*res://Scripts/Control/WorldManipulator.cs"
 
 [display]
 

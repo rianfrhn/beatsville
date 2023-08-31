@@ -16,6 +16,6 @@ func handle_event(event_data, dialog_node):
 	var expression = event_data['expression']
 	var duration = event_data['duration']
 	# once you want to continue with the next event
-	GlobalVariable.ExpressNPC(npc, expression, duration)
+	WorldManipulator.ExpressNPC(npc, expression, duration)
 	dialog_node._load_next_event()
 	dialog_node.set_state(dialog_node.state.READY)

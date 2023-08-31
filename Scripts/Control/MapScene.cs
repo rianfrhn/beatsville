@@ -9,7 +9,7 @@ public class MapScene : Node2D
     }
     public void PlacePlayer(string directory = "")
 	{
-		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 		Humanoid player = GetNode<Humanoid>("Player");
 		if (gv.loadPos)
 		{

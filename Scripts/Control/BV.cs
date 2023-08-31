@@ -17,10 +17,12 @@ public static class BV
     /// <summary>
     /// Global Variable
     /// </summary>
-    public static GlobalVariable GV = null;
+    public static GlobalHandler GH = null;
     /// <summary>
     /// QuestHandler
     /// </summary>
     public static QuestHandler QH = null;
+
+    public static WorldManipulator WM = null;
 
 }

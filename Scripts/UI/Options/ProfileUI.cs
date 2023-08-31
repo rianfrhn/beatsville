@@ -4,7 +4,7 @@ using System;
 public class ProfileUI : VBoxContainer
 {
     Control statsBox;
-    GlobalVariable gv;
+    GlobalHandler gh;
     Button
         healthTxt, regenHealthTxt,
         inspirationTxt, regenInspirationTxt,
@@ -17,7 +17,7 @@ public class ProfileUI : VBoxContainer
 
     public override void _Ready()
     {
-        gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+        gh = BV.GH;
         statsBox = GetNode<GridContainer>("Data/VSplitContainer/GridContainer");
         healthTxt = statsBox.GetNode<Button>("Health/Label");
         regenHealthTxt = statsBox.GetNode<Button>("HRegen/Label");
@@ -45,7 +45,7 @@ public class ProfileUI : VBoxContainer
     public void onVisibilityChanged()
     {
         if(!Visible)return;
-        SaveData savedata = gv.saveData;
+        SaveData savedata = gh.saveData;
         Stats stats = (Stats)savedata.stats;
         Talisman talisman = (Talisman)stats.talisman;
         //Update main stats

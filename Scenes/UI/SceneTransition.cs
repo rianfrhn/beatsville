@@ -16,7 +16,7 @@ public class SceneTransition : CanvasLayer
 	}
 	public async void ChangeScene(string scenepath, string musicpath = "", string dialogue = "")
 	{
-		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 		PackedScene s = ResourceLoader.Load<PackedScene>(scenepath, noCache: true);
 		Node node = s.Instance();
 		DefaultMusic defaultMusic = node.GetNodeOrNull<DefaultMusic>("DefaultMusic");

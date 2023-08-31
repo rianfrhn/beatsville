@@ -13,7 +13,7 @@ func handle_event(event_data, dialog_node):
 	var posy = event_data["posy"]
 	var duration = event_data["duration"]
 	var is_relative = event_data["is_relative"]
-	GlobalVariable.MoveCamera(posx, posy, is_relative, duration)
+	WorldManipulator.MoveCamera(posx, posy, is_relative, duration)
 	
 	
 	# once you want to continue with the next event

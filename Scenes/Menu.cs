@@ -22,13 +22,13 @@ public class Menu : Control
 	private void _on_Play_pressed()
 	{
 		// Replace with function body.
-		GetTree().Root.GetNode<GlobalVariable>("GlobalVariable").NewGameData();
+		GetTree().Root.GetNode<GlobalHandler>("GlobalHandler").NewGameData();
 		GetTree().Root.GetNode<SceneTransition>("SceneTransition").ChangeScene("res://Scenes/UI/Cutscenes/Cutscene_Initial.tscn", "STOP");
 		
 	}
 	private void _on_Continue_pressed()
 	{
-		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
+		GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
 		gv.LoadGameData();
 	}
 	
@@ -41,7 +41,7 @@ public class Menu : Control
 	
 	private void _on_Test_Map_pressed()
 	{
-		GetTree().Root.GetNode<GlobalVariable>("GlobalVariable").NewTestGameData();
+		GetTree().Root.GetNode<GlobalHandler>("GlobalHandler").NewTestGameData();
 		GetTree().Root.GetNode<SceneTransition>("SceneTransition").ChangeScene("res://Scenes/UI/Cutscenes/Cutscene_TestMap.tscn", "STOP");
 	}
 }

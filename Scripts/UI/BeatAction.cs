@@ -62,7 +62,7 @@ public class BeatAction : Node
 		beatTemplate.QueueFree();
 		BV.GM.Connect("EmitBeat", this, "BeatPulse");
 		await ToSignal(GetTree().CurrentScene, "ready");
-		BV.GV.currentAtkPlayer.Connect("Acted", this, "onPlayerAction");
+		BV.GH.currentAtkPlayer.Connect("Acted", this, "onPlayerAction");
 	}
 	public void BeatPulse(int beat)
 	{

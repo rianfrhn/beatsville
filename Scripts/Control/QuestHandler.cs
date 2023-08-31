@@ -31,7 +31,7 @@ public class QuestHandler : Node
 		q.Initialize();
 		EmitSignal("QuestActivated", q.questID);
 		q.Connect("Completed", this, "CompleteQuest");
-		BV.GV.CreateNotification(this, "New Quest!", 2.0f, Colors.Yellow);
+		BV.GH.CreateNotification(this, "New Quest!", 2.0f, Colors.Yellow);
 	}
 	public void CompleteQuest(string id)
 	{
@@ -45,7 +45,7 @@ public class QuestHandler : Node
 		activatedNode.RemoveChild(q);
 		completedNode.AddChild(q);
 		EmitSignal("QuestFinished", q.questID);
-		BV.GV.CreateNotification(this, "Quest Completed!", 2.0f, Colors.Yellow);
+		BV.GH.CreateNotification(this, "Quest Completed!", 2.0f, Colors.Yellow);
 	}
 
 	public override void _Ready()

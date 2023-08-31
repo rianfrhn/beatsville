@@ -41,10 +41,9 @@ public class MusicHandler : Node
 
 	public override void _Ready()
 	{
-		GlobalVariable gv = GetTree().Root.GetNode<GlobalVariable>("GlobalVariable");
-		GlobalMusic gm = GetTree().Root.GetNode<GlobalMusic>("GlobalMusic");
+		GlobalHandler gv = BV.GH;
+		GlobalMusic gm = BV.GM;
 		musicStream = gm.GetPlayingAudioStream();
-		GlobalHandler.CurrentMusic = this;
 		if (songDataRes != null && songDataRes is SongData sd)
 		{
 			songData = sd;
