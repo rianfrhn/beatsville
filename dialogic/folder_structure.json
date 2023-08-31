@@ -227,7 +227,19 @@
 						"timeline-1693293870.json"
 					],
 					"folders": {
+						"VillageEntrance": {
+							"files": [
+								"timeline-1693462384.json",
+								"timeline-1693463854.json"
+							],
+							"folders": {
 
+							},
+							"metadata": {
+								"color": null,
+								"folded": false
+							}
+						}
 					},
 					"metadata": {
 						"color": null,

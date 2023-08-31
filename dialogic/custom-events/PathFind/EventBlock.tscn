@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/dialogic/Editor/Events/Templates/EventTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/dialogic/Images/Event Icons/Main Icons/custom-event.svg" type="Texture" id=2]
 [ext_resource path="res://dialogic/custom-events/PathFind/PathfindPart.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/dialogic/Images/Event Icons/Main Icons/end-branch.svg" type="Texture" id=4]
 
-[sub_resource type="Image" id=4]
+[sub_resource type="Image" id=5]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "LumAlpha8",
@@ -16,10 +17,10 @@ data = {
 [sub_resource type="ImageTexture" id=2]
 flags = 4
 flags = 4
-image = SubResource( 4 )
+image = SubResource( 5 )
 size = Vector2( 16, 16 )
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="ExampleCustomEvent" instance=ExtResource( 1 )]
 event_name = "PathFind"
@@ -30,20 +31,31 @@ event_data = {
 "posx": 0,
 "posy": 0
 }
-event_icon = ExtResource( 2 )
+event_icon = ExtResource( 4 )
 body_scene = ExtResource( 3 )
 
 [node name="PanelContainer" parent="." index="1"]
-margin_right = 81.0
+margin_right = 305.0
+margin_bottom = 135.0
 
 [node name="MarginContainer" parent="PanelContainer" index="1"]
-margin_right = 81.0
+margin_right = 305.0
+margin_bottom = 135.0
 
 [node name="VBoxContainer" parent="PanelContainer/MarginContainer" index="0"]
-margin_right = 75.0
+margin_right = 299.0
+margin_bottom = 129.0
 
 [node name="Header" parent="PanelContainer/MarginContainer/VBoxContainer" index="0"]
-margin_right = 65.0
+margin_right = 289.0
+margin_bottom = 32.0
+
+[node name="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="0"]
+margin_bottom = 32.0
+
+[node name="IconPanel" parent="PanelContainer/MarginContainer/VBoxContainer/Header/CenterContainer" index="0"]
+margin_top = 16.0
+margin_bottom = 16.0
 
 [node name="IconTexture" parent="PanelContainer/MarginContainer/VBoxContainer/Header/CenterContainer/IconPanel" index="0"]
 self_modulate = Color( 0, 0, 0, 1 )
@@ -53,17 +65,41 @@ texture = ExtResource( 2 )
 texture = SubResource( 2 )
 
 [node name="TitleLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="1"]
+margin_top = 9.0
 margin_right = 55.0
+margin_bottom = 23.0
 text = "PathFind"
 
 [node name="Content" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="2"]
 margin_left = 55.0
 margin_right = 65.0
+margin_bottom = 32.0
+
+[node name="ExpandControl" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="3"]
+visible = true
+margin_left = 65.0
+margin_top = 1.0
+margin_right = 109.0
+margin_bottom = 31.0
 
 [node name="Spacer" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="4"]
-margin_left = 65.0
-margin_right = 65.0
+margin_left = 109.0
+margin_right = 289.0
+margin_bottom = 32.0
+
+[node name="Body" parent="PanelContainer/MarginContainer/VBoxContainer" index="1"]
+visible = true
+margin_left = 0.0
+margin_top = 36.0
+margin_right = 289.0
+margin_bottom = 123.0
+
+[node name="Content" parent="PanelContainer/MarginContainer/VBoxContainer/Body" index="0"]
+margin_top = 0.0
+margin_right = 289.0
+margin_bottom = 87.0
+custom_constants/margin_left = 0
 
 [node name="PopupMenu" parent="." index="2"]
-custom_styles/hover = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
 items = [ "Documentation", SubResource( 2 ), 0, false, false, 0, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Move up", SubResource( 2 ), 0, false, false, 2, 0, null, "", false, "Move down", SubResource( 2 ), 0, false, false, 3, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Delete", SubResource( 2 ), 0, false, false, 5, 0, null, "", false ]

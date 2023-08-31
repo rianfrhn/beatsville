@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/dialogic/Editor/Events/Templates/EventTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/dialogic/Images/Event Icons/Main Icons/custom-event.svg" type="Texture" id=2]
-[ext_resource path="res://dialogic/custom-events/MoveCamera/MoveCameraPart.tscn" type="PackedScene" id=3]
-[ext_resource path="res://addons/dialogic/Images/Event Icons/Main Icons/change-background.svg" type="Texture" id=4]
+[ext_resource path="res://Assets/DialogicCustomIcon/BlockCursor.png" type="Texture" id=3]
 
-[sub_resource type="Image" id=3]
+[sub_resource type="Image" id=5]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "LumAlpha8",
@@ -17,45 +16,29 @@ data = {
 [sub_resource type="ImageTexture" id=2]
 flags = 4
 flags = 4
-image = SubResource( 3 )
+image = SubResource( 5 )
 size = Vector2( 16, 16 )
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="ExampleCustomEvent" instance=ExtResource( 1 )]
-event_name = "MoveCamera"
+event_name = "StopMouse"
 event_data = {
-"duration": 0.0,
-"event_id": "move_camera",
-"is_relative": false,
-"posx": 0,
-"posy": 0
+"event_id": "bv_stop_mouse"
 }
-event_icon = ExtResource( 4 )
-body_scene = ExtResource( 3 )
+event_icon = ExtResource( 3 )
 
 [node name="PanelContainer" parent="." index="1"]
-margin_right = 207.0
-margin_bottom = 150.0
+margin_right = 97.0
 
 [node name="MarginContainer" parent="PanelContainer" index="1"]
-margin_right = 207.0
-margin_bottom = 150.0
+margin_right = 97.0
 
 [node name="VBoxContainer" parent="PanelContainer/MarginContainer" index="0"]
-margin_right = 201.0
-margin_bottom = 144.0
+margin_right = 91.0
 
 [node name="Header" parent="PanelContainer/MarginContainer/VBoxContainer" index="0"]
-margin_right = 191.0
-margin_bottom = 32.0
-
-[node name="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="0"]
-margin_bottom = 32.0
-
-[node name="IconPanel" parent="PanelContainer/MarginContainer/VBoxContainer/Header/CenterContainer" index="0"]
-margin_top = 16.0
-margin_bottom = 16.0
+margin_right = 81.0
 
 [node name="IconTexture" parent="PanelContainer/MarginContainer/VBoxContainer/Header/CenterContainer/IconPanel" index="0"]
 self_modulate = Color( 0, 0, 0, 1 )
@@ -65,40 +48,16 @@ texture = ExtResource( 2 )
 texture = SubResource( 2 )
 
 [node name="TitleLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="1"]
-margin_top = 9.0
-margin_right = 83.0
-margin_bottom = 23.0
-text = "MoveCamera"
+margin_right = 71.0
+text = "StopMouse"
 
 [node name="Content" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="2"]
-margin_left = 83.0
-margin_right = 93.0
-margin_bottom = 32.0
-
-[node name="ExpandControl" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="3"]
-visible = true
-margin_left = 93.0
-margin_top = 1.0
-margin_right = 137.0
-margin_bottom = 31.0
+margin_left = 71.0
+margin_right = 81.0
 
 [node name="Spacer" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="4"]
-margin_left = 137.0
-margin_right = 191.0
-margin_bottom = 32.0
-
-[node name="Body" parent="PanelContainer/MarginContainer/VBoxContainer" index="1"]
-visible = true
-margin_left = 0.0
-margin_top = 36.0
-margin_right = 191.0
-margin_bottom = 138.0
-
-[node name="Content" parent="PanelContainer/MarginContainer/VBoxContainer/Body" index="0"]
-margin_top = 0.0
-margin_right = 191.0
-margin_bottom = 102.0
-custom_constants/margin_left = 0
+margin_left = 81.0
+margin_right = 81.0
 
 [node name="PopupMenu" parent="." index="2"]
 custom_styles/hover = SubResource( 4 )

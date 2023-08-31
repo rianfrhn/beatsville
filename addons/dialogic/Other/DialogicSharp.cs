@@ -10,12 +10,12 @@ public static class DialogicSharp
   // Check the documentation of the DialogicClass for more information on how to use these functions!
   public static Node Start(String timeline = "", String default_timeline = "", bool useCanvasInstead = true)
   {
-    return Start<Node>(timeline, default_timeline, DEFAULT_DIALOG_RESOURCE, useCanvasInstead);
+	return Start<Node>(timeline, default_timeline, DEFAULT_DIALOG_RESOURCE, useCanvasInstead);
   }
 
   public static T Start<T>(String timeline = "", String default_timeline = "", String dialogScenePath = "", bool useCanvasInstead = true) where T : class
   {
-    return (T)_dialogic.Call("start", timeline, default_timeline, dialogScenePath, useCanvasInstead);
+	return (T)_dialogic.Call("start", timeline, default_timeline, dialogScenePath, useCanvasInstead);
   }
   
   // ------------------------------------------------------------------------------------------
@@ -23,37 +23,37 @@ public static class DialogicSharp
   // ------------------------------------------------------------------------------------------
   public static void Load(String slot_name = "")
   {
-     _dialogic.Call("load", slot_name);
+	 _dialogic.Call("load", slot_name);
   }
   
   public static void Save(String slot_name = "")
   {
-     _dialogic.Call("save", slot_name);
+	 _dialogic.Call("save", slot_name);
   }
 
   public static GC.Array GetSlotNames()
   {
-     return (GC.Array)_dialogic.Call("get_slot_names");
+	 return (GC.Array)_dialogic.Call("get_slot_names");
   }
   
   public static void EraseSlot(String slot_name)
   {
-     _dialogic.Call("erase_slot", slot_name);
+	 _dialogic.Call("erase_slot", slot_name);
   }
 
   public static bool HasCurrentDialogNode()
   {
-     return (bool)_dialogic.Call("has_current_dialog_node");
+	 return (bool)_dialogic.Call("has_current_dialog_node");
   }
 
   public static void ResetSaves()
   {
-    _dialogic.Call("reset_saves");
+	_dialogic.Call("reset_saves");
   }
 
   public static String GetCurrentSlot()
   {
-     return (String)_dialogic.Call("get_current_slot");
+	 return (String)_dialogic.Call("get_current_slot");
   }
   
   // ------------------------------------------------------------------------------------------
@@ -61,12 +61,12 @@ public static class DialogicSharp
   // ------------------------------------------------------------------------------------------
   public static GC.Dictionary Export()
   {
-    return (GC.Dictionary)_dialogic.Call("export");
+	return (GC.Dictionary)_dialogic.Call("export");
   }
 
   public static void Import(GC.Dictionary data)
   {
-    _dialogic.Call("import", data);
+	_dialogic.Call("import", data);
   }
   
   // ------------------------------------------------------------------------------------------
@@ -74,12 +74,12 @@ public static class DialogicSharp
   // ------------------------------------------------------------------------------------------
   public static String GetVariable(String name)
   {
-    return (String)_dialogic.Call("get_variable", name);
+	return (String)_dialogic.Call("get_variable", name);
   }
 
   public static void SetVariable(String name, String value)
   {
-    _dialogic.Call("set_variable", name, value);
+	_dialogic.Call("set_variable", name, value);
   }
 
   // ------------------------------------------------------------------------------------------
@@ -87,41 +87,41 @@ public static class DialogicSharp
   // ------------------------------------------------------------------------------------------
   public static String CurrentTimeline
   {
-    get
-    {
-      return (String)_dialogic.Call("get_current_timeline");
-    }
-    set
-    {
-      _dialogic.Call("set_current_timeline", value);
-    }
+	get
+	{
+	  return (String)_dialogic.Call("get_current_timeline");
+	}
+	set
+	{
+	  _dialogic.Call("set_current_timeline", value);
+	}
   }
 
   public static GC.Dictionary Definitions
   {
-    get
-    {
-      return (GC.Dictionary)_dialogic.Call("get_definitions");
-    }
+	get
+	{
+	  return (GC.Dictionary)_dialogic.Call("get_definitions");
+	}
   }
 
   public static GC.Dictionary DefaultDefinitions
   {
-    get
-    {
-      return (GC.Dictionary)_dialogic.Call("get_default_definitions");
-    }
+	get
+	{
+	  return (GC.Dictionary)_dialogic.Call("get_default_definitions");
+	}
   }
 
   public static bool Autosave
   {
-    get
-    {
-      return (bool)_dialogic.Call("get_autosave");
-    }
-    set
-    {
-      _dialogic.Call("set_autosave", value);
-    }
+	get
+	{
+	  return (bool)_dialogic.Call("get_autosave");
+	}
+	set
+	{
+	  _dialogic.Call("set_autosave", value);
+	}
   }
 }

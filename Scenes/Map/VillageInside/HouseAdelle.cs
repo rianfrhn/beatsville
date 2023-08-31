@@ -11,6 +11,10 @@ public class HouseAdelle : MapScene
 	public override void _Ready()
 	{
 		base._Ready();
+		if(DialogicSharp.GetVariable("FoughtShadow") == "1")
+		{
+
+		}
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

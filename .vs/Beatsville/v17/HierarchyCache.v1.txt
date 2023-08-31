@@ -3,7 +3,7 @@ i:{00000000-0000-0000-0000-000000000000}:Beatsville.sln
 ++Beatsville
 i:{00000000-0000-0000-0000-000000000000}:Beatsville
 ++Dependencies
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:>12204
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:>12428
 ++addons
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\
 ++Scenes
@@ -125,6 +125,8 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\ui\options\settingsui.cs
 ++SetupUI.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\ui\options\setupui.cs
+++BeatAction.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\ui\beataction.cs
 ++BVCamera.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\ui\bvcamera.cs
 ++BVTextButton.cs
@@ -201,5 +203,7 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\wildernessvwest\wildernesswest.cs
 ++DialogicSharp.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\dialogic\other\dialogicsharp.cs
-++BeatAction.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\ui\beataction.cs
+++VillageInside
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\villageinside\
+++HouseAdelle.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\villageinside\houseadelle.cs

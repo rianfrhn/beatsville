@@ -1,0 +1,109 @@
+{
+	"events": [
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "So. Adelle... what's your conclusion? "
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hmm.... "
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "How interesting....."
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 2
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well Marione, I don't have anything else to say... He looks completely normal. "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "But what in the world happened to him? "
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I couldn't say. There were no marks or signs of any physical damage. "
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "His brain functions are in normal condition. "
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I believe that he will wake up soon. "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well what if he doesn't? I'm only sure that he's alive once I felt a sudden strange ambiance inside the deep forests. "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I've never seen him actually wide awake since the last time he went missing. "
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well I'm not completely sure. Worst case is that he might be in deep coma. "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What shall we do now? "
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You'll wait here while I get some herbs real quick. "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No wait... I have to meet up with the others!!! "
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Darn... "
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1693462384.json",
+		"name": "AdelleCheckup"
+	}
+}
