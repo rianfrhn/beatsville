@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Tiles/BeatsvilleInterior/MedicalBedBack.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tiles/PathTiles.tres" type="TileSet" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://Assets/Tiles/BeatsvilleInterior/MedicalBedFront.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Tiles/Tilesets/BeatsvilleInteriors.tres" type="TileSet" id=8]
 [ext_resource path="res://Scenes/Map/VillageInside/HouseAdelle.cs" type="Script" id=9]
+[ext_resource path="res://Scenes/Misc/EventAction.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Misc/TriggerNode.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Interactables/NPC/Adelle.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Misc/NPCRemover.tscn" type="PackedScene" id=13]
 
 [node name="Scene" type="Node2D"]
 script = ExtResource( 9 )
@@ -54,7 +58,7 @@ animatedTileIDs = [  ]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 modulate = Color( 1.1, 1.1, 1, 1 )
-position = Vector2( 56, 88 )
+position = Vector2( 136, 135 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -24, -40 )
@@ -79,4 +83,37 @@ script = ExtResource( 5 )
 musicPath = "res://Resources/Songs/Silence.tres"
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 208, 56 )
+position = Vector2( 136, 152 )
+
+[node name="TriggerNode" parent="." instance=ExtResource( 11 )]
+position = Vector2( 216, 56 )
+action = 1
+dialogue = "KalWokeUp"
+
+[node name="EventAction" parent="TriggerNode" instance=ExtResource( 10 )]
+definition = "FoughtShadow"
+
+[node name="EventAction2" parent="TriggerNode" instance=ExtResource( 10 )]
+action = 1
+definition = "FoughtShadow"
+value = "2"
+
+[node name="TriggerNode2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 248, 56 )
+action = 1
+dialogue = "KalWokeUp"
+
+[node name="EventAction" parent="TriggerNode2" instance=ExtResource( 10 )]
+definition = "FoughtShadow"
+
+[node name="EventAction2" parent="TriggerNode2" instance=ExtResource( 10 )]
+action = 1
+definition = "FoughtShadow"
+value = "2"
+
+[node name="Adelle" parent="." instance=ExtResource( 12 )]
+position = Vector2( 56, 72 )
+
+[node name="NPCRemover" parent="." instance=ExtResource( 13 )]
+position = Vector2( 136, 163 )
+collision_mask = 4

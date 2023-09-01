@@ -83,9 +83,15 @@ public class Humanoid : Interactable
 	public bool atkMode;
 	[Export]
 	public Resource statsResource;
+	/// <summary>
+	/// Default facing. Will return to this face after done being interacted with
+	/// </summary>
 	[Export]
 	public bool faceLeft = false;
 
+	/// <summary>
+	/// Temporary facing value
+	/// </summary>
 	public bool facingLeft = false;
 	int xFacing = 0;
 	SceneTreeTween tweening;//forface
@@ -430,6 +436,7 @@ public class Humanoid : Interactable
 	}
 	public override void OpenDialogue(Node2D castSource)
 	{
+		if(dialogue == null) return;
 		if (castSource.Position.x < Position.x) facingLeft = true;
 		else facingLeft = false;
 		Node dialogueNode = DialogicSharp.Start(dialogue);

@@ -1,6 +1,15 @@
 {
 	"events": [
 		{
+			"enable_movement": false,
+			"event_id": "configure_movement"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
 			"character": "character-1676874925.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
@@ -78,6 +87,13 @@
 			"text": "What shall we do now? "
 		},
 		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Adelle",
+			"posx": 136,
+			"posy": 152
+		},
+		{
 			"character": "character-1693380421.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
@@ -99,6 +115,10 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Darn... "
+		},
+		{
+			"enable_movement": true,
+			"event_id": "configure_movement"
 		}
 	],
 	"metadata": {

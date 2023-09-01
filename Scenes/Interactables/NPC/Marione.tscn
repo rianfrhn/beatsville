@@ -598,7 +598,6 @@ tracks/5/keys = {
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 2 )
-dialogue = "MarioneTest"
 
 [node name="Rig" type="Node2D" parent="."]
 

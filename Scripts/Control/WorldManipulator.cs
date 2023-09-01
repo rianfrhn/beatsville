@@ -92,5 +92,32 @@ public class WorldManipulator : Node
 
 
 	}
+	public void CharacterExit(string name)
+	{
+		Humanoid npc = FindNpc(name);
+		if (BV.GH.currentScene == null) { GD.PushWarning("Current scene not found, tried to Exit Scene"); return; }
+		if (npc == null) { GD.PushWarning("NPC " + name + " Not found, tried to Exit Scene"); return; }
+		BV.GH.currentScene.RemoveChild(npc);
+	}
+	public void CharacterEnter(string dir, Vector2 pos, bool facingLeft)
+    {
+		Humanoid npc = ResourceLoader.Load<PackedScene>(dir).InstanceOrNull<Humanoid>();
+		if (BV.GH.currentScene == null) { GD.PushWarning("Current scene not found, tried to Enter Scene"); return; }
+		if(npc == null) { GD.PushWarning("Failed to get scene for NPC, tried to Enter Scene"); return; }
+		
+		BV.GH.currentScene.AddChild(npc);
+		npc.Position = pos;
+		npc.faceLeft = facingLeft;
 
+
+	}
+	public void CharacterTeleport(string name, Vector2 pos, bool facingLeft = false)
+    {
+		Humanoid npc = FindNpc(name);
+		if (BV.GH.currentScene == null) { GD.PushWarning("Current scene not found, tried to Teleport"); return; }
+		if (npc == null) { GD.PushWarning("Failed to get scene for NPC, tried to Teleport"); return; }
+
+		npc.Position = pos;
+		npc.faceLeft = facingLeft;
+	}
 }

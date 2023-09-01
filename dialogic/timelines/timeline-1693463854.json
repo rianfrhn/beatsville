@@ -124,12 +124,22 @@
 		},
 		{
 			"character": "character-1676874925.json",
-			"event_id": "dialogic_001",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
 			"portrait": "",
-			"text": "So I would assume that it was you"
+			"question": "So I would assume that it was you, Kal."
 		},
 		{
-			"choice": "Who are you?",
+			"choice": "So, I once...",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Lived here?",
 			"condition": "",
 			"definition": "",
 			"event_id": "dialogic_011",
@@ -137,6 +147,57 @@
 		},
 		{
 			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yeah... But I don't remember a single thing. "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh I almost forgot. I am Marione, a local florist here in beatsville! "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You're currently in the community health centre. Run independently by Adelle. "
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Anyway, how are you feeling? "
+		},
+		{
+			"choice": "I'm ok really",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"definition": "1693295379-447",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "2"
+		},
+		{
+			"event_id": "update_event"
 		}
 	],
 	"metadata": {

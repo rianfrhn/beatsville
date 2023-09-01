@@ -62,7 +62,7 @@ margin_left = 147.0
 margin_right = 212.0
 margin_bottom = 20.0
 text = "Angry"
-items = [ "Angry", null, false, 0, null, "Calm", null, false, 1, null, "Excited", null, false, 2, null, "Happy", null, false, 3, null, "Heart", null, false, 4, null, "Inspiration", null, false, 5, null, "Music", null, false, 6, null, "Poker", null, false, 7, null, "Surprised", null, false, 8, null, "Wrong", null, false, 9, null, "Angry", null, false, 0, null, "Calm", null, false, 1, null, "Excited", null, false, 2, null, "Happy", null, false, 3, null, "Heart", null, false, 4, null, "Inspiration", null, false, 5, null, "Music", null, false, 6, null, "Poker", null, false, 7, null, "Surprised", null, false, 8, null, "Wrong", null, false, 9, null, "Angry", null, false, 0, null, "Calm", null, false, 1, null, "Excited", null, false, 2, null, "Happy", null, false, 3, null, "Heart", null, false, 4, null, "Inspiration", null, false, 5, null, "Music", null, false, 6, null, "Poker", null, false, 7, null, "Surprised", null, false, 8, null, "Wrong", null, false, 9, null ]
+items = [ "Angry", null, false, 0, null, "Calm", null, false, 1, null, "Excited", null, false, 2, null, "Happy", null, false, 3, null, "Heart", null, false, 4, null, "Inspiration", null, false, 5, null, "Music", null, false, 6, null, "Poker", null, false, 7, null, "Surprised", null, false, 8, null, "Wrong", null, false, 9, null ]
 selected = 0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
