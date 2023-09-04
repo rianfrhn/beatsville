@@ -16,12 +16,6 @@
 			"value": "0"
 		},
 		{
-			"id": "1676538085-648",
-			"name": "HeldScene",
-			"type": 0,
-			"value": ""
-		},
-		{
 			"id": "1676538619-787",
 			"name": "HeldMusic",
 			"type": 0,
@@ -70,20 +64,26 @@
 			"value": "0"
 		},
 		{
-			"id": "1691662025-528",
-			"name": "EncounteredMarione",
-			"type": 0,
-			"value": "0"
-		},
-		{
 			"id": "1693295379-447",
 			"name": "FoughtShadow",
 			"type": 0,
 			"value": "0"
 		},
 		{
+			"id": "1676538085-648",
+			"name": "HeldScene",
+			"type": 0,
+			"value": ""
+		},
+		{
 			"id": "1693799648-151",
 			"name": "VillageIntro",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1691662025-528",
+			"name": "EncounteredMarione",
 			"type": 0,
 			"value": "0"
 		}

@@ -98,6 +98,7 @@ GlobalHandler="*res://Scripts/Control/GlobalHandler.cs"
 SceneTransition="*res://Scenes/UI/SceneTransition.tscn"
 QuestHandler="*res://Scenes/Control/QuestHandler.tscn"
 WorldManipulator="*res://Scripts/Control/WorldManipulator.cs"
+References="*res://Scripts/Control/References.cs"
 
 [display]
 

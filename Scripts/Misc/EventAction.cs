@@ -36,7 +36,11 @@ public class EventAction : Node
 					parent.QueueFree();
 					break;
 				case Action.ChangeDialogue:
-					if (parent is Interactable i) i.dialogueOverride = param; break; 
+					if (parent is Interactable i)
+						i.dialogueOverride = param;
+					else
+						GD.PushWarning(Name + " IS NOT INTERACTABLE");
+					break; 
 			}
 		}
 	}

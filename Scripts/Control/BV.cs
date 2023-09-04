@@ -24,5 +24,6 @@ public static class BV
     public static QuestHandler QH = null;
 
     public static WorldManipulator WM = null;
+    public static References Ref = null;
 
 }

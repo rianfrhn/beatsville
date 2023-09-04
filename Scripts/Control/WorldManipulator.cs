@@ -92,6 +92,17 @@ public class WorldManipulator : Node
 
 
 	}
+
+	SceneTreeTween cameraZtweener;
+	public void ZoomCamera(int tX, int tY, float duration)
+    {
+		if (BV.GH.currentCamera == null || BV.GH.currentPlayer == null) return;
+		Vector2 t = new Vector2(tX, tY);
+		if (cameraZtweener != null) cameraZtweener.Kill();
+		cameraZtweener = GetTree().CreateTween();
+		cameraZtweener.TweenProperty(BV.GH.currentCamera, "zoom", t, duration);
+
+	}
 	public void CharacterExit(string name)
 	{
 		Humanoid npc = FindNpc(name);
@@ -99,16 +110,24 @@ public class WorldManipulator : Node
 		if (npc == null) { GD.PushWarning("NPC " + name + " Not found, tried to Exit Scene"); return; }
 		BV.GH.currentScene.RemoveChild(npc);
 	}
-	public void CharacterEnter(string dir, Vector2 pos, bool facingLeft)
+	public Humanoid CharacterEnter(string dir, Vector2 pos, bool facingLeft)
     {
 		Humanoid npc = ResourceLoader.Load<PackedScene>(dir).InstanceOrNull<Humanoid>();
-		if (BV.GH.currentScene == null) { GD.PushWarning("Current scene not found, tried to Enter Scene"); return; }
-		if(npc == null) { GD.PushWarning("Failed to get scene for NPC, tried to Enter Scene"); return; }
+		if (BV.GH.currentScene == null) { GD.PushWarning("Current scene not found, tried to Enter Scene"); return null; }
+		if(npc == null) { GD.PushWarning("Failed to get scene for NPC, tried to Enter Scene"); return null; }
+		Humanoid existing = FindNpc(npc.Name);
+		if (existing != null)
+        {
+			existing.Position = pos;
+			existing.faceLeft = facingLeft;
+			npc.QueueFree();
+			return existing;
+        }
 		
 		BV.GH.currentScene.AddChild(npc);
 		npc.Position = pos;
 		npc.faceLeft = facingLeft;
-
+		return npc;
 
 	}
 	public void CharacterTeleport(string name, Vector2 pos, bool facingLeft = false)

@@ -211,7 +211,7 @@
 			"npc_name": "",
 			"resource_file": "",
 			"xpos": 136,
-			"ypos": 100
+			"ypos": 146
 		},
 		{
 			"event_id": "bv_pf",
@@ -317,19 +317,19 @@
 			"character": "character-1676874925.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I think we should go and meet him! He must be with Cutter near the playground."
+			"text": "I think we should go and meet him! He must be with Cutter near the empty land. "
 		},
 		{
 			"character": "character-1693380421.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "You go on ahead! I'll thay here as usual!"
+			"text": "You go on ahead! I'll stay here as usual!"
 		},
 		{
 			"character": "character-1676874925.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Lets go! We'll meet up at the right side of the village!"
+			"text": "Lets go! We'll meet up at the bottom right side of the village!"
 		},
 		{
 			"event_id": "bv_pf",
@@ -345,6 +345,14 @@
 			"random_upper_limit": 100,
 			"set_random": false,
 			"set_value": "2"
+		},
+		{
+			"definition": "1693799648-151",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
 		},
 		{
 			"event_id": "update_event"

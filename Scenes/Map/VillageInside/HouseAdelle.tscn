@@ -83,7 +83,7 @@ script = ExtResource( 5 )
 musicPath = "res://Resources/Songs/Silence.tres"
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 136, 152 )
+position = Vector2( 136, 146 )
 
 [node name="TriggerNode" parent="." instance=ExtResource( 11 )]
 position = Vector2( 216, 56 )

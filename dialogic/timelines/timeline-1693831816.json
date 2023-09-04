@@ -1,0 +1,305 @@
+{
+	"events": [
+		{
+			"enable_movement": false,
+			"event_id": "configure_movement"
+		},
+		{
+			"event_id": "change_song",
+			"resource_file": "res://Resources/Songs/Silence.tres"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"event_id": "change_song",
+			"resource_file": "res://Resources/Songs/DireGuardian.tres"
+		},
+		{
+			"change_scene": "res://Scenes/Interactables/NPC/Sparky.tscn",
+			"event_id": "bv_character_enter",
+			"exit": false,
+			"faceleft": false,
+			"npc_name": "",
+			"xpos": 1048,
+			"ypos": 296
+		},
+		{
+			"change_scene": "res://Scenes/Interactables/NPC/Marione.tscn",
+			"event_id": "bv_character_enter",
+			"exit": false,
+			"faceleft": false,
+			"npc_name": "",
+			"xpos": 1048,
+			"ypos": 312
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Sparky",
+			"posx": 1208,
+			"posy": 296
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Marione",
+			"posx": 1208,
+			"posy": 312
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 4
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What are you doing?!? "
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This isn't how we treat guests.. "
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 0.1
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yeah but what if they're from the-"
+		},
+		{
+			"block_input": false,
+			"event_id": "dialogic_050",
+			"wait_time": 0.1
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "That's enough."
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[wave]*sigh*[/wave] Can't we just have a little peace around here?  "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Okay, I am sorry. But this GUY right here startled me. "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I had the right to defend myself. "
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You don't even know his name! "
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Give him a chance to make a proper introduction! "
+		},
+		{
+			"event_id": "change_song",
+			"resource_file": "res://Resources/Songs/Silence.tres"
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Go on"
+		},
+		{
+			"choice": "Hello...",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "I'm Kal",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "change_song",
+			"resource_file": "res://Resources/Songs/HerbsAndMedicine.tres"
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No way!!!!"
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You're from the rumors  that has died out LONG AGO! "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I can't believe that it's true"
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I found him unconsious near the wilderness. "
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 0.1
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "unconscious*"
+		},
+		{
+			"block_input": false,
+			"event_id": "dialogic_050",
+			"wait_time": 0.1
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Now is not the time for that!"
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Okay okay. so supposedly, you knew him before?"
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'm only sure of it because of the rumors! I never actually knew him. "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Bro... Aren't you the one who started the rumors?"
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Me? I have never spread any rumors "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yeah, we're pretty sure that you were the one who spread the words. "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Anyway... what are we going to do, Cutter? Since you invited us here. "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well I was going to invite you to fish."
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "But since Kal's new here in town, why dont we show him around?"
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Since when did you become so nice to him? "
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You were the one who started a fight earlier."
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Come on. It was a pretty fun fight! "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I guess we could spar some time again! "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Anyway, I think it's best for us to inform everyone about Kal's arrival."
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh yeah! we'll document this with Chief Khel as well! "
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You guys go ahead, I'll be on Khel's house if you ever need me!"
+		},
+		{
+			"event_id": "change_song",
+			"resource_file": "res://Resources/Songs/WelcomeToBeatsville.tres"
+		},
+		{
+			"enable_movement": true,
+			"event_id": "configure_movement"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1693831816.json",
+		"name": "SparkyQuestionsAzka"
+	}
+}

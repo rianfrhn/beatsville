@@ -66,7 +66,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": true
+						"folded": false
 					}
 				},
 				"TestWorld": {
@@ -178,6 +178,19 @@
 						"folded": false
 					}
 				},
+				"Misc": {
+					"files": [
+						"timeline-1693806920.json",
+						"timeline-1693807967.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				},
 				"TestRoom": {
 					"files": [
 						"timeline-1675319699.json",
@@ -228,10 +241,24 @@
 						"timeline-1693293870.json"
 					],
 					"folders": {
-						"VillageEntrance": {
+						"Village1Entrance": {
 							"files": [
 								"timeline-1693462384.json",
 								"timeline-1693463854.json"
+							],
+							"folders": {
+
+							},
+							"metadata": {
+								"color": null,
+								"folded": false
+							}
+						},
+						"Village2Cutter": {
+							"files": [
+								"timeline-1693830993.json",
+								"timeline-1693831555.json",
+								"timeline-1693831816.json"
 							],
 							"folders": {
 
