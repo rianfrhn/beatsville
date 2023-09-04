@@ -129,8 +129,8 @@ script = ExtResource( 5 )
 [node name="TriggerNode" parent="." instance=ExtResource( 9 )]
 position = Vector2( 871, 271 )
 scale = Vector2( 0.534979, 1.65971 )
-sceneDir = "res://Scenes/Map/WildernessVWest/WildernessWest.tscn"
 dialogue = "TransitionMemToWilderness"
+sceneDir = "res://Scenes/Map/WildernessVWest/WildernessWest.tscn"
 
 [node name="MusicController" parent="." instance=ExtResource( 3 )]
 songDataRes = ExtResource( 12 )

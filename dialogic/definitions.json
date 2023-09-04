@@ -80,6 +80,12 @@
 			"name": "FoughtShadow",
 			"type": 0,
 			"value": "0"
+		},
+		{
+			"id": "1693799648-151",
+			"name": "VillageIntro",
+			"type": 0,
+			"value": "0"
 		}
 	]
 }

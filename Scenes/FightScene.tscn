@@ -11,6 +11,26 @@
 [node name="FightScene" type="Node2D"]
 script = ExtResource( 4 )
 
+[node name="TriggerNode" parent="." instance=ExtResource( 6 )]
+position = Vector2( 39, 98 )
+scale = Vector2( 0.690156, 8.43316 )
+sceneDir = "RUN"
+
+[node name="TriggerNode2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 163, 24 )
+scale = Vector2( 15.6426, 0.43114 )
+sceneDir = "RUN"
+
+[node name="TriggerNode3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 282, 95 )
+scale = Vector2( 0.690156, 8.43316 )
+sceneDir = "RUN"
+
+[node name="TriggerNode4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 160, 170 )
+scale = Vector2( 15.227, 0.503254 )
+sceneDir = "RUN"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer"]
@@ -35,24 +55,6 @@ collision_layer = 0
 collision_mask = 6
 format = 1
 tile_data = PoolIntArray( 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 65550, 2, 0, 65551, 2, 0, 65552, 2, 0, 65553, 2, 0, 131074, 2, 0, 131089, 2, 0, 196610, 2, 0, 196625, 2, 0, 262146, 2, 0, 262161, 2, 0, 327682, 2, 0, 327697, 2, 0, 393218, 2, 0, 393233, 2, 0, 458754, 2, 0, 458769, 2, 0, 524290, 2, 0, 524305, 2, 0, 589826, 2, 0, 589841, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0 )
-
-[node name="ExitNodes" type="Node2D" parent="."]
-
-[node name="TriggerNode" parent="ExitNodes" instance=ExtResource( 6 )]
-position = Vector2( 39, 98 )
-scale = Vector2( 0.690156, 8.43316 )
-
-[node name="TriggerNode2" parent="ExitNodes" instance=ExtResource( 6 )]
-position = Vector2( 163, 24 )
-scale = Vector2( 15.6426, 0.43114 )
-
-[node name="TriggerNode3" parent="ExitNodes" instance=ExtResource( 6 )]
-position = Vector2( 282, 95 )
-scale = Vector2( 0.690156, 8.43316 )
-
-[node name="TriggerNode4" parent="ExitNodes" instance=ExtResource( 6 )]
-position = Vector2( 160, 170 )
-scale = Vector2( 15.227, 0.503254 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

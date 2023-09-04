@@ -125,7 +125,7 @@
 			"value": ""
 		},
 		{
-			"character": "",
+			"character": "character-1691731414.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Ah... "
@@ -144,12 +144,6 @@
 		},
 		{
 			"event_id": "dialogic_013"
-		},
-		{
-			"character": "character-1691731414.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Kal "
 		},
 		{
 			"character": "character-1691731414.json",

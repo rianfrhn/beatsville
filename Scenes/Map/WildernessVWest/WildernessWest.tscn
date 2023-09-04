@@ -66,8 +66,8 @@ musicPath = "res://Resources/Songs/Silence.tres"
 [node name="TriggerNode" parent="." instance=ExtResource( 8 )]
 position = Vector2( 392, 98 )
 scale = Vector2( 1, 10.56 )
-action = 1
 dialogue = "MarioneEncounter"
+action = 1
 
 [node name="EventAction" parent="TriggerNode" instance=ExtResource( 9 )]
 action = 1
@@ -76,8 +76,8 @@ definition = "EncounteredMarione"
 [node name="TriggerNode2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 440, 200 )
 scale = Vector2( 3.8897, 5.40516 )
-action = 1
 dialogue = "ShadowHauntsBack"
+action = 1
 
 [node name="EventAction" parent="TriggerNode2" instance=ExtResource( 9 )]
 definition = "EncounteredMarione"

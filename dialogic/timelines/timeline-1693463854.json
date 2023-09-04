@@ -1,6 +1,10 @@
 {
 	"events": [
 		{
+			"enable_movement": false,
+			"event_id": "configure_movement"
+		},
+		{
 			"character": "character-1676874925.json",
 			"event_id": "dialogic_010",
 			"options": [
@@ -189,6 +193,152 @@
 			"event_id": "dialogic_013"
 		},
 		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Thats good to hear. "
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 2
+		},
+		{
+			"change_scene": "res://Scenes/Interactables/NPC/Adelle.tscn",
+			"event_id": "bv_character_enter",
+			"exit": false,
+			"faceleft": false,
+			"npc_name": "",
+			"resource_file": "",
+			"xpos": 136,
+			"ypos": 100
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Adelle",
+			"posx": 136,
+			"posy": 120
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sorry it took a while... "
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Adelle",
+			"posx": 184,
+			"posy": 88
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh, you're awake! "
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "How are you feeling?"
+		},
+		{
+			"choice": "Im good",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "First of all, tell me what happened? How did you end up in that forest?"
+		},
+		{
+			"choice": "So...",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You recount your encounter with the Shadowy Figure of  yourself in the forest. "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You explained that you had no memory of what happened prior to those events. But..."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You explained a bit about what Marione had told you. "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yeah... It's an old rumor that implies that you once lived here. "
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yeah, I've heard of that rumor long ago. Sparky told me about it."
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No  way! I heard it from sparky too!"
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I think we should go and meet him! He must be with Cutter near the playground."
+		},
+		{
+			"character": "character-1693380421.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You go on ahead! I'll thay here as usual!"
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Lets go! We'll meet up at the right side of the village!"
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Marione",
+			"posx": 136,
+			"posy": 152
+		},
+		{
 			"definition": "1693295379-447",
 			"event_id": "dialogic_014",
 			"operation": "=",
@@ -198,6 +348,10 @@
 		},
 		{
 			"event_id": "update_event"
+		},
+		{
+			"enable_movement": true,
+			"event_id": "configure_movement"
 		}
 	],
 	"metadata": {

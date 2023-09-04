@@ -1,18 +1,17 @@
 using Godot;
 using System;
 
-public class TriggerNode : Area2D
+public class TriggerNode : Interactable
 {
 	enum Action { ChangeScene, TriggerDialog}
-
+	[Export]
+	public bool onClick = false;
 	[Export]
 	Action action;
 	[Export(PropertyHint.File, "*.tscn")]
 	string sceneDir = "";
 	[Export(PropertyHint.File, "*.tres")]
 	string musicDir = "";
-	[Export]
-	string dialogue = "";
 
 	public override void _Ready()
 	{
@@ -22,6 +21,7 @@ public class TriggerNode : Area2D
 	private void onPlayerEntered(Node body)
 	{
 		if (!Visible) return;
+		if (onClick) return;
 		if (!(body is Humanoid plr && plr.isPlayer)) return;
 		switch (action)
 		{
@@ -31,23 +31,47 @@ public class TriggerNode : Area2D
 				break;
 			case Action.ChangeScene:
 				if (sceneDir == "") return;
-				GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
-				gv.fromScene = GetParent().Name;
+				BV.GH.fromScene = GetParent().Name;
 
 				if(sceneDir == "RUN")
 				{
-					gv.loadPos = true;
-					gv.LoadGameData("FightRun");
+					BV.GH.loadPos = true;
+					BV.GH.LoadGameData("FightRun");
 					
 					break;
 				}
-
-
-				SceneTransition st = GetTree().Root.GetNode<SceneTransition>("SceneTransition");
-				st.ChangeScene(sceneDir, musicDir, dialogue);
+				BV.ST.ChangeScene(sceneDir, musicDir, dialogue);
 				break;
 			default: break;
 		}
+	}
+	public override void OpenDialogue(Node2D castSource)
+	{
+		if (!Visible) return;
+		if (!onClick) return;
+		switch (action)
+		{
+			case Action.TriggerDialog:
+				Node dialogueNode = DialogicSharp.Start(dialogue);
+				BV.ST.AddChild(dialogueNode);
+				break;
+			case Action.ChangeScene:
+				if (sceneDir == "") return;
+				BV.GH.fromScene = GetParent().Name;
+
+				if (sceneDir == "RUN")
+				{
+					BV.GH.loadPos = true;
+					BV.GH.LoadGameData("FightRun");
+
+					break;
+				}
+
+				BV.ST.ChangeScene(sceneDir, musicDir, dialogue);
+				break;
+			default: break;
+		}
+
 	}
 
 

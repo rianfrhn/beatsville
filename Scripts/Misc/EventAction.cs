@@ -5,11 +5,12 @@ public class EventAction : Node
 {
 	enum Action
 	{
-		Appear, Disappear, Destroy
+		Appear, Disappear, Destroy, ChangeDialogue
 	}
 	[Export] Action action;
 	[Export] string definition;
 	[Export] string value;
+	[Export] string param;
 	CanvasItem parent;
 	public override void _Ready()
 	{
@@ -34,6 +35,8 @@ public class EventAction : Node
 				case Action.Destroy:
 					parent.QueueFree();
 					break;
+				case Action.ChangeDialogue:
+					if (parent is Interactable i) i.dialogueOverride = param; break; 
 			}
 		}
 	}

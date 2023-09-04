@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Assets/OST/Welcome to Beatsville.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/Resources/SongData.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+BPM = 120
+TimeSign = 4
+song = ExtResource( 1 )
+beatsToMove = [ 0, 1, 2 ]
+beatsToAtk = [  ]
+timeChanges = {
+}

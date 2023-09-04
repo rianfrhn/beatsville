@@ -15,7 +15,7 @@ func handle_event(event_data, dialog_node):
 		WorldManipulator.CharacterExit(event_data['npc_name'])
 	else:
 		WorldManipulator.CharacterEnter(
-			event_data['resource_file'],
+			event_data['change_scene'],
 			Vector2(event_data['xpos'], event_data['ypos']),
 			event_data['faceleft']
 		)

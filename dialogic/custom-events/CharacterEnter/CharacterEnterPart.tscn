@@ -78,7 +78,7 @@ margin_left = 64.0
 margin_top = 0.0
 margin_right = 233.0
 margin_bottom = 24.0
-Mode = "Resource"
+Mode = "Scene"
 
 [node name="FileButton" parent="EnterContainer/Char/FilePicker" index="1"]
 custom_colors/font_color = Color( 0.8, 0.807843, 0.827451, 1 )
@@ -108,6 +108,7 @@ text = "X:"
 margin_left = 16.0
 margin_right = 90.0
 margin_bottom = 24.0
+max_value = 10000.0
 
 [node name="Label2" parent="EnterContainer/Coords" instance=ExtResource( 4 )]
 margin_left = 94.0
@@ -121,6 +122,7 @@ text = "Y:"
 margin_left = 109.0
 margin_right = 183.0
 margin_bottom = 24.0
+max_value = 10000.0
 
 [node name="BoolContainer" type="HBoxContainer" parent="EnterContainer"]
 margin_top = 56.0

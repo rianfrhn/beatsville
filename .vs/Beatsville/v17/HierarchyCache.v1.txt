@@ -3,7 +3,7 @@ i:{00000000-0000-0000-0000-000000000000}:Beatsville.sln
 ++Beatsville
 i:{00000000-0000-0000-0000-000000000000}:Beatsville
 ++Dependencies
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:>12428
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:>12820
 ++addons
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\
 ++Scenes
@@ -11,6 +11,14 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 ++Map
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\map\
+++Memory
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\memory\
+++VillageInside
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\villageinside\
+++HouseAdelle.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\villageinside\houseadelle.cs
+++WildernessVWest
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\wildernessvwest\
 ++Misc
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\misc\
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\misc\
@@ -46,7 +54,6 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 ++BV.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\bv.cs
 ++GlobalVariable.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\globalvariable.cs
 ++MapScene.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\mapscene.cs
 ++QuestHandler.cs
@@ -140,7 +147,7 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 ++FightScene.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\fightscene.cs
 ++GlobalHandler.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\globalhandler.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\globalhandler.cs
 ++Humanoid.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\humanoid.cs
 ++Interactable.cs
@@ -163,10 +170,10 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:assemblies
 ++dialogic
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\dialogic\
-++Memory
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\memory\
-++WildernessVWest
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\wildernessvwest\
+++Start.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\memory\start.cs
+++WildernessWest.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\wildernessvwest\wildernesswest.cs
 ++DamageIndicator.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\misc\damageindicator.cs
 ++Marker.cs
@@ -197,13 +204,11 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemb
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.xml.linq.dll
 ++Other
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\dialogic\other\
-++Start.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\memory\start.cs
-++WildernessWest.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\wildernessvwest\wildernesswest.cs
 ++DialogicSharp.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\dialogic\other\dialogicsharp.cs
-++VillageInside
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\villageinside\
-++HouseAdelle.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\villageinside\houseadelle.cs
+++WorldManipulator.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\worldmanipulator.cs
+++NPCRemover.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\misc\npcremover.cs
+++BeatsvilleMap.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\beatsvillemap.cs
