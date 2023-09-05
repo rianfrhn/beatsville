@@ -289,6 +289,140 @@
 			"text": "You guys go ahead, I'll be on Khel's house if you ever need me!"
 		},
 		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Sparky",
+			"posx": 760,
+			"posy": 248
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 3
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'll tell the others to come out and see you! "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Meet all of the villagers. "
+		},
+		{
+			"character": "character-1676874925.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Let's have a chat after you're done. "
+		},
+		{
+			"event_id": "bv_pf",
+			"is_relative": false,
+			"name": "Marione",
+			"posx": 344,
+			"posy": 136
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 3
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Bro... "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Sorry about earlier... I was startled, thats all."
+		},
+		{
+			"choice": "It's alright",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"duration": 2,
+			"event_id": "event_bv_ce",
+			"expression": "Heart",
+			"name": "Cutter"
+		},
+		{
+			"choice": "...",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It's nice to meet you! I'm  Cutter. A local blacksmith. "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I forge and repair musical instruments. "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I also occasionaly [color=#00b7ff]Trade materials for talismans[/color]. "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "We use these instruments to spar, just like what we did back there. "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Though fighting like that here is not a necessity for us villagers. "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Those who has the will of conquering the arts of music are able to defend themselves. "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "However, you dont seem to have any instruments?"
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Eitherway, come and talk after you've met up with the others! "
+		},
+		{
+			"character": "character-1693380310.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'll be staying here for a while!"
+		},
+		{
 			"event_id": "change_song",
 			"resource_file": "res://Resources/Songs/WelcomeToBeatsville.tres"
 		},

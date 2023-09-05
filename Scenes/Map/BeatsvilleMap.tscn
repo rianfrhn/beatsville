@@ -389,5 +389,5 @@ action = 1
 definition = "VillageIntro"
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 1048, 296 )
+position = Vector2( 344, 136 )
 z_index = 10

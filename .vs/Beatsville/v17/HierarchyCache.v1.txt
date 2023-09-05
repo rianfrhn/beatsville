@@ -3,7 +3,7 @@ i:{00000000-0000-0000-0000-000000000000}:Beatsville.sln
 ++Beatsville
 i:{00000000-0000-0000-0000-000000000000}:Beatsville
 ++Dependencies
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:>12820
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:>13172
 ++addons
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\
 ++Scenes
@@ -19,6 +19,8 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\villageinside\houseadelle.cs
 ++WildernessVWest
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\wildernessvwest\
+++BeatsvilleMap.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\beatsvillemap.cs
 ++Misc
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\misc\
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\misc\
@@ -53,11 +55,14 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\astarpath.cs
 ++BV.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\bv.cs
-++GlobalVariable.cs
+++GlobalHandler.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\globalhandler.cs
 ++MapScene.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\mapscene.cs
 ++QuestHandler.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\questhandler.cs
+++WorldManipulator.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\worldmanipulator.cs
 ++AnimatedTiles.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\map\animatedtiles.cs
 ++TestCave.cs
@@ -84,6 +89,8 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\misc\eventaction.cs
 ++ExpressionBubble.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\misc\expressionbubble.cs
+++NPCRemover.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\misc\npcremover.cs
 ++TriggerNode.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\misc\triggernode.cs
 ++ProjectileBehaviors
@@ -146,8 +153,6 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\ui\options.cs
 ++FightScene.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\fightscene.cs
-++GlobalHandler.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\globalhandler.cs
 ++Humanoid.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\humanoid.cs
 ++Interactable.cs
@@ -206,9 +211,5 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemb
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\dialogic\other\
 ++DialogicSharp.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\dialogic\other\dialogicsharp.cs
-++WorldManipulator.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\worldmanipulator.cs
-++NPCRemover.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\misc\npcremover.cs
-++BeatsvilleMap.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\map\beatsvillemap.cs
+++References.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\references.cs

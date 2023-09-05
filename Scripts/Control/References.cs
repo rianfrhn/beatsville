@@ -12,6 +12,7 @@ public class References : Node
         public static readonly string Marione = "res://Scenes/Interactables/NPC/Marione.tscn";
         public static readonly string Rei = "res://Scenes/Interactables/NPC/Rei.tscn";
         public static readonly string Sparky = "res://Scenes/Interactables/NPC/Sparky.tscn";
+        public static readonly string Khel = "res://Scenes/Interactables/NPC/Khel.tscn";
     }
     public static class Map
     {
