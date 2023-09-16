@@ -69,7 +69,7 @@ public abstract class BaseAI : Node
 		Vector2 dist = CastToGrid(EnemyPosition() - human.Position);
 		int ySign = Mathf.Sign(dist.y);
 		int xSign = Mathf.Sign(dist.x);
-		if (Mathf.Abs(dist.y) > Mathf.Abs(dist.x))
+		if (Mathf.Abs(dist.y) >= Mathf.Abs(dist.x))
 		{
 			return new Vector2(-xSign * 16, 0);
 		}

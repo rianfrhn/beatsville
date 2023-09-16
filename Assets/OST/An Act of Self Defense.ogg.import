@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/An Act of Self Defense.ogg-abf1137a5f7dd3d12eb420aa3301f411.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/An Act of Self Defense.ogg"
+dest_files=[ "res://.import/An Act of Self Defense.ogg-abf1137a5f7dd3d12eb420aa3301f411.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

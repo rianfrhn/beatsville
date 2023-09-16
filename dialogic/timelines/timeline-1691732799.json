@@ -8,6 +8,7 @@
 		},
 		{
 			"event_id": "start_fight",
+			"prevent_loss": true,
 			"resource_file": "res://Resources/Fights/VSShadow.tres"
 		}
 	],

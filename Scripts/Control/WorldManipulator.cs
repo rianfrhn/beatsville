@@ -120,6 +120,7 @@ public class WorldManipulator : Node
         {
 			existing.Position = pos;
 			existing.faceLeft = facingLeft;
+			existing.facingLeft = facingLeft;
 			npc.QueueFree();
 			return existing;
         }
@@ -127,6 +128,7 @@ public class WorldManipulator : Node
 		BV.GH.currentScene.AddChild(npc);
 		npc.Position = pos;
 		npc.faceLeft = facingLeft;
+		npc.facingLeft = facingLeft;
 		return npc;
 
 	}
@@ -138,5 +140,6 @@ public class WorldManipulator : Node
 
 		npc.Position = pos;
 		npc.faceLeft = facingLeft;
+		npc.facingLeft = facingLeft;
 	}
 }

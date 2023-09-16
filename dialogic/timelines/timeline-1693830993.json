@@ -35,8 +35,9 @@
 			"text": "STAY AWAY! "
 		},
 		{
-			"change_timeline": "timeline-1693831816.json",
-			"event_id": "dialogic_020"
+			"event_id": "start_fight",
+			"prevent_loss": true,
+			"resource_file": "res://Resources/Fights/VSCutter.tres"
 		}
 	],
 	"metadata": {

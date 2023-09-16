@@ -24,6 +24,7 @@ public class QuestHandler : Node
 		Quest q = GetQuestByID(id);
 		if (q == null) return;
 		if (completedQuests.Contains(q)) return;
+		if (activatedQuests.Contains(q)) { BV.GH.CreateNotification(this, "Quest Existed", c: Colors.Red); return; }
 		GD.Print("Starting quest " + q.questID);
 		activatedQuests.Add(q);
 		questNode.RemoveChild(q);
@@ -167,6 +168,7 @@ public class QuestHandler : Node
 		psQuests.Pack(questNode);
 		ResourceSaver.Save("user://unfQ", psQuests);
 		*/
+		/*
 		foreach(Node q in activatedNode.GetChildren())
 		{
 			foreach(Node n in q.GetChildren())
@@ -193,12 +195,34 @@ public class QuestHandler : Node
 		PackedScene psActivated = new PackedScene();
 		psActivated.Pack(activatedNode);
 		ResourceSaver.Save("user://actQ.tscn", psActivated, ResourceSaver.SaverFlags.ReplaceSubresourcePaths);
+		*/
+		QuestSaveData qsd = ResourceLoader.Load<QuestSaveData>("res://Resources/QuestSaveData.tres");
 
+		foreach (Quest q in activatedNode.GetChildren())
+		{
+			string id = q.questID;
+			Array<string> completedGoals = new Array<string>();
+
+			foreach (QuestGoal g in q.GetChildren())
+			{
+				if (g.completed)
+				{
+					completedGoals.Add(g.goalID);
+				}
+			}
+			qsd.AddActivated(id, completedGoals);
+		}
+		foreach (Quest q in completedNode.GetChildren())
+		{
+			qsd.AddCompleted(q.questID);
+		}
+		ResourceSaver.Save("user://questdata.tres", qsd, ResourceSaver.SaverFlags.ReplaceSubresourcePaths);
 
 
 	}
 	public void LoadQuests()
 	{
+		/*
 		PackedScene psCompleted = ResourceLoader.Load<PackedScene>("user://compQ.tscn", noCache:true);
 		completedNode.QueueFree();
 		Node comp = psCompleted.Instance();
@@ -223,6 +247,56 @@ public class QuestHandler : Node
 			}
 		}
 		UpdateQuests();
+		*/
+		Resource qsdRes = ResourceLoader.Load<Resource>("user://questdata.tres", noCache: true);
+		QuestSaveData qsd;
+		if (qsdRes is QuestSaveData _qsd) qsd = _qsd; else { GD.PushError("Failed to load quest data"); return; }
+		
+		
+		foreach (Dictionary d in qsd.activated)
+		{
+			string qid = (string)d["id"];
+			Array<string> goals = (Array<string>)d["completed_goals"];
+			Quest q = GetQuestByID(qid);
+			if(q != null) { 
+				foreach(QuestGoal qg in q.GetChildren())
+				{
+					if (goals.Contains(qg.goalID))
+					{
+						qg.completed = true;
+					}
+					qg.Owner = q;
+				}
+				activatedNode.AddChild(q);
+			}
+		}
+		foreach(string qid in qsd.completed)
+		{
+			Quest q = GetQuestByID(qid);
+			if(q != null)
+			{
+				foreach (QuestGoal qg in q.GetChildren())
+				{
+					qg.Owner = q;
+					qg.completed = true;
+				}
+				completedNode.AddChild(q);
+				
+			}
+		}
+
+		ValidateQuests();
+		foreach (Node n in activatedNode.GetChildren())
+		{
+			if (n is Quest q)
+			{
+				q.Initialize();
+				q.Connect("Completed", this, "CompleteQuest");
+
+			}
+		}
+		UpdateQuests();
+
 	}
 	public void ValidateQuests()
 	{

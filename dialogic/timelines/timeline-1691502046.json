@@ -35,6 +35,9 @@
 			"text": "Craving for something? "
 		},
 		{
+			"event_id": "bv_save_all"
+		},
+		{
 			"character": "character-1691731414.json",
 			"event_id": "dialogic_001",
 			"portrait": "",

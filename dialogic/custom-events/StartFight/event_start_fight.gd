@@ -9,7 +9,7 @@ func handle_event(event_data, dialog_node):
 	"""
 	#dialog_node.set_state(dialog_node.state.WAITING)
 	#dialog_node.set_state(dialog_node.state.WAITING_INPUT)
-	GlobalHandler.InitializeFight(event_data["resource_file"])
+	GlobalHandler.InitializeFight(event_data["resource_file"], event_data["prevent_loss"])
 	
 	# once you want to continue with the next event
 	dialog_node._load_next_event()

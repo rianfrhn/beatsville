@@ -10,9 +10,12 @@ public class Quest : Node
 	public string questName = "";
 	[Export]
 	public string description = "";
-
+	[Export]
+	public bool showProgress = false;
+	[Export]
+	public bool sequential = true;
 	public Array<QuestGoal> questGoals = new Array<QuestGoal>();
-	public int activeIndex;
+	public int progress;
 	[Signal]
 	public delegate void Completed(string id);
 	public void Initialize()
@@ -33,39 +36,47 @@ public class Quest : Node
 		{
 			GD.PushWarning("QUEST GOALS FOR " + questID + " IS 0");
 			return;
-
 		}
-		activeIndex = 0;
+		progress = 0;
 		GD.Print("Quest " + questID +" INITIALIZED");
-		ActivateGoal(0);
+        if (sequential)
+		{
+			ActivateGoal(0);
+        }
+        else
+        {
+			for (int i = 0; i < questGoals.Count; i++) ActivateGoal(i);
+        }
 	}
 	public void ActivateGoal(int num)
 	{
 		if (questGoals == null || questGoals[num] == null) return;
 		QuestGoal q = questGoals[num];
 		GD.Print("Goal " + q.goalID + " activated");
-		activeIndex = num;
 		q.Activate();
 		q.Connect("Completed", this, "onGoalCompleted");
 	}
 	public void onGoalCompleted(string id)
 	{
 		QuestGoal q = GetQuestGoalByID(id);
-		GD.Print("QUestGoal: " + id + " has been completed");
+		GD.Print("QuestGoal: " + id + " has been completed");
 		q.Disconnect("Completed", this, "onGoalCompleted");
-		activeIndex++;
-		if(activeIndex < questGoals.Count)
+		progress++;
+		GD.PushWarning("Progress = " + progress);
+		GD.PushWarning("Goal Count = " + questGoals.Count);
+
+		if (progress < questGoals.Count)
 		{
-			ActivateGoal(activeIndex);
+			if (sequential) ActivateGoal(progress);
+			BV.GH.CreateNotification(this, "Quest Progressed!", 2.0f, Colors.Yellow);
 		}
 		else
 		{
 			EmitSignal("Completed", questID);
 			GD.Print("Quest " + questID + " Completed");
 		}
-		
-
 	}
+	
 	public Array<QuestGoal> GetQuestGoals()
 	{
 		Godot.Collections.Array nodes;

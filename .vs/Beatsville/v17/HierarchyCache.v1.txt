@@ -3,7 +3,7 @@ i:{00000000-0000-0000-0000-000000000000}:Beatsville.sln
 ++Beatsville
 i:{00000000-0000-0000-0000-000000000000}:Beatsville
 ++Dependencies
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:>13172
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:>13760
 ++addons
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\
 ++Scenes
@@ -31,6 +31,8 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\ui\healthbar.cs
 ++SceneTransition.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\ui\scenetransition.cs
+++BeatGradient.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\beatgradient.cs
 ++Menu.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scenes\menu.cs
 ++StateLabel.cs
@@ -45,6 +47,8 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\ai\baseai.cs
 ++ChimeraAI.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\ai\chimeraai.cs
+++CutterAI.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\ai\cutterai.cs
 ++DummyAI.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\ai\dummyai.cs
 ++SKalAI.cs
@@ -61,6 +65,8 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\mapscene.cs
 ++QuestHandler.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\questhandler.cs
+++References.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\references.cs
 ++WorldManipulator.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\worldmanipulator.cs
 ++AnimatedTiles.cs
@@ -107,6 +113,8 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\moonlit_sonata2.cs
 ++Moonlit_Sonata3.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\moonlit_sonata3.cs
+++SaxTravel1.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\saxtravel1.cs
 ++ScytheThrow.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\projectilebehaviors\scythethrow.cs
 ++Resources
@@ -186,30 +194,28 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 ++SaveData.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\resources\playerdata\savedata.cs
 ++GodotSharp
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\.mono\assemblies\debug\godotsharp.dll
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\godotsharp
 ++GodotSharpEditor
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\.mono\assemblies\debug\godotsharpeditor.dll
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\godotsharpeditor
 ++System
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.dll
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system
 ++System.Core
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.core.dll
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.core
 ++System.Data
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.data.dll
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.data
 ++System.Drawing
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.drawing.dll
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.drawing
 ++System.IO.Compression.FileSystem
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.io.compression.filesystem.dll
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.io.compression.filesystem
 ++System.Numerics
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.numerics.dll
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.numerics
 ++System.Runtime.Serialization
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.runtime.serialization.dll
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.runtime.serialization
 ++System.Xml
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.xml.dll
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.xml
 ++System.Xml.Linq
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.xml.linq.dll
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.xml.linq
 ++Other
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\dialogic\other\
 ++DialogicSharp.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\dialogic\other\dialogicsharp.cs
-++References.cs
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\control\references.cs

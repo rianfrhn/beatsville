@@ -5,10 +5,13 @@ public class QuestGoal : Node
 {
 	[Export]
 	public string goalID;
+	[Export]
+	public bool completed = false;
 	[Signal]
 	public delegate void Completed(string GoalID);
 	[Signal]
 	public delegate void Progressed(string GoalID);
+	
 
 	public int progress;
 	public bool activated;

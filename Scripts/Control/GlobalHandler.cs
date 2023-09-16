@@ -4,6 +4,7 @@ using Godot.Collections;
 
 public class GlobalHandler : Node
 {
+	public bool preventLoss = false;
 	public float songOffset = 0;
 
 	public string fromScene;
@@ -82,14 +83,15 @@ public class GlobalHandler : Node
 		GD.Print(player1dir, player2dir, songdatadir, IsBossfight);
 	}
 	*/
-	public void InitializeFight(string resName)
+	public void InitializeFight(string resName, bool preventLoss = false)
     {
 		//SaveGameData();
 		FightData fd = ResourceLoader.Load<FightData>(resName);
 		if(fd!= null)
 		{
-			fd.Initialize(resName);
+			fd.Initialize(resName, preventLoss);
 			currentFight = fd;
+			
 		}
 		sceneTransition.ChangeScene("res://Scenes/FightScene.tscn", "STOP");
     }
@@ -97,7 +99,7 @@ public class GlobalHandler : Node
     {
 		FightData fd = (FightData) currentFight;
 		fd.Finished();
-		DialogicSharp.Save();
+		//DialogicSharp.Save();
 		saveData.money += fd.moneyGain;
 		saveData.AddXP(fd.xpGain);
 		LoadGameData("FightWon");
@@ -203,6 +205,8 @@ public class GlobalHandler : Node
 	}
 	public void OnUpdateEvent()
     {
-		SaveGameData();
+		//SaveGameData();
+		
     }
+	
 }

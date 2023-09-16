@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Projectiles/Sax/Ring.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/ProjectileBehaviors/SaxTravel1.cs" type="Script" id=2]
+[ext_resource path="res://Assets/FX/Music.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 3.0
+
+[sub_resource type="Animation" id=7]
+resource_name = "Collide"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ring:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Default"
+
+[sub_resource type="Animation" id=9]
+resource_name = "Pulse"
+length = 0.3
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ring/Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.025, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ring/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.025, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1.2, 1.2, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Gradient" id=22]
+offsets = PoolRealArray( 0, 0.861878 )
+colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=21]
+gradient = SubResource( 22 )
+
+[sub_resource type="ParticlesMaterial" id=23]
+flag_disable_z = true
+direction = Vector3( 10, 0, 0 )
+spread = 180.0
+flatness = 0.17
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 83.27
+initial_velocity_random = 0.27
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 39.89
+damping_random = 0.66
+scale_random = 0.5
+color_ramp = SubResource( 21 )
+hue_variation = -0.94
+hue_variation_random = 0.22
+
+[node name="SaxRing" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 2 )
+stunDur = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="FlipTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Collide = SubResource( 7 )
+anims/Default = SubResource( 8 )
+anims/Pulse = SubResource( 9 )
+
+[node name="Ring" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Ring"]
+texture = ExtResource( 1 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+show_behind_parent = true
+z_index = -1
+emitting = false
+amount = 15
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.83
+fixed_fps = 24
+local_coords = false
+process_material = SubResource( 23 )
+texture = ExtResource( 3 )

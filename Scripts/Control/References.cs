@@ -4,6 +4,7 @@ using System;
 public class References : Node
 {
     public static class Char
+
     {
         public static readonly string SKal = "res://Scenes/Interactables/NPC/SKal.tscn";
         public static readonly string Adelle = "res://Scenes/Interactables/NPC/Adelle.tscn";
@@ -13,6 +14,8 @@ public class References : Node
         public static readonly string Rei = "res://Scenes/Interactables/NPC/Rei.tscn";
         public static readonly string Sparky = "res://Scenes/Interactables/NPC/Sparky.tscn";
         public static readonly string Khel = "res://Scenes/Interactables/NPC/Khel.tscn";
+        public static readonly string Rai = "res://Scenes/Interactables/NPC/Rai.tscn";
+        public static readonly string Lazarus = "res://Scenes/Interactables/NPC/Lazarus.tscn";
     }
     public static class Map
     {

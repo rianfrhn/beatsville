@@ -20,6 +20,44 @@ script = ExtResource( 3 )
 goalID = "ct1"
 interactableName = "Chimera"
 
+[node name="TalkVillagers" type="Node" parent="Quests"]
+script = ExtResource( 2 )
+questID = "meet_villagers"
+questName = "Talk to the villagers"
+description = "Interact with the villagers. They should be on standby infront of their houses."
+showProgress = true
+sequential = false
+
+[node name="InteractSpark" type="Node" parent="Quests/TalkVillagers"]
+script = ExtResource( 3 )
+goalID = "mv_sy"
+interactableName = "Sparky"
+
+[node name="InteractMarione" type="Node" parent="Quests/TalkVillagers"]
+script = ExtResource( 3 )
+goalID = "mv_me"
+interactableName = "Marione"
+
+[node name="InteractKhel" type="Node" parent="Quests/TalkVillagers"]
+script = ExtResource( 3 )
+goalID = "mv_kl"
+interactableName = "Khel"
+
+[node name="InteractRai" type="Node" parent="Quests/TalkVillagers"]
+script = ExtResource( 3 )
+goalID = "mv_ri"
+interactableName = "Rai"
+
+[node name="InteractAdelle" type="Node" parent="Quests/TalkVillagers"]
+script = ExtResource( 3 )
+goalID = "mv_ae"
+interactableName = "Adelle"
+
+[node name="InteractLazarus" type="Node" parent="Quests/TalkVillagers"]
+script = ExtResource( 3 )
+goalID = "mv_ls"
+interactableName = "Lazarus"
+
 [node name="Activated" type="Node" parent="."]
 
 [node name="Completed" type="Node" parent="."]

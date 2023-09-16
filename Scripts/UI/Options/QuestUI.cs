@@ -45,6 +45,7 @@ public class QuestUI : VBoxContainer
     }
     public void OnPressed(Quest q)
     {
-        label.BbcodeText = q.questName+": "+q.description+"\nRewards: NotYetImplemented";
+        label.BbcodeText = q.questName+": "+q.description;
+        if (q.showProgress) label.BbcodeText += "\nProgress: " + q.progress + "/" + q.questGoals.Count;
     }
 }

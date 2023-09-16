@@ -114,18 +114,18 @@ modulate = Color( 1.1, 1.1, 1, 1 )
 position = Vector2( 56, 88 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( -24, -40 )
 current = true
 limit_left = 0
 limit_top = 0
 limit_right = 1328
 limit_bottom = 288
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 3.0
 offset_h = -1.0
 offset_v = -1.0
-drag_margin_left = 0.4
-drag_margin_top = 0.4
+drag_margin_left = 0.0
+drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 editor_draw_limits = true

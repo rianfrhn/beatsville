@@ -76,14 +76,68 @@
 			"value": ""
 		},
 		{
+			"id": "1691662025-528",
+			"name": "EncounteredMarione",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1693978839-787",
+			"name": "IntroTalkedSparky",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1693978868-366",
+			"name": "IntroTalkedMarione",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1693978877-146",
+			"name": "IntroTalkedAdelle",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1693978892-918",
+			"name": "IntroTalkedRai",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1693978905-483",
+			"name": "IntroTalkedLazarus",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1693978936-970",
+			"name": "IntroTalkedKhel",
+			"type": 0,
+			"value": ""
+		},
+		{
 			"id": "1693799648-151",
 			"name": "VillageIntro",
 			"type": 0,
 			"value": "0"
 		},
 		{
-			"id": "1691662025-528",
-			"name": "EncounteredMarione",
+			"id": "1693978791-648",
+			"name": "IntroNpcsTalkedTo",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1693979026-713",
+			"name": "VillagersIntroduction",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1694667838-416",
+			"name": "FoughtCutter",
 			"type": 0,
 			"value": "0"
 		}

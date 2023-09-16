@@ -6,7 +6,9 @@ public class MapScene : Node2D
     public override void _Ready()
     {
 		PlacePlayer();
-    }
+		BV.GH.Connect("UpdateEvent", this, "onUpdate");
+	}
+	public virtual void onUpdate() { }
     public void PlacePlayer(string directory = "")
 	{
 		GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");

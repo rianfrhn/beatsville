@@ -594,7 +594,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0, 4 ) ]
 }
 
-[node name="Cutter" type="Area2D"]
+[node name="Khel" type="Area2D"]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 2 )

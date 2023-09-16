@@ -5,6 +5,7 @@ public abstract class Projectile : Area2D
 {
 	[Export]
 	public Animation castingAnimation;
+	[Export]
 	public int stunDur = 1;
 	public int damage = 50;
 	public int strength;
@@ -45,7 +46,7 @@ public abstract class Projectile : Area2D
 		int bonusDmg = rng.RandiRange(0, strength);
 		return damage + bonusDmg;
 	}
-	public async void onHit(Node obj)
+	public void onHit(Node obj)
 	{
 
 		if(obj is Humanoid)
@@ -68,6 +69,10 @@ public abstract class Projectile : Area2D
 			tileset.SetCellv(cell, -1);
 
 		}
+		Deletion(obj);
+	}
+	public virtual async void Deletion(Node recentlyHit = null)
+    {
 		if (onCollideAutoDel)
 		{
 			if (!collided && animplayer != null)
@@ -75,9 +80,10 @@ public abstract class Projectile : Area2D
 				animplayer.Play("Collide");
 			};
 			collided = true;
-			if(animplayer != null) await ToSignal(animplayer, "animation_finished");
+			if (animplayer != null) await ToSignal(animplayer, "animation_finished");
 			this.QueueFree();
 		}
+
 	}
 	
 	public override void _Ready(){

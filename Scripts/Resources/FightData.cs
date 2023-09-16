@@ -17,11 +17,14 @@ public class FightData : Resource
     public bool isBossFight;
     [Export]
     public PackedScene map;
+    [Export]
+    public bool lossPrevention = false;
     public string name;
 
-    public void Initialize(string name)
+    public void Initialize(string name, bool preventLoss = false)
     {
         this.name = name;
+        this.lossPrevention = preventLoss;
         DialogicSharp.SetVariable("OngoingFight", name);
     }
     public void Finished()

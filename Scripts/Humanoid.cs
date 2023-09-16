@@ -82,7 +82,11 @@ public class Humanoid : Interactable
 	[Export]
 	public bool atkMode;
 	[Export]
+	public bool showWeaponOnAtkMode = true;
+	[Export]
 	public Resource statsResource;
+	[Export]
+	public PackedScene fightAIOverride = null;
 	/// <summary>
 	/// Default facing. Will return to this face after done being interacted with
 	/// </summary>
@@ -98,6 +102,7 @@ public class Humanoid : Interactable
 	SceneTreeTween tweening2;//formove
 
 	public int attackCombo = 0;
+	Node2D weapon;
 	public override void _Ready()
 	{
 		if(statsResource != null && statsResource is Stats)
@@ -121,6 +126,9 @@ public class Humanoid : Interactable
 
 		}
 		body = GetNodeOrNull<Node2D>("Rig");
+		weapon = GetNodeOrNull<Node2D>("Rig/Body/Weapon");
+		if (weapon != null) { if (atkMode && showWeaponOnAtkMode) weapon.Visible = true; else weapon.Visible = false; }
+
 		//sprite = GetNodeOrNull<Sprite>("Sprite");
 		worldTileMap = GetParent().GetNodeOrNull<TileMap>("PathTileMap");
 		AstarPathFind = GetNodeOrNull<AStarPath>("AStarPath");
@@ -152,6 +160,14 @@ public class Humanoid : Interactable
 		toExpressionString.Add(Expressions.Wrong, "Wrong");
 
 		RefreshState();
+		if (atkMode && !isPlayer && fightAIOverride != null)
+		{
+			Node existingAI = GetNodeOrNull<BaseAI>("FightAI");
+			if (existingAI != null) existingAI.QueueFree();
+			Node aiNode = fightAIOverride.Instance();
+			AddChild(aiNode);
+			aiNode.Name = "FIghtAI";
+		}
 	}
 	public override void _Process(float delta)
 	{
@@ -396,11 +412,14 @@ public class Humanoid : Interactable
 			EmitSignal("Defeated");
 		}
 		EmitSignal("HealthChanged", health, maxHealth);
-		GD.Print("got hit for " + dmg + " dmg, health is now " + health);
-		currentState = status.Stunned;
-		timer.WaitTime = stundur * 55 / BV.GM.songBPM;
-		if (!timer.IsConnected("timeout", this, "RefreshState")) { timer.Connect("timeout", this, "RefreshState"); }
-		timer.Start();
+		if(stundur != 0)
+		{
+			currentState = status.Stunned;
+			timer.WaitTime = stundur * 55 / BV.GM.songBPM;
+			if (!timer.IsConnected("timeout", this, "RefreshState")) { timer.Connect("timeout", this, "RefreshState"); }
+			timer.Start();
+
+		}
 
 
 
@@ -506,6 +525,10 @@ public class Humanoid : Interactable
 	public int GetHealth()
 	{
 		return health;
+	}
+	public int GetMaxHealth()
+	{
+		return maxHealth;
 	}
 
 

@@ -25,22 +25,23 @@ size = Vector2( 16, 16 )
 event_name = "StartFight"
 event_data = {
 "event_id": "start_fight",
+"prevent_loss": false,
 "resource_file": ""
 }
 event_icon = ExtResource( 4 )
 header_scene = ExtResource( 3 )
 
 [node name="PanelContainer" parent="." index="1"]
-margin_right = 469.0
+margin_right = 579.0
 
 [node name="MarginContainer" parent="PanelContainer" index="1"]
-margin_right = 469.0
+margin_right = 579.0
 
 [node name="VBoxContainer" parent="PanelContainer/MarginContainer" index="0"]
-margin_right = 463.0
+margin_right = 573.0
 
 [node name="Header" parent="PanelContainer/MarginContainer/VBoxContainer" index="0"]
-margin_right = 453.0
+margin_right = 563.0
 
 [node name="IconTexture" parent="PanelContainer/MarginContainer/VBoxContainer/Header/CenterContainer/IconPanel" index="0"]
 self_modulate = Color( 0, 0, 0, 1 )
@@ -55,11 +56,11 @@ text = "StartFight"
 
 [node name="Content" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="2"]
 margin_left = 60.0
-margin_right = 453.0
+margin_right = 563.0
 
 [node name="Spacer" parent="PanelContainer/MarginContainer/VBoxContainer/Header" index="4"]
-margin_left = 453.0
-margin_right = 453.0
+margin_left = 563.0
+margin_right = 563.0
 
 [node name="PopupMenu" parent="." index="2"]
 custom_styles/hover = SubResource( 4 )

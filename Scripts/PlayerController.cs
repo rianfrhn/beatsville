@@ -97,6 +97,33 @@ public class PlayerController : Node2D
 					selectedSkill = 2;
 			}
 
+			if (Input.IsActionJustPressed("ui_left"))
+			{
+				if (!CheckBeatValidity()) return;
+				player.Move(Vector2.Left * 16);
+				CreateMarker(player.GlobalPosition + Vector2.Left * 16);
+			}
+			if (Input.IsActionJustPressed("ui_right"))
+			{
+				if (!CheckBeatValidity()) return;
+				player.Move(Vector2.Right * 16);
+				CreateMarker(player.GlobalPosition + Vector2.Right * 16);
+			}
+			if (Input.IsActionJustPressed("ui_up"))
+			{
+				if (!CheckBeatValidity()) return;
+				player.Move(Vector2.Up * 16);
+				CreateMarker(player.GlobalPosition + Vector2.Up * 16);
+			}
+			if (Input.IsActionJustPressed("ui_down"))
+			{
+				if (!CheckBeatValidity()) return;
+				player.Move(Vector2.Down * 16);
+				CreateMarker(player.GlobalPosition + Vector2.Down * 16);
+			}
+
+
+
 
 			if (@event.IsActionPressed("click_left"))
 			{
@@ -209,6 +236,25 @@ public class PlayerController : Node2D
 			}
 		}
 		
+	}
+	public bool CheckBeatValidity()
+    {
+		if (player.currentState != Humanoid.status.Idle)
+		{
+			if (player.currentState == Humanoid.status.Attacking) return false;
+			player.EmitSignal("Blundered");
+			return false;
+		}
+
+		songData = BV.GM.songData;
+		if (!songData.beatsToMove.Contains(BV.GM.inBeat()))
+		{
+			player.EmitSignal("Acted", false);
+			player.EmitSignal("Blundered");
+			return false;
+		}
+		player.EmitSignal("Acted", true);
+		return true;
 	}
 
 }

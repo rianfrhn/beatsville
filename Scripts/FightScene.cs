@@ -3,7 +3,8 @@ using System;
 
 public class FightScene : Node2D
 {
-
+	[Export]
+	public bool lossPrevention = false;
 	/// <summary>
 	/// Initialize the fight song with its bpm etc. To make resource, add resource in project, attach songdata as script.
 	/// </summary>
@@ -34,6 +35,7 @@ public class FightScene : Node2D
 		fightData = (FightData)gh.currentFight;
 		songdata = fightData.songData;
 		IsBossfight = fightData.isBossFight;
+		lossPrevention = fightData.lossPrevention;
 
 		GlobalMusic globalMusic = BV.GM;
 		globalMusic.musicOffset = songOffset;
@@ -125,15 +127,16 @@ public class FightScene : Node2D
 
 	public void onPlayer1Defeat()
 	{
-		if (fightFinished) return;
+		if (fightFinished || lossPrevention) return;
 		GD.Print("Player 1 Defeated");
+		BV.ST.ChangeScene("res://Scenes/Map/Limbo.tscn");
 		Node dialogue = DialogicSharp.Start("FightLost");
 		GetTree().Root.AddChild(dialogue);
 		fightFinished = true;
 	}
 	public void onPlayer2Defeat()
 	{
-		if (fightFinished) return;
+		if (fightFinished || lossPrevention) return;
 		GD.Print("player 2 defeated");
 		gh.FinishFight();
 		fightFinished = true;

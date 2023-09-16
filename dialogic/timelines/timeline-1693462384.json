@@ -33,6 +33,9 @@
 			"wait_seconds": 2
 		},
 		{
+			"event_id": "bv_save_all"
+		},
+		{
 			"character": "character-1693380421.json",
 			"event_id": "dialogic_001",
 			"portrait": "",

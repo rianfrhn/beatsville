@@ -18,7 +18,6 @@ public class HealthBar : Control
 	{
 		healthbar.MaxValue = maxHealth;
 		healthbar.Value = health;
-		GD.Print("healthbar updated");
 	}
 	public void onHealthUpdated(int maxHealth)
 	{

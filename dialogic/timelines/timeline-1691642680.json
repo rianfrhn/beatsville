@@ -17,6 +17,9 @@
 			"wait_seconds": 6
 		},
 		{
+			"event_id": "bv_save_all"
+		},
+		{
 			"event_id": "bv_pf",
 			"is_relative": false,
 			"name": "Sparky",

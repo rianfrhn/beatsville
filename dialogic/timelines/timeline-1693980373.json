@@ -1,0 +1,37 @@
+{
+	"events": [
+		{
+			"condition": "",
+			"definition": "1693978839-787",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"change_timeline": "timeline-1694012610.json",
+			"event_id": "dialogic_020"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1693978839-787",
+			"event_id": "dialogic_012",
+			"value": "1"
+		},
+		{
+			"character": "character-1675318783.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "We're happy to welcome new members! "
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1693980373.json",
+		"name": "IntroSparky"
+	}
+}

@@ -22,7 +22,7 @@
 					"[OngoingFight]"
 				],
 				"method_name": "InitializeFight",
-				"target_node_path": "GlobalVariable"
+				"target_node_path": "GlobalHandler"
 			},
 			"event_id": "dialogic_042"
 		},
@@ -32,6 +32,16 @@
 			"definition": "",
 			"event_id": "dialogic_011",
 			"value": ""
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "LoadGameData",
+				"target_node_path": "GlobalHandler"
+			},
+			"event_id": "dialogic_042"
 		},
 		{
 			"event_id": "dialogic_013"

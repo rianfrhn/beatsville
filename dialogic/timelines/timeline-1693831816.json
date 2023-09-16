@@ -36,6 +36,9 @@
 			"ypos": 312
 		},
 		{
+			"event_id": "bv_save_all"
+		},
+		{
 			"event_id": "bv_pf",
 			"is_relative": false,
 			"name": "Sparky",
@@ -423,12 +426,38 @@
 			"text": "I'll be staying here for a while!"
 		},
 		{
+			"definition": "1693979026-713",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"definition": "1694667838-416",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "2"
+		},
+		{
 			"event_id": "change_song",
 			"resource_file": "res://Resources/Songs/WelcomeToBeatsville.tres"
 		},
 		{
+			"event_id": "bv_aq",
+			"quest_id": "meet_villagers"
+		},
+		{
+			"event_id": "update_event"
+		},
+		{
 			"enable_movement": true,
 			"event_id": "configure_movement"
+		},
+		{
+			"event_id": "bv_save_all"
 		}
 	],
 	"metadata": {

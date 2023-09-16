@@ -1,12 +1,20 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/FightTileMaps/WildernessFight.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/BeatAction.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Tiles/B&WTileSet.tres" type="TileSet" id=3]
 [ext_resource path="res://Scripts/FightScene.cs" type="Script" id=4]
+[ext_resource path="res://Scenes/BeatGradient.cs" type="Script" id=5]
 [ext_resource path="res://Scenes/Misc/TriggerNode.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Misc/Shaders/MonitorEffectAdvanced.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/UI/HealthBar.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
 [node name="FightScene" type="Node2D"]
 script = ExtResource( 4 )
@@ -58,8 +66,6 @@ tile_data = PoolIntArray( 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Beat" parent="CanvasLayer" instance=ExtResource( 2 )]
-
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource( 10 )]
 
 [node name="HealthBar2" parent="CanvasLayer" instance=ExtResource( 10 )]
@@ -70,3 +76,14 @@ margin_bottom = 40.0
 rect_scale = Vector2( -1, 1 )
 
 [node name="ColorRect" parent="CanvasLayer" instance=ExtResource( 8 )]
+
+[node name="BeatGradient" type="TextureRect" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = SubResource( 2 )
+expand = true
+script = ExtResource( 5 )
+
+[node name="Beat" parent="CanvasLayer" instance=ExtResource( 2 )]
