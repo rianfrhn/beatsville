@@ -12,3 +12,4 @@ beatsToMove = [ 0, 1, 2, 3 ]
 beatsToAtk = [  ]
 timeChanges = {
 }
+displayName = "An Act of Self Defense"

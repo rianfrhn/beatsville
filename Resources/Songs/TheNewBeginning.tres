@@ -12,3 +12,4 @@ beatsToMove = [ 0, 1, 2 ]
 beatsToAtk = [  ]
 timeChanges = {
 }
+displayName = "The New Beginning"

@@ -36,7 +36,7 @@ public class BeatsvilleMap : MapScene
 			marione.dialogue = "IntroMarione";
 			adelle.dialogue = "IntroAdelle";
 			cutter.dialogue = "IntroCutter";
-			rai.dialogue = "IntroRai";
+			rai.dialogue = "RaiFightSelector";
 			lazarus.dialogue = "IntroLazarus";
 
 

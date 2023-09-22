@@ -117,6 +117,27 @@ public class GlobalMusic : Node
 		gv.currentMusic = musicdir;
 		EmitSignal("SongChanged");
 	}
+	public void SwitchMusicByResource(SongData songData)
+	{
+
+		songDataRes = songData;
+		if (songDataRes == null) return;
+		if (playing == 0)
+		{
+			playing = 1;
+			UpdateStream();
+			animplayer.Play("CrossTo2");
+		}
+		else
+		{
+			playing = 0;
+			UpdateStream();
+			animplayer.Play("CrossTo1");
+		}
+		GlobalHandler gv = GetTree().Root.GetNode<GlobalHandler>("GlobalHandler");
+		//gv.currentMusic = musicdir;
+		EmitSignal("SongChanged");
+	}
 	public void Reset()
 	{
 		animplayer.Play("RESET");

@@ -2,13 +2,13 @@
 
 [ext_resource path="res://Scripts/Resources/FightData.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Interactables/NPC/Chimera.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Resources/Songs/RestlessFoe.tres" type="AnimationNodeAnimation" id=4]
+[ext_resource path="res://Scenes/Interactables/NPC/Cutter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/Songs/SelfDefense.tres" type="Resource" id=4]
 
 [resource]
 script = ExtResource( 1 )
 moneyGain = 10
-xpGain = 10
+xpGain = 0
 player1 = ExtResource( 2 )
 player2 = ExtResource( 3 )
 songData = ExtResource( 4 )

@@ -194,28 +194,30 @@ i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\proje
 ++SaveData.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\resources\playerdata\savedata.cs
 ++GodotSharp
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\godotsharp
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\.mono\assemblies\debug\godotsharp.dll
 ++GodotSharpEditor
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\godotsharpeditor
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\.mono\assemblies\debug\godotsharpeditor.dll
 ++System
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.dll
 ++System.Core
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.core
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.core.dll
 ++System.Data
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.data
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.data.dll
 ++System.Drawing
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.drawing
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.drawing.dll
 ++System.IO.Compression.FileSystem
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.io.compression.filesystem
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.io.compression.filesystem.dll
 ++System.Numerics
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.numerics
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.numerics.dll
 ++System.Runtime.Serialization
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.runtime.serialization
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.runtime.serialization.dll
 ++System.Xml
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.xml
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.xml.dll
 ++System.Xml.Linq
-i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\system.xml.linq
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.7.2\system.xml.linq.dll
 ++Other
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\dialogic\other\
 ++DialogicSharp.cs
 i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\addons\dialogic\other\dialogicsharp.cs
+++QuestSaveData.cs
+i:{ee6cef1f-011a-4769-a19a-d4a9b54b3310}:c:\users\riand\onedrive\documents\project\it development\game dev\beatsville\scripts\resources\questsavedata.cs

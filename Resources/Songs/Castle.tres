@@ -12,3 +12,4 @@ beatsToMove = [  ]
 beatsToAtk = [  ]
 timeChanges = {
 }
+displayName = "Castle"

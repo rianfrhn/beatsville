@@ -1,17 +1,18 @@
 using Godot;
 using System;
 using Godot.Collections;
+using System.Collections;
 
 public class QuestHandler : Node
 {
 	public Array<Quest> quests;
 	public Array<Quest> activatedQuests;
 	public Array<Quest> completedQuests;
-
 	public Node questNode;
 	public Node questNodeDefault;
 	public Node activatedNode;
 	public Node completedNode;
+	
 
 	[Signal]
 	public delegate void QuestActivated(string id);
@@ -65,6 +66,7 @@ public class QuestHandler : Node
 		quests = GetQuests();
 		activatedQuests = GetActivatedQuests();
 		completedQuests = GetCompletedQuests();
+		
 	}
 	public Array<Quest> GetQuests()
 	{

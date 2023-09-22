@@ -167,7 +167,7 @@ size_flags_vertical = 11
 size_flags_stretch_ratio = 0.6
 bbcode_enabled = true
 bbcode_text = "[right]50 b[/right]"
-text = "50 b"
+text = "[right]50 b[/right]"
 scroll_active = false
 
 [node name="RightSide" type="NinePatchRect" parent="MenuSeparate"]
@@ -623,7 +623,7 @@ margin_bottom = 14.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#1ebc73]Health"
-text = "+0 Health"
+text = "+0 [color=#1ebc73]Health"
 fit_content_height = true
 scroll_active = false
 
@@ -634,7 +634,7 @@ margin_bottom = 14.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#91db69]H. Regen"
-text = "+0 H. Regen"
+text = "+0 [color=#91db69]H. Regen"
 fit_content_height = true
 scroll_active = false
 
@@ -645,7 +645,7 @@ margin_bottom = 28.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#f79617]Insp"
-text = "+0 Insp"
+text = "+0 [color=#f79617]Insp"
 fit_content_height = true
 scroll_active = false
 
@@ -657,7 +657,7 @@ margin_bottom = 28.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#f9c22b]I. Regen"
-text = "+0 I. Regen"
+text = "+0 [color=#f9c22b]I. Regen"
 fit_content_height = true
 scroll_active = false
 
@@ -668,7 +668,7 @@ margin_bottom = 42.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#ea4f36]Strength"
-text = "+0 Strength"
+text = "+0 [color=#ea4f36]Strength"
 fit_content_height = true
 scroll_active = false
 
@@ -680,7 +680,7 @@ margin_bottom = 42.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#4d9be6]Defense"
-text = "+0 Defense"
+text = "+0 [color=#4d9be6]Defense"
 fit_content_height = true
 scroll_active = false
 
@@ -691,7 +691,7 @@ margin_bottom = 56.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#905ea9]Comp"
-text = "+0 Comp"
+text = "+0 [color=#905ea9]Comp"
 fit_content_height = true
 scroll_active = false
 
@@ -795,7 +795,7 @@ margin_bottom = 14.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#1ebc73]Health"
-text = "+0 Health"
+text = "+0 [color=#1ebc73]Health"
 fit_content_height = true
 scroll_active = false
 
@@ -806,7 +806,7 @@ margin_bottom = 14.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#91db69]H. Regen"
-text = "+0 H. Regen"
+text = "+0 [color=#91db69]H. Regen"
 fit_content_height = true
 scroll_active = false
 
@@ -817,7 +817,7 @@ margin_bottom = 28.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#f79617]Insp"
-text = "+0 Insp"
+text = "+0 [color=#f79617]Insp"
 fit_content_height = true
 scroll_active = false
 
@@ -829,7 +829,7 @@ margin_bottom = 28.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#f9c22b]I. Regen"
-text = "+0 I. Regen"
+text = "+0 [color=#f9c22b]I. Regen"
 fit_content_height = true
 scroll_active = false
 
@@ -840,7 +840,7 @@ margin_bottom = 42.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#ea4f36]Strength"
-text = "+0 Strength"
+text = "+0 [color=#ea4f36]Strength"
 fit_content_height = true
 scroll_active = false
 
@@ -852,7 +852,7 @@ margin_bottom = 42.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#4d9be6]Defense"
-text = "+0 Defense"
+text = "+0 [color=#4d9be6]Defense"
 fit_content_height = true
 scroll_active = false
 
@@ -863,7 +863,7 @@ margin_bottom = 56.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#905ea9]Comp"
-text = "+0 Comp"
+text = "+0 [color=#905ea9]Comp"
 fit_content_height = true
 scroll_active = false
 
@@ -900,7 +900,7 @@ margin_right = 63.0
 margin_bottom = 14.0
 bbcode_enabled = true
 bbcode_text = "[center]Test Eq 1"
-text = "Test Eq 1"
+text = "[center]Test Eq 1"
 fit_content_height = true
 scroll_active = false
 
@@ -966,7 +966,7 @@ margin_bottom = 14.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#1ebc73]Health"
-text = "+0 Health"
+text = "+0 [color=#1ebc73]Health"
 fit_content_height = true
 scroll_active = false
 
@@ -977,7 +977,7 @@ margin_bottom = 14.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#91db69]H. Regen"
-text = "+0 H. Regen"
+text = "+0 [color=#91db69]H. Regen"
 fit_content_height = true
 scroll_active = false
 
@@ -988,7 +988,7 @@ margin_bottom = 28.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#f79617]Insp"
-text = "+0 Insp"
+text = "+0 [color=#f79617]Insp"
 fit_content_height = true
 scroll_active = false
 
@@ -1000,7 +1000,7 @@ margin_bottom = 28.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#f9c22b]I. Regen"
-text = "+0 I. Regen"
+text = "+0 [color=#f9c22b]I. Regen"
 fit_content_height = true
 scroll_active = false
 
@@ -1011,7 +1011,7 @@ margin_bottom = 42.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#ea4f36]Strength"
-text = "+0 Strength"
+text = "+0 [color=#ea4f36]Strength"
 fit_content_height = true
 scroll_active = false
 
@@ -1023,7 +1023,7 @@ margin_bottom = 42.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#4d9be6]Defense"
-text = "+0 Defense"
+text = "+0 [color=#4d9be6]Defense"
 fit_content_height = true
 scroll_active = false
 
@@ -1034,7 +1034,7 @@ margin_bottom = 56.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 bbcode_text = "+0 [color=#905ea9]Comp"
-text = "+0 Comp"
+text = "+0 [color=#905ea9]Comp"
 fit_content_height = true
 scroll_active = false
 
@@ -1328,6 +1328,7 @@ fit_content_height = true
 scroll_active = false
 
 [node name="Quests" type="VBoxContainer" parent="MenuSeparate/RightSide"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0

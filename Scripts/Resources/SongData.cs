@@ -6,6 +6,8 @@ using Godot.Collections;
 public class SongData : Resource
 {
 	[Export]
+	public string displayName = null;
+	[Export]
 	public int BPM { get; set; }
 	[Export]
 	public int TimeSign { get; set; }
@@ -17,6 +19,7 @@ public class SongData : Resource
 	public Array<int> beatsToAtk { get; set; }
 	[Export]
 	public Dictionary<int, string> timeChanges { get; set; }
+
 
 
 

@@ -10,3 +10,4 @@ beatsToMove = [ 0, 1, 2 ]
 beatsToAtk = [  ]
 timeChanges = {
 }
+displayName = "Silence"
